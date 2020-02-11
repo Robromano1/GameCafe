@@ -15,18 +15,21 @@ export const logoutCurrentUser = () => ({
 });
 
 export const receiveErrors = errors => ({
-    type: RECEIVE_SESSION_ERRORS
+    type: RECEIVE_SESSION_ERRORS,
+    errors
 });
 
 //thunk action creators
 export const signup = user => dispatch => (
     APIUtil.signup(user)
-        .then(userPayload => dispatch(receiveCurrentUser(userPayload)))
+        .then(userPayload => (dispatch(receiveCurrentUser(userPayload))),
+        error => (dispatch(receiveErrors(error.responseJSON))))
 );
 
 export const login = user => dispatch => (
     APIUtil.login(user)
-        .then(userPayload => dispatch(receiveCurrentUser(userPayload)))
+        .then(userPayload => (dispatch(receiveCurrentUser(userPayload))),
+        error => (dispatch(receiveErrors(error.responseJSON))))
 );
 
 export const logout = () => (

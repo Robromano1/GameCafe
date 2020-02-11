@@ -1,2 +1,0 @@
-class ServerUsersController < ApplicationController
-end

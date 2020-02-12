@@ -3,7 +3,7 @@ import {
     LOGOUT_CURRENT_USER,
 } from '../actions/session_actions';
 
-const _nullUser = object.freeze({
+const _nullUser = Object.freeze({
     id: null
 });
 

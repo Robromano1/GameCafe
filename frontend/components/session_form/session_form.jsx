@@ -34,13 +34,14 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        const { formType, navLink } = this.props;
+        const { formType, navLink, message } = this.props;
         return(
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit}>
-                    Please {formType} or {navLink}
+                    <h2 className="message">{message}</h2>
+                    
                     {this.renderErrors()}
-                    <br/>
+                    
                     <div className="login-form">
                         <label>Username:
                             <input type="text" 
@@ -54,6 +55,7 @@ class SessionForm extends React.Component {
                         </label>
                         <input type="submit" value={formType}/>
                         <br/>
+                        {navLink}
                     </div>
                 </form>
             </div>

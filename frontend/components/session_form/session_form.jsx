@@ -5,6 +5,7 @@ class SessionForm extends React.Component {
         super(props)
         
         this.state = {
+            email: "",
             username: "",
             password: ""
         }
@@ -35,31 +36,65 @@ class SessionForm extends React.Component {
 
     render() {
         const { formType, navLink, message } = this.props;
-        return(
-            <div className="login-form-container">
-                <form onSubmit={this.handleSubmit}>
-                    <h2 className="message">{message}</h2>
-                    
-                    {this.renderErrors()}
-                    
-                    <div className="login-form">
-                        <label>Username:
-                            <input type="text" 
-                            value={this.state.username}
-                            onChange={this.update('username')}/>
-                        </label>
-                        <label>Password:
+        if (formType === 'Signup') {
+            return (
+                <div className="signup-form-container">
+                    <form onSubmit={this.handleSubmit}>
+                        <h2 className="message">{message}</h2>
+
+                        {this.renderErrors()}
+
+                        <div className="signup-form theme-dark">
+                            <label>Email:
+                            <input type="email"
+                                    value={this.state.email}
+                                    onChange={this.update('email')} />
+                            </label>
+                            <label>Username:
+                            <input type="text"
+                                    value={this.state.username}
+                                    onChange={this.update('username')} />
+                            </label>
+                            <label>Password:
                             <input type="password"
-                                value={this.state.password}
-                                onChange={this.update('password')} />
-                        </label>
-                        <input type="submit" value={formType}/>
-                        <br/>
-                        {navLink}
-                    </div>
-                </form>
-            </div>
-        )
+                                    value={this.state.password}
+                                    onChange={this.update('password')} />
+                            </label>
+                            <input type="submit" value={formType} />
+                            <br />
+                            {navLink}
+                        </div>
+                    </form>
+                </div>
+            )
+        } else if(formType === 'Login') {
+            return (
+
+                <div className="login-form-container">
+                    <form onSubmit={this.handleSubmit}>
+                        <h2 className="message">{message}</h2>
+
+                        {this.renderErrors()}
+
+                        <div className="login-form theme-dark">
+                            <label>Email:
+                            <input type="email"
+                                    value={this.state.email}
+                                    onChange={this.update('email')} />
+                            </label>
+                            <label>Password:
+                            <input type="password"
+                                    value={this.state.password}
+                                    onChange={this.update('password')} />
+                            </label>
+                            <input type="submit" value={formType} />
+                            <br />
+                            {navLink}
+                        </div>
+                    </form>
+                </div>
+            )
+        }
     }
 }
 

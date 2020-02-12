@@ -70,8 +70,9 @@ class SessionForm extends React.Component {
                                 {/* <p className="contents">{navLink}</p> */}
                             </div>
                         </form>
-                    </div>
+                    </div>       
                 </div>
+                
             )
         } else if(formType === 'Login') {
             return (
@@ -97,7 +98,7 @@ class SessionForm extends React.Component {
                             </label>
                             <input type="submit" value={formType} />
                             <br />
-                            {navLink}
+                            {/* {navLink} */}
                         </div>
                     </form>
                 </div>

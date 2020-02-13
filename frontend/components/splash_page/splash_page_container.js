@@ -5,8 +5,9 @@ import SplashPage from './splash_page';
 import { login } from '../../actions/session_actions';
 
 const mSTP = state => ({
+	navLink: <Link to={"/login"}></Link>
+});
 
-})
 
 const mDTP = dispatch => ({
 

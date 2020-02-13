@@ -1,10 +1,38 @@
-.logo {
+// .logo {
 	
-}
+// }
 
-.background-img {
+.background  {
+	background-image: url("https://images3.alphacoders.com/906/906873.jpg");
 	background-size: cover;
 }
+
+.loginPage > a {
+	//margin: 0 auto;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	color: white;
+	//color: #7289da;
+	display: block;
+	//position: absolute;
+	text-decoration: none;
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	//margin-top: -10px;
+}
+
+.linkedin > a {
+	color: white;
+	text-decoration: none;
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	margin-top: 50px;
+}
+// .background-img {
+// 	// background-size: cover;
+// 	background-size: contain;
+// }
 
 
 

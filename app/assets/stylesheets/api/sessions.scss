@@ -5,30 +5,7 @@
 form {
     display: block;
     margin-top: 0em;
-}
-
-.wrapper {
-   background-image: url("https://cdna.artstation.com/p/assets/images/images/012/086/010/large/mikael-gustafsson-amongtrees-2-8.jpg?1532971442");
-   position: absolute;
-   top: 0;
-   left: 0;
-   bottom: 0;
-   right: 0;
-   width: auto;
-   height: auto;
-   display: -webkit-box;
-   display: -ms-flexbox;
-   display: flex;
-   -webkit-box-align: center;
-   -ms-flex-align: center;
-   align-items: center;
-   -webkit-box-pack: center;
-   -ms-flex-pack: center;
-   justify-content: center;
-   text-rendering: optimizeLegibility;
-   -webkit-box-direction: normal;
-   line-height: 1;
-   user-select: none;
+    
 }
 
 div {
@@ -54,6 +31,8 @@ div {
    border-radius: 5px;
    -webkit-box-sizing: border-box;
    box-sizing: border-box;
+   padding-bottom: 100px;
+   
 }
 
 .theme-dark {
@@ -103,19 +82,43 @@ div {
    --deprecated-text-input-prefix: #dcddde;
 }
 
+.input-wrapper {
+   width: 100%;
+   text-align: center;
+   margin-top: -20px;
+}
+
 .message {
-   font-size: 26px;
+   font-size: 24px;
    line-height: 32px;
    font-weight: 300;
    color: #fff;
    font-family: Helvetica, sans-serif;
    display: flex;
    justify-content: center;
+   margin-top: -20px;
 }
 
 .outer-container {
    width: 100%;
    text-align: center;
+   position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-image: url(https://cdna.artstation.com/p/assets/images/images/012/086/010/large/mikael-gustafsson-amongtrees-2-8.jpg?1532971442);
 }
 
 h5 {
@@ -173,7 +176,7 @@ input {
    margin: 0em;
    font: 400 11px system-ui;
    padding: 10px;
-   border-width: 2px;
+   border-width: 1px;
    border-style: inset;
    // border-color: initial;
    border-image: initial;
@@ -216,10 +219,19 @@ input {
    min-width: 130px;
    min-height: 44px; 
    transition: background-color .17s ease,color .17s ease;
-   margin-top: 20px;
+   margin-top: -20px;
    border-radius: 3px;
    border: none;
    font-weight: 500px;
+   cursor: pointer;
+}
+
+.navContent {
+   margin: 0 auto;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   color: #7289DA !important;
 }
 
 

@@ -44,8 +44,8 @@ class SessionForm extends React.Component {
                         <form onSubmit={this.handleSubmit}>
                             {this.renderErrors()}
 
-                            <div className="wrapper">
-                                <h2 className="message">{title}</h2>
+                            <h2 className="message">{title}</h2>
+                            <div className="input-wrapper">
                                 <div className="email-field">
                                     <h5>EMAIL</h5>
                                         <input type="email"
@@ -74,10 +74,8 @@ class SessionForm extends React.Component {
                                     </button>
                                 </div>
                                 <br />
-                                <div className="alt-page">
-                                    <button className="alt"></button>
-                                        <div className="content">{navLink}</div>
-                                </div>
+                                <div className="navContent">{navLink}</div>
+                             
                                 {/* <p className="contents">{navLink}</p> */}
                             </div>
                         </form>

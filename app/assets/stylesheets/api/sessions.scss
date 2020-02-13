@@ -33,6 +33,7 @@ div {
    box-sizing: border-box;
    padding-bottom: 100px;
    
+   
 }
 
 .theme-dark {
@@ -226,12 +227,18 @@ input {
    cursor: pointer;
 }
 
-.navContent {
+.navContent > a {
    margin: 0 auto;
    white-space: nowrap;
    text-overflow: ellipsis;
    overflow: hidden;
-   color: #7289DA !important;
+   color: #7289da;
+   display: flex;
+   position: absolute;
+   text-decoration: none;
+   font-family: 'Roboto', sans-serif;
+   font-size: 14px;
+   margin-top: -10px;
 }
 
 

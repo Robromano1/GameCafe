@@ -44,7 +44,7 @@ class SessionForm extends React.Component {
                         <form onSubmit={this.handleSubmit}>
                             {this.renderErrors()}
 
-                            <h2 className="message">{title}</h2>
+                            <h2 className="signup-message">{title}</h2>
                             <div className="input-wrapper">
                                 <div className="email-field">
                                     <h5>EMAIL</h5>
@@ -69,7 +69,10 @@ class SessionForm extends React.Component {
                                 </div>
                                 <br/>
                                 <div className="sub-button">
-                                    <button className="session-submit" type="submit" value={formType}>
+                                    <button 
+                                    className="session-submit" 
+                                    type="submit" 
+                                    value={formType}>
                                         <div className="content-text">Continue</div>
                                     </button>
                                 </div>
@@ -85,31 +88,48 @@ class SessionForm extends React.Component {
             )
         } else if(formType === 'Login') {
             return (
+                
+                <div className="login-outer-container">
+                    <div className="login-form-container theme-dark">
+                        <form onSubmit={this.handleSubmit}>
+                            <div className="login-message">
+                                <h2 className="title">Welcome back!</h2>
+                                <h3 className="sub-title">We're so excited to see you again!</h3>
+                            </div>
 
-                <div className="login-form-container">
-                    <form onSubmit={this.handleSubmit}>
-                        <h2 className="title">{title}</h2>
+                            {this.renderErrors()}
 
-                        {this.renderErrors()}
-
-                        <div className="login-form theme-dark">
-                            <label className="email">Email:
-                                <input type="email"
-                                    value={this.state.email}
-                                    onChange={this.update('email')} 
-                                />
-                            </label>
-                            <label className="password">Password:
-                                <input type="password"
-                                    value={this.state.password}
-                                    onChange={this.update('password')} 
-                                />
-                            </label>
-                            <input type="submit" value={formType} />
-                            <br />
-                            {/* {navLink} */}
-                        </div>
-                    </form>
+                            <div className="login-wrapper">
+                                <div className="login-email">
+                                    <h5>EMAIL</h5>
+                                        <input type="email"
+                                            value={this.state.email}
+                                            onChange={this.update('email')} 
+                                        />
+                                </div>
+                                <div className="login-password">
+                                    <h5>PASSWORD</h5>
+                                        <input type="password"
+                                            value={this.state.password}
+                                            onChange={this.update('password')} 
+                                        />
+                                </div>
+                                <br/>
+                                <div className="login-button">
+                                    <button 
+                                    className="session-submit" 
+                                    type="submit" 
+                                    value={formType}>
+                                        <div className="content-text">Login</div>
+                                    </button>
+                                </div>
+                                <br />
+                                <p>Need an account?<div className="navContent">{navLink}</div></p>
+                                
+                            </div>
+                        </form>
+                        
+                    </div>
                 </div>
             )
         }

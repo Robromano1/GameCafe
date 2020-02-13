@@ -124,11 +124,12 @@ class SessionForm extends React.Component {
                                     </button>
                                 </div>
                                 <br />
-                                <p>Need an account?<div className="navContent">{navLink}</div></p>
-                                
+                                <div className="loginNavContent">
+                                    <span>Need an account?</span>
+                                    <p>{navLink}</p>
+                                </div>
                             </div>
-                        </form>
-                        
+                        </form> 
                     </div>
                 </div>
             )

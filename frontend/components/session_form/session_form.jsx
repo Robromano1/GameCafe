@@ -35,38 +35,49 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        const { formType, navLink, message } = this.props;
+        const { formType, navLink, title } = this.props;
         if (formType === 'Signup') {
+        
             return (
-                <div className="wrapper">
+              	<div className="outer-container">
                     <div className="signup-form-container theme-dark">
                         <form onSubmit={this.handleSubmit}>
                             {this.renderErrors()}
 
-                            <div className="signup-form">
-                                <h2 className="message">{message}</h2>
-                                <h5>EMAIL</h5>
-                                    <input type="email"
-                                        value={this.state.email}
-                                        onChange={this.update('email')} 
-                                    />
-
-                                <h5>USERNAME</h5>
-                                    <input type="text"
-                                        value={this.state.username}
-                                        onChange={this.update('username')} 
-                                    />
-                                   
-                                <h5>PASSWORD</h5>
-                                    <input type="password"
-                                        value={this.state.password}
-                                        onChange={this.update('password')} 
-                                    />
+                            <div className="wrapper">
+                                <h2 className="message">{title}</h2>
+                                <div className="email-field">
+                                    <h5>EMAIL</h5>
+                                        <input type="email"
+                                            value={this.state.email}
+                                            onChange={this.update('email')} 
+                                        />
+                                </div>
+                                <div className="username-field">
+                                    <h5>USERNAME</h5>
+                                        <input type="text"
+                                            value={this.state.username}
+                                            onChange={this.update('username')} 
+                                        />
+                                </div>
+                                <div className="password-field">
+                                    <h5>PASSWORD</h5>
+                                        <input type="password"
+                                            value={this.state.password}
+                                            onChange={this.update('password')} 
+                                        />
+                                </div>
                                 <br/>
+                                <div className="sub-button">
                                     <button className="session-submit" type="submit" value={formType}>
-                                        <div className="contents">Continue</div>
+                                        <div className="content-text">Continue</div>
                                     </button>
+                                </div>
                                 <br />
+                                <div className="alt-page">
+                                    <button className="alt"></button>
+                                        <div className="content">{navLink}</div>
+                                </div>
                                 {/* <p className="contents">{navLink}</p> */}
                             </div>
                         </form>
@@ -79,7 +90,7 @@ class SessionForm extends React.Component {
 
                 <div className="login-form-container">
                     <form onSubmit={this.handleSubmit}>
-                        <h2 className="message">{message}</h2>
+                        <h2 className="title">{title}</h2>
 
                         {this.renderErrors()}
 

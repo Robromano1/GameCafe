@@ -16,7 +16,7 @@ const App = () => (
     <div>
         <header>
             <Link to="/" className="header-link">
-                <h1>Coffee Talk</h1>
+                <h1 className="logo">Game Cafe</h1>
             </Link>
             
         </header>

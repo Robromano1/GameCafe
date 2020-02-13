@@ -88,8 +88,6 @@
 }
 
 .loginNavContent {
-		display: inline-flex;
-		justify-content: left;
 		font-family: 'Roboto', sans-serif;
 		position: absolute;
 		
@@ -98,10 +96,11 @@
 .loginNavContent > span {
 	font-size: 14px;
 	color: #72767d;
+	float: left;
+	margin-top: -10px;
 }
 
 .loginNavContent > p > a {
-	display: inline-flex;
 	justify-content: space-around;
 	margin: 0 auto;
 	white-space: nowrap;
@@ -110,7 +109,10 @@
 	color: #7289da;
 	text-decoration: none;
 	font-size: 14px;
-	margin-top: -15px;
+	float: left;
+	margin-left: 115px;
+	margin-top: -28px;
+
 	
 }
 

@@ -14,12 +14,13 @@ import {
 
 const App = () => (
     <div>
-        <header>
+        {/* <header>
             <Link to="/" className="header-link">
-                <img src={window.gamecafeURL} />;
+                <h1>Game Cafe</h1>
+                <img className="logo" src={window.gamecafeURL} />;
             </Link>
             
-        </header>
+        </header> */}
         <Switch>
             <AuthRoute exact path="/login" component={LogInFormContainer}/>
             <AuthRoute exact path="/signup" component={SignUpFormContainer}/>

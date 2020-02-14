@@ -6,6 +6,7 @@ class NavBar extends React.Component {
 		super(props);
 
 		this.goToLogin = this.goToLogin.bind(this);
+
 	}
 
 	goHome(e) {
@@ -30,13 +31,13 @@ class NavBar extends React.Component {
 			<div className="Navi">
 				<ul className="rightNav">
 					<li className="download">Download</li>
-					<div className="dropdown">
-						<li className="developer">Developer</li>
-						<div className="dropdown-content">
+					{/* <div className="dropdown">  */}
+					<li className="developer">Developer</li>
+						{/* <div className="dropdown-content">
 							<a href="https://github.com/robromano1">Github</a>
 							<a href="https://www.linkedin.com/in/robert-romano/">LinkedIn</a>
 						</div>
-					</div>
+					</div> */}
 					<li className="community">Community</li>
 					<li className="support">Support</li>
 				</ul>
@@ -52,3 +53,5 @@ class NavBar extends React.Component {
 }
 
 export default NavBar;
+
+

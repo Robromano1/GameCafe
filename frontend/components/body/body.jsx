@@ -18,13 +18,13 @@ const Body = () => {
 					<div className="buttonsWrapper">
 						<div className="buttons">
 							<a alt="Download GameCafe" href="https://discordapp.com/api/download?platform=osx"
-								 className="downloadNow">Download for macOs</a>
+								 className="downloadNow defaultTheme">Download for macOs</a>
 								 <div>
-									 <form className="fieldForm">
+									 <form className="fieldForm buttonTry formBranding">
 										 <input type="text" 
-														 className="fieldInputClosed" 
+														 className="fieldInputClosed inputBranding" 
 														 placeholder="Enter a username" autofocus/>
-											<button className="fieldButton">
+											<button className="fieldButton buttonBranding">
 												<span className="message">
 													Open GameCafe in your browser.
 												</span>

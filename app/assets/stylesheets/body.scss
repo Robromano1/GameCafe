@@ -78,3 +78,119 @@ div {
 	font-family: inherit;
   font-size: 100%;
 }
+
+.buttons-wrapper {
+	transition: opacity .5s ease;
+  opacity: 1;
+}
+
+.buttons {
+	display: flex;
+	-webkit-box-pack: center;
+	justify-content: center;
+	-webkit-box-flex: 1;
+  flex: 1;
+}
+
+.defaultTheme {
+	background-color: #fff;
+	color: #18191c;
+	font-family: "Roboto", sans-serif;
+	font-size: 15px;
+}
+
+.downloadNow {
+	font-size: 15px;
+	display: flex;
+	-webkit-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+	font-weight: 500;
+	padding: 0;
+	position: relative;
+	z-index: 1;
+	border-radius: 3px;
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,.2);
+	margin-right: 40px;
+	height: 45px;
+	transform: translateY(-1px);
+	width: 250px;
+	//transition: box-shadow .3s cubic-bezier(.25,.25,.315,1.35),transform .1s linear,-webkit-box-shadow .3s cubic-bezier(.25,.25,.315,1.35),-webkit-transform .1s linear;
+}
+
+a {
+	text-decoration: none;
+}
+
+.buttonTry {
+	margin: 0;
+}
+
+.fieldForm {
+	width: 250px;
+	top: -1px;
+	transition: all .35s cubic-bezier(.25,.25,.315,1.35);
+	border-radius: 3px;
+	height: 45px;
+	position: relative;
+}
+
+.formBranding {
+	background-color: transparent;
+	color: #7289da;
+	font-family: "Roboto", sans-serif;
+}
+
+.fieldInputClosed {
+	display: none;
+	border-radius: 3px;
+	font-weight: 400;
+	padding: 0 24px;
+	font-size: 14px;
+	outline: none;
+	-webkit-box-flex: 1;
+	
+}
+
+.inputBranding {
+	color: #202225;
+	
+}
+
+.fieldButton {
+	width: 100%;
+	transition: all .35s cubic-bezier(.25,.25,.315,1.35);
+	height: 45px;
+	position: absolute;
+	top: 0;
+	border-radius: 3px;
+	transform: none;
+	box-shadow: none;
+	text-transform: none;
+	text-align: center;
+	bottom: 0;
+	right: 0;
+	font-weight: 500;
+	overflow: hidden;
+	font-size: 16px;
+	cursor: pointer;
+	outline: none;
+	margin: auto;
+	border: 0;
+	padding: 0;
+	font-size: 15px;
+	
+	
+}
+
+.buttonBranding {
+	background-color: transparent;
+	color: #fff;
+	background-color: #7289da;
+	font-family: "Roboto", sans-serif;
+}
+
+button {
+	-webkit-appearance: none;
+}

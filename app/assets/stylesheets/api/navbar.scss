@@ -1,0 +1,56 @@
+.Navi {
+	background-color: gray;
+}
+
+.rightNav {
+	display: flex;
+	list-style-type: none;
+	margin-left: 200px;
+	margin-top: -5px;
+}
+
+.download {
+	margin-right: 30px;
+	margin-top: 12px;
+}
+
+.developer {
+	margin-right: 30px;		
+	margin-top: 12px;
+}
+
+.community {
+	margin-right: 30px;
+	margin-top: 12px;
+}
+
+.support {
+	margin-top: 12px;
+}
+
+.goLogin {
+	list-style-type: none;
+	display: flex;
+	
+}
+
+.loginButton {
+		margin-top: -37px;
+		margin-left: 1200px;
+	  color: #fff;
+    top: 0;
+    border: 2px solid hsla(0,0%,100%,.8);
+    padding: 5px 17px 7px;
+		border-radius: 20px;
+    line-height: 24px;
+		margin-right: 18px;
+		outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: "Roboto", sans-serif;
+    font-size: 100%;
+		vertical-align: baseline;
+		font-size: 14px;
+		
+	
+}

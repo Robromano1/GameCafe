@@ -30,3 +30,8 @@ tfoot, th, thead, tr, tt, ul, var {
     font-size: 100%;
 		vertical-align: baseline;
 } */
+
+html {
+  background-color: grey;
+}
+

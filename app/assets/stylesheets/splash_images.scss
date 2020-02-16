@@ -160,4 +160,89 @@
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 	animation-timing-function: ease-in-out;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-duration: 1.5s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+}
+
+.coin {
+	left: 50%;
+	margin-left: -428px;
+	bottom: 300px;
+}
+
+.coin2 {
+	left: 50%;
+  margin-left: 80px;
+  bottom: 530px;
+}
+
+.GCartridge {
+	left: 50%;
+	margin-left: 250px;
+  bottom: 392px;
+}
+
+.shield {
+	left: 50%;
+  margin-left: 423px;
+}
+
+.divPotion {
+	left: 50%;
+	margin-left: -565px;
+  position: absolute;
+  bottom: 132px;
+}
+
+.box {
+	position: absolute;
+	left: 50%;
+	margin-left: -234px;
+	-webkit-transition: none;
+	transition: none;
+	bottom: 532px;
+}
+
+.questionBox {
+	left: 50%;
+	margin-left: -239px;
+	bottom: 462px;
+	cursor: pointer;
+	transition: none;
+	position: absolute;
+}
+
+.desktop {
+	left: 50%;
+	margin-left: -289.5px;
+}
+
+.android {
+	left: 50%;
+	margin-left: -548px;
+	z-index: 2;
+}
+
+.Iphone {
+	left: 50%;
+	margin-left: -401.5px;
+}
+
+.controller {
+	left: 50%;
+	margin-left: -255px;
+}
+
+.laptop {
+	left: 50%;
+	margin-left: -4px;
+}
+
+.headphones {
+	left: 50%;
+	margin-left: 350px;
+	bottom: 142px;
+	transform: scale(.75);
 }

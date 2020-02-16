@@ -21,17 +21,55 @@ fieldset, form, h1, h2, h3, h4, h5, h6, html, iframe,
 img, ins, kbd, label, legend, li, object, ol, p, pre, q, 
 s, samp, small, span, strike, strong, table, tbody, td, 
 tfoot, th, thead, tr, tt, ul, var {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-weight: inherit;
-    font-style: inherit;
-    font-family: inherit;
-    font-size: 100%;
-		vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
 } */
+html div body a ul li span img{
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
 
 html {
   background-color: #26262b;
+  height: 100%;
+  display: block;
+  color: -internal-root-color;
 }
+
+#app-mount {
+	height: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    min-width: 824px;
+  }
+}
+
+head {
+  display: none;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+
 

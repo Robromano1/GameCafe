@@ -8,6 +8,19 @@ main {
 	
 }
 
+
+
+body {
+	text-rendering: optimizeLegibility;
+	font-family: "Roboto", sans-serif;
+	line-height: 1.15;
+	// background: #fff;
+	// color: #000;
+	min-width: 1000px;
+	display: block;
+  margin: 8px;
+}
+
 .grid {
 	display: flex;
 	-webkit-box-orient: vertical;
@@ -15,9 +28,9 @@ main {
 	flex-direction: column;
 }
 
-.page-content {
-	margin-top: -60px;
-}
+// .page-content {
+// 	margin-top: -60px;
+// }
 
 .landing {
 	display: flex;
@@ -194,4 +207,10 @@ a {
 
 button {
 	-webkit-appearance: none;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    min-width: 824px;
+  }
 }

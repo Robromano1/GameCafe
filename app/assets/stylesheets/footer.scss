@@ -1,0 +1,136 @@
+.footer2 {
+	background: transparent;
+	position: relative;
+	z-index: 1;
+}
+
+.footer1 {
+	padding: 80px 160px 48px;
+	font-weight: 400;
+	overflow: hidden;
+}
+
+footer {
+	display: block;
+}
+
+.footerBackground {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+svg {
+	height: 100%;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+.footerContent {
+	position: relative;
+	max-width: 1600px;
+	margin: 0 auto;
+}
+
+.navigation {
+	display: flex;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+}
+
+.logoWrap {
+	width: 36px;
+  height: 36px;
+}
+
+.logo {
+	width: 36px;
+  height: 36px;
+}
+
+a img {
+	border: none;
+}
+
+.navigationSection {
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	flex-direction: column;
+	margin: 0 16px;
+}
+
+.navHeader {
+	color: #fff;
+	font-size: 14px;
+	margin-bottom: 13px;
+}
+
+.navigation {
+	font-family: "Roboto", sans-serif;
+}
+
+h3 {
+	display: block;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+}
+
+.navRoute > span {
+	color: rgba(255, 255, 255, .6) !important;
+	font-size: 14px;
+	line-height: 20px;
+	text-decoration: none;	
+}
+
+.footerSeperator {
+	height: 1px;
+	width: 100%;
+	//Add a line for the background
+	//background: url("ffa0a8d74568beaa8ec72dd51951685c.svg");
+	opacity: .1;
+	//margin: 34px 0;
+}
+
+.joinGameCafe {
+	display: flex;
+}
+
+.joinWrap {
+	-webkit-box-flex: 1;
+	flex: 1;
+}
+
+.readyToJoin {
+	font-size: 26px;
+	color: #fff;
+	line-height: 34px;
+}
+
+.joinOthers {
+	font-size: 14px;
+	color: rgba(255, 255, 255, .6);
+	font-weight: 500;
+	margin-top: 4px;
+}
+
+.buttonSignup {
+	background-color: #7289da;
+	color: #fff !important;
+}
+
+.button {
+	position: relative;
+	padding: 16px;
+	height: 15px;
+	border-radius: 3px;
+	font-size: 15px;
+	line-height: 15px;
+	cursor: pointer;
+
+}

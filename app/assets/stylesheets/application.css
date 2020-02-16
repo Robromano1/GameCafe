@@ -30,7 +30,7 @@ tfoot, th, thead, tr, tt, ul, var {
   font-size: 100%;
   vertical-align: baseline;
 } */
-html div body a ul li span img{
+html div body a ul li span img h1 h2 h3{
   display: block;
   margin: 0;
   padding: 0;

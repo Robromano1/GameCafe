@@ -91,6 +91,11 @@ h3 {
 .footerSeperator {
 	height: 1px;
 	width: 100%;
+	border: .5px solid white ;
+	margin-top: 40px;
+	//border-color: var(--light-font);
+	width: 75%;
+	opacity: 0.1;
 	//Add a line for the background
 	//background: url("ffa0a8d74568beaa8ec72dd51951685c.svg");
 	opacity: .1;
@@ -99,6 +104,7 @@ h3 {
 
 .joinGameCafe {
 	display: flex;
+
 }
 
 .joinWrap {
@@ -132,5 +138,6 @@ h3 {
 	font-size: 15px;
 	line-height: 15px;
 	cursor: pointer;
+	margin-top: 35px;
 
 }

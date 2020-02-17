@@ -1,10 +1,24 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
+import React from 'react';
+import { Route, Link } from 'react-router-dom';
+import ServerBarContainer from './server_bar_container';
+import HomeFriendsListContainer from '../home_page/home_friends_list_container';
 
-// class Server extends React.Component {
-// 	constructor(props) {
-// 		super(props);
-// 	}
+class ServerPage extends React.Component {
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		return (
+			<div>
+				<Route path='/channels' component={ServerBarContainer}/>
+				<Route path='/channels' component={HomeFriendsListContainer} />
+			</div>
+		)
+	}
+}
+
+export default ServerPage;
 
 // 	render() {
 // 		return (

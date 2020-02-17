@@ -1,0 +1,64 @@
+.directMessages {
+	box-sizing: border-box;
+	position: relative;
+	overflow: hidden;
+	user-select: none;
+	-webkit-box-flex: 1;
+	flex: 1;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	flex-direction: column;
+	background-color: #2C2F33;
+}
+
+.searchBar {
+	position: relative;
+	z-index: 2;
+	-webkit-box-flex: 0;
+	flex: 0 0 auto;
+	padding: 0 10px;
+	height: 48px;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+.searchBarButton {
+	width: 100%;
+	height: 28%;
+	overflow: hidden;
+	border-radius: 4px;
+	background-color: #2C2F33;
+	box-shadow: none;
+	color: gray;
+	text-align: left;
+	text-overflow: ellipsis;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 24px;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.scrollWrap {
+	min-height: 0;
+	min-width: 0;
+	position: relative;
+	display: flex;
+	height: 100%;
+	-webkit-box-flex: 1;
+	flex: 1 1 auto;
+}
+
+.channel-2 {
+	max-width: 224px;
+	margin-left: 8px;
+}
+
+.container-2 {
+	box-sizing: border-box;
+	display: block;
+	padding: 1px 0;
+	border-radius: 4px;
+}

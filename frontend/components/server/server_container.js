@@ -1,12 +1,12 @@
-import { connect } from 'react-redux';
-import Server from './server';
+// import { connect } from 'react-redux';
+// import Server from './server';
 
-const mSTP = state => ({
+// const mSTP = state => ({
 
-});
+// });
 
-const mDTP = dispatch => ({
+// const mDTP = dispatch => ({
 
-});
+// });
 
-export default connect(mSTP, mDTP)(Server);
+// export default connect(mSTP, mDTP)(Server);

@@ -1,0 +1,140 @@
+.appMount {
+	background-color: var(--background-tertiary);
+	text-rendering: optimizeLegibility;
+	position: absolute;
+	overflow: hidden;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+
+.scroll2 {
+	user-select: none;
+	padding: 12px 0 0;
+	overflow-x: hidden;
+	background-color: var(--background-tertiary);
+	contain: layout size;
+}
+
+.scroll {
+	position: relative;
+	min-height: 0;
+	overflow-y: scroll;
+	-webkit-box-flex: 1;
+	flex: 1 1 auto;
+}
+
+.listItem {
+	position: relative;
+	margin: 0 0 8px;
+	display: flex;
+	-webkit-box-pack: center;
+	justify-content: center;
+	width: 72px;
+}
+
+.pill-1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.pillWrapper {
+	overflow: hidden;
+	width: 8px;
+	height: 48px;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	-webkit-box-pack: start;
+	justify-content: flex-start;
+	contain: layout size;
+}
+
+.item-2 {
+	opacity: 1;
+	height: 40px;
+	transform: none;
+	position: absolute;
+	display: block;
+	width: 8px;
+	border-radius: 0 4px 4px 0;
+	margin-left: -4px;
+	background-color: white;
+	//background-color: var(--header-primary);
+}
+
+.innerWrapper {
+	box-sizing: border-box;
+	width: 48px;
+	height: 48px;
+	position: relative;
+	cursor: pointer;
+}
+
+.svg-1 {
+	position: absolute;
+	top: 0;
+	left: 2;
+	box-sizing: border-box;
+	height: 48px;
+	width: 48px;
+}
+
+.serverSeperator {
+	height: 2px;
+	width: 32px;
+	border-radius: 1px;
+	border-color: white;
+}
+
+.pill-2 {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.item-2b {
+	opacity: 1;
+	height: 8px;
+	transform: none;
+	position: absolute;
+	display: block;
+	width: 8px;
+	border-radius: 0 4px 4px 0;
+	margin-left: -4px;
+	background-color: white;
+}
+
+.blobWrapper {
+	box-sizing: border-box;
+	width: 48px;
+	height: 48px;
+}
+
+.blobWrapper-2{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	flex-direction: column;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	pointer-events: none;
+}
+
+.edge {
+	flex-basis: 25%;
+}
+
+.middle {
+	-webkit-box-flex: 1;
+	flex: 1;
+}

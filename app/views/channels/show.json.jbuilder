@@ -1,0 +1,1 @@
+json.partial! "api/channles/channel", channel: @channel

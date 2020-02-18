@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ChatRoom from '../chat/chat_room';
 
 class ServerBar extends React.Component {
 	constructor(props) {
@@ -80,8 +81,9 @@ class ServerBar extends React.Component {
 								</div>
 							</div>
 						</div>
+					
 						<div className="mainContent">
-
+							<ChatRoom />
 						</div>
 					</div>
 				</div>

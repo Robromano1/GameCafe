@@ -1,5 +1,5 @@
-class Server < ApplicationRecord
-	validates :server_name, :admin_id, :description, :server_image, presence: true
+ class Server < ApplicationRecord
+	validates :server_name, :description, :server_image, presence: true
 
 	belongs_to :user, 
 		primary_key: :id,

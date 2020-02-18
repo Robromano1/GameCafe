@@ -1,5 +1,5 @@
 class Message < ApplicationRecord
-	validates :body, :user_id, :channel_id
+	validates :body, presence: true
 
 	belongs_to :user,
 		primary_key: :id,

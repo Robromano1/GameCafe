@@ -1,5 +1,5 @@
 class Channel < ApplicationRecord
-	validates :server_id, :channel_name, :description, presence: true
+	validates :channel_name, :description, presence: true
 
 	belongs_to :server,
 		primary_key: :id,

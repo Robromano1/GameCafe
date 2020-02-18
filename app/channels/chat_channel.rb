@@ -5,7 +5,8 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    message = Message.create(body: data['message'])
+    
+    message = Message.create({body: data['message'], user_id: 1, channel_id: 1})
     #Action cable only allows broadcast of objects, not strings
     socket = { message: message.body }
     ChatChannel.broadcast_to('chat_channel', socket)

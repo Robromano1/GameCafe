@@ -27,7 +27,7 @@ class MessageForm extends React.Component {
 					<input 
 						type="text"
 						value={this.state.body}
-						onchange={this.update("body")}
+						onChange={this.update("body")}
 						placeholder="Message"
 					/>
 					<input type="submit"/>

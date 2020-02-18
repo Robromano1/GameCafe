@@ -10,10 +10,12 @@ class ChatRoom extends React.Component {
 	}
 
 	componentDidMount() {
+		//Can have own component for App.cable.subscription
 		App.cable.subscriptions.create(
 			{ channel: "ChatChannel" },
 			{
 				received: data => {
+					// Instead of setting local this.state, dispatch action to update store
 					this.setState({
 						messages: this.state.messages.concat(data.message)
 					});

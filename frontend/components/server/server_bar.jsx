@@ -73,94 +73,21 @@ class ServerBar extends React.Component {
 				<div className="base">
 					<div className="content-1">
 						<div className="sidebar">
-							<div className="serverChannels"></div>
+							<div className="serverChannels">
+								<div className="searchBar">
+									<button type="button" className="searchButton">Find or start a conversation</button>
+								</div>
+								<div className="scrollWrap scrollTheme">
+
+								</div>
+							</div>
+						</div>
+						<div className="mainContent">
+							
 						</div>
 					</div>
 				</div>
 			</div>
-
-
-
-			// <div id="app-mount" className="appMount">
-			// 	<div className="scroll serverPad scroll2">
-			// 		<div className="listItem">
-			// 			<div className="pill-1 pillWrapper">
-			// 				<span className="item-2"></span>
-			// 			</div>
-			// 			<div className="listItemWrapper">
-			// 				<div className="innerWrapper">
-			// 					<svg className="svg-1">
-			// 						{/* Add image here */}
-			// 						{/* Add link to home page when image is clicked */}
-			// 					</svg>
-			// 				</div>
-			// 			</div>
-			// 		</div>
-			// 		<div className="listItem">
-			// 			<div className="serverSeperator"></div>
-			// 		</div>
-			// 		<div className="listItem">
-			// 			<div className="pill-2 pillWrapper">
-			// 				<span className="item-2b"></span>
-			// 			</div>
-			// 			<div className="blobContainer" draggable="true">
-			// 				<div className="blobWrapper">
-			// 					{/* <svg className="svg-1">
-									
-			// 					</svg> */}
-			// 					<Link className="serverIconLink" to="/">
-			// 						<img className="svg-1" src="https://image.flaticon.com/icons/svg/1385/1385594.svg"/>
-			// 					</Link>
-			// 				</div>
-			// 				<div className="blobWrapper-2">
-			// 					<span className="edge"></span>
-			// 					<span className="middle"></span>
-			// 					<span className="edge"></span>
-			// 				</div>
-			// 			</div>
-			// 		</div>
-			// 		<div className="listItem">
-			// 			<div className="pill-2 pillWrapper">
-			// 				<span className="item-2b"></span>
-			// 			</div>
-			// 			<div className="blobContainer" draggable="true">
-			// 				<div className="blobWrapper">
-			// 					{/* <svg className="svg-1">
-									
-			// 					</svg> */}
-			// 					<Link className="serverIconLink" to="/">
-			// 						<img className="svg-1" src="https://image.flaticon.com/icons/svg/344/344757.svg"/>
-			// 					</Link>
-			// 				</div>
-			// 				<div className="blobWrapper-2">
-			// 					<span className="edge"></span>
-			// 					<span className="middle"></span>
-			// 					<span className="edge"></span>
-			// 				</div>
-			// 			</div>
-			// 		</div>
-			// 		<div className="listItem">
-			// 			<div className="pill-2 pillWrapper">
-			// 				<span className="item-2b"></span>
-			// 			</div>
-			// 			<div className="blobContainer" draggable="true">
-			// 				<div className="blobWrapper">
-			// 					{/* <svg className="svg-1">
-									
-			// 					</svg> */}
-			// 					<Link className="serverIconLink" to="/">
-			// 						<img className="svg-1" src="https://image.flaticon.com/icons/svg/1055/1055646.svg"/>
-			// 					</Link>
-			// 				</div>
-			// 				<div className="blobWrapper-2">
-			// 					<span className="edge"></span>
-			// 					<span className="middle"></span>
-			// 					<span className="edge"></span>
-			// 				</div>
-			// 			</div>
-			// 		</div>
-			// 	</div>
-			// </div>
 
 		)
 	}

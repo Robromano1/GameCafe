@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import ServerBarContainer from './server_bar_container';
-import HomeFriendsListContainer from '../home_page/home_friends_list_container';
+
 
 class ServerPage extends React.Component {
 	constructor(props) {
@@ -11,8 +11,7 @@ class ServerPage extends React.Component {
 	render() {
 		return (
 			<div>
-				<Route path='/channels' component={ServerBarContainer}/>
-				<Route path='/channels' component={HomeFriendsListContainer} />
+				<Route path='/channels/@me' component={ServerBarContainer}/>
 			</div>
 		)
 	}

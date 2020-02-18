@@ -8,9 +8,7 @@ class ServerBar extends React.Component {
 
 	render() {
 		return (
-			// <div>
-			// 	<h1>I am from the server bar</h1>
-			// </div>
+			
 			<div id="app-mount" className="appMount">
 				{/* Side server scroll bar */}
 				<div className="scrollWrap scrollTheme">
@@ -83,7 +81,7 @@ class ServerBar extends React.Component {
 							</div>
 						</div>
 						<div className="mainContent">
-							
+
 						</div>
 					</div>
 				</div>

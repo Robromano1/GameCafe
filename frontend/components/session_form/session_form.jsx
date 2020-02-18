@@ -20,7 +20,17 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state)
-        this.props.processForm(user);
+        this.props.processForm(user)
+            .then(() => this.props.history.push("/channels/@me"));
+    }
+
+    handleGuest(e) {
+        e.preventDefault();
+        this.processForm({
+            email: "guestuser@gmail.com",
+            username: "guest_account1",
+            password: "password123"
+        }).then(() => this.props.history.push("/channels/@me"));
     }
 
     renderErrors() {
@@ -52,21 +62,30 @@ class SessionForm extends React.Component {
                             <div className="input-wrapper">
                                 <div className="email-field">
                                     <h5>EMAIL</h5>
-                                        <input type="email"
+                                        <input 
+                                            id="session-form-email-input"
+                                            className="session-form-input"
+                                            type="email"
                                             value={this.state.email}
                                             onChange={this.update('email')} 
                                         />
                                 </div>
                                 <div className="username-field">
                                     <h5>USERNAME</h5>
-                                        <input type="text"
+                                        <input 
+                                            id="session-form-username-input"
+                                            className="session-form-input"
+                                            type="text"
                                             value={this.state.username}
                                             onChange={this.update('username')} 
                                         />
                                 </div>
                                 <div className="password-field">
                                     <h5>PASSWORD</h5>
-                                        <input type="password"
+                                        <input 
+                                            id="session-form-password-input"
+                                            className="session-form-input"
+                                            type="password"
                                             value={this.state.password}
                                             onChange={this.update('password')} 
                                         />
@@ -106,14 +125,18 @@ class SessionForm extends React.Component {
                             <div className="login-wrapper">
                                 <div className="login-email">
                                     <h5>EMAIL</h5>
-                                        <input type="email"
+                                        <input 
+                                            id="session-form-email-input"
+                                            type="email"
                                             value={this.state.email}
                                             onChange={this.update('email')} 
                                         />
                                 </div>
                                 <div className="login-password">
                                     <h5>PASSWORD</h5>
-                                        <input type="password"
+                                        <input 
+                                            id="session-form-password-input"
+                                            type="password"
                                             value={this.state.password}
                                             onChange={this.update('password')} 
                                         />
@@ -131,6 +154,9 @@ class SessionForm extends React.Component {
                                 <div className="loginNavContent">
                                     <span>Need an account?</span>
                                     <p>{navLink}</p>
+                                </div>
+                                <div className="guestUser">
+                                    <button type="submit" onClick={this.handleGuest} className="guestButton">Sign in as a guest</button>
                                 </div>
                             </div>
                         </form> 

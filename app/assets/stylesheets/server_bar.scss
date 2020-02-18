@@ -67,7 +67,7 @@
 	//background-color: var(--header-primary);
 }
 
-.innerWrapper {
+.logoWrapper {
 	box-sizing: border-box;
 	width: 48px;
 	height: 48px;
@@ -109,7 +109,7 @@
 	background-color: white;
 }
 
-.blobWrapper {
+.iconWrapper {
 	box-sizing: border-box;
 	width: 48px;
 	height: 48px;
@@ -137,4 +137,35 @@
 .middle {
 	-webkit-box-flex: 1;
 	flex: 1;
+}
+
+.addServer {
+	color: #DC143C;
+	align-items: center;
+	box-sizing: border-box;
+	display: flex;
+	border-radius: 50%;
+	background-color: #37383f;
+	justify-content: center;
+	font-weight: 400;
+	font-size: 26px;
+	overflow: hidden;
+	height: 50px;
+	min-height: 50px;
+	max-height: 50px;
+	width: 50px;
+	min-width: 50px;
+	max-width: 50px;
+	margin-left: 10px;
+}
+
+.scrollWrap {
+	width: 90px;
+	min-height: 0;
+	min-width: 0;
+	position: relative;
+	display: flex;
+	height: 100%;
+	-webkit-box-flex: 1;
+	flex: 1 1 auto;
 }

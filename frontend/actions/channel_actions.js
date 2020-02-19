@@ -17,7 +17,7 @@ const receiveChannel = channel => ({
 });
 
 const receiveErrors = errors => ({
-	type: RECEIVE_CHANNEL_ERRORS;
+	type: RECEIVE_CHANNEL_ERRORS,
 	errors
 });
 
@@ -27,8 +27,8 @@ const deleteChannel = id => ({
 });
 
 //thunk action creators
-export const getChannels = userId => dispatch => (
-	ChannelApiUtil.getChannels(userId)
+export const getChannels = () => dispatch => (
+	ChannelApiUtil.getChannels()
 		.then(channels => {
 			dispatch(receiveChannels(channels))
 		},
@@ -42,6 +42,12 @@ export const getChannel = id => dispatch => (
 		},
 			errors => dispatch(receiveErrors(errors.responseJSON)))
 );
+
+export const getUserChannel = userId => dispatch => {
+	return ChannelApiUtil.getUserChannels(userId)
+		.then(channels => dispatch(receiveChannels(channels)),
+			errors => dispatch(receiveErrors(errors.responseJSON)));
+};
 
 export const createChannel = channel => dispatch => (
 	ChannelApiUtil.createChannel(channel)

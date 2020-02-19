@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
 import ChatRoom from './chat_room';
+import { requestMessages } from '../../actions/message_actions';
 
 const mSTP = state => ({
-
+	messages: state.entities.messages
 })
 
 const mDTP = dispatch => ({
-	requestMessage: message => dispatch(requestMessages(message))
+	requestMessages: messages => dispatch(requestMessages(messages))
 })
 
 export default connect(mSTP, mDTP)(ChatRoom)

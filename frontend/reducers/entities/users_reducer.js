@@ -12,12 +12,12 @@ const usersReducer = (state = {}, action ) => {
 			newState = merge({}, state)
 			Object.keys(action.users).forEach(userId => newState[userId] = action.users[userId]);
 			return newState;
-		case UPDATE_USER_CHANNELS:
-			newState = merge({}, state);
-			if(!newState[action.userId].channel_ids.includes(action.channelId)) {
-				newState[action.userId].channel_ids.push(action.channelId);
-			}
-			return newState;
+		// case UPDATE_USER_CHANNELS:
+		// 	newState = merge({}, state);
+		// 	if(!newState[action.userId].channel_ids.includes(action.channelId)) {
+		// 		newState[action.userId].channel_ids.push(action.channelId);
+		// 	}
+			// return newState;
 		default:
 			return state;
 

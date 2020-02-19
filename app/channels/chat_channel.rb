@@ -18,8 +18,6 @@ class ChatChannel < ApplicationCable::Channel
         id: message.id,
         body: message.body,
         channel: message.channel_id
-        user_id: message.user_id,
-        created_at: message.created_at
       }
       socket = { message: message.to_json, type: 'message'}
       ChatChannel.broadcast_to(@chat_channel, socket)

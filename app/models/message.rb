@@ -10,4 +10,8 @@ class Message < ApplicationRecord
 		primary_key: :id,
 		foreign_key: :channel_id,
 		class_name: :Channel
+
+	belong_to :server,
+		through: :channel,
+		source: :server
 end

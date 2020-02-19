@@ -21,16 +21,16 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state)
         this.props.processForm(user)
-            .then(() => this.props.history.push("/channels/@me"));
+            .then(() => this.props.history.push("/channels/@me")); 
     }
 
     handleGuest(e) {
         e.preventDefault();
-        this.processForm({
+        this.state = {
             email: "guestuser@gmail.com",
             username: "guest_account1",
             password: "password123"
-        }).then(() => this.props.history.push("/channels/@me"));
+        } 
     }
 
     renderErrors() {

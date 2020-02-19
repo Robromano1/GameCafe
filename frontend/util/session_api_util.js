@@ -20,3 +20,20 @@ export const logout = () => (
         method: "DELETE"
     })
 )
+
+export const getChannelMembers = channelId => (
+    $.ajax({
+        url:"/api/users",
+        method: "GET",
+        data: {
+            channelId
+        }
+    })
+)
+
+export const getAllUsers = () => (
+    $.ajax({
+        url:"/api/users",
+        method: "GET"
+    })
+)

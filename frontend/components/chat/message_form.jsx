@@ -16,21 +16,20 @@ class MessageForm extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-		App.cable.subscriptions.subscriptions[0].speak({ message: this.state.body });
+		App.currentChannel.speak({ message: this.state.body });
 		this.setState({ body: "" });
 	}
 
 	render() {
 		return (
-			<div>
-				<form onSubmit={this.handleSubmit}>
+			<div className="message-form-container">
+				<form className="message-form" onSubmit={this.handleSubmit}>
 					<input 
 						type="text"
 						value={this.state.body}
 						onChange={this.update("body")}
-						placeholder="Message"
+						placeholder={`Message #${name}`}
 					/>
-					<input type="submit"/>
 				</form>
 			</div>
 		);

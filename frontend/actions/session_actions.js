@@ -1,38 +1,52 @@
-import * as APIUtil from '../util/session_api_util';
+import * as SessionApiUtil from '../util/session_api_util';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
+export const RECEIVE_USERS = "RECEIVE_USERS";
+export const RECEIVE_USER = "RECEIVE_USER";
+export const UPDATE_USER_CHANNELS = "UPDATE_USER_CHANNELS";
 
 //session action creators
-export const receiveCurrentUser = currentUser => ({
+const receiveCurrentUser = currentUser => ({
     type: RECEIVE_CURRENT_USER,
     currentUser
 });
 
-export const logoutCurrentUser = () => ({
+const logoutCurrentUser = () => ({
     type: LOGOUT_CURRENT_USER
 });
 
-export const receiveErrors = errors => ({
+const receiveErrors = errors => ({
     type: RECEIVE_SESSION_ERRORS,
     errors
 });
 
+const receiveUsers = users => ({
+    type: RECEIVE_USERS,
+    users
+})
+
+export const updateUserChannels = (channelId, userId) => ({
+    type: UPDATE_USER_CHANNELS,
+    channelId,
+    userId
+})
+
 //thunk action creators
 export const signup = user => dispatch => (
-    APIUtil.signup(user)
+    SessionApiUtil.signup(user)
         .then(userPayload => (dispatch(receiveCurrentUser(userPayload))),
         error => (dispatch(receiveErrors(error.responseJSON))))
 );
 
 export const login = user => dispatch => (
-    APIUtil.login(user)
+    SessionApiUtil.login(user)
         .then(userPayload => (dispatch(receiveCurrentUser(userPayload))),
         error => (dispatch(receiveErrors(error.responseJSON))))
 );
 
 export const logout = () => (
-    APIUtil.logout()
+    SessionApiUtil.logout()
         .then(user => dispatch(logoutCurrentUser()))
 );

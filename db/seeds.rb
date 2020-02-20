@@ -10,5 +10,10 @@ User.destroy_all
 
 rob = User.create!(email: "rob@rob.com", username: "RobbyBizz", password: "codelife")
 bond = User.create!(email: "bond@JamesBond.com", username: "bond007", password: "Goldeneye")
+
 coffee_lovers = Server.create!(server_name: "Coffee", server_image: "true", description: "The best server for coffee lovers", private: true, admin_id: rob.id)
+
 coffee_channel = Channel.create!(channel_name: "Coffee Channel", description: "This is a channel for coffee lovers",  server_id: coffee_lovers.id)
+
+members = ServerUser.create!(user_id: rob.id, server_id: coffee_lovers.id)
+members = ServerUser.create!(user_id: bond.id, server_id: coffee_lovers.id)

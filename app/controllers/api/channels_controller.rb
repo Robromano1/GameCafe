@@ -1,6 +1,6 @@
 class Api::ChannelsController < ApplicationController
 
-	before_action :ensure_logged_in
+	
 
 	def index 
 		@channels = Channel.all 

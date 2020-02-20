@@ -46,7 +46,7 @@ export const login = user => dispatch => (
         error => (dispatch(receiveErrors(error.responseJSON))))
 );
 
-export const logout = () => (
+export const logout = () => dispatch =>(
     SessionApiUtil.logout()
-        .then(user => dispatch(logoutCurrentUser()))
+        .then(() => dispatch(logoutCurrentUser()))
 );

@@ -1,0 +1,1 @@
+json.extract! message, :body, :user_id, :channel_id

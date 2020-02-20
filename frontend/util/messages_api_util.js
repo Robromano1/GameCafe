@@ -1,20 +1,9 @@
-export const getChannelMessages = channelId => (
+export const getMessages = () => (
 	$.ajax({
 		url: "/api/messages",
-		method: "GET",
-		data: {
-			channelId
-		}
+		method: "GET"
 	})
 );
 
-export const getDmMessages = dmId => (
-	$.ajax({
-		url: "/api/messages",
-		method: "GET",
-		data: {
-			dmId
-		}
-	})
-);
+
 

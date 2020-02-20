@@ -17,12 +17,8 @@ export const receiveMessage = message => ({
 
 
 //thunk action creators
-export const getChannelMessages = channelId => dispatch => (
-	MessageAPIUtil.getChannelMessages(channelId)
+export const getMessages = () => dispatch => (
+	MessageAPIUtil.getMessages()
 		.then(messages => dispatch(receiveMessages(messages)))
 );
 
-export const getDmMessages = dmId => dispatch => (
-	MessageAPIUtil.getDmMessages(dmId)
-		.then(messages => dispatch(receiveMessages(messages)))
-);

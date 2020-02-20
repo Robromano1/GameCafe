@@ -14,4 +14,11 @@
 	has_many :messages,
 		through: :channels,
 		source: :messages
+
+	has_many :server_users,
+		foreign_key: :server_id
+
+	has_many :members,
+		through: :server_users,
+		source: :user
 end

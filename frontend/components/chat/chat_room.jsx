@@ -1,11 +1,12 @@
 import React from 'react';
 import MessageForm from './message_form';
+import { withRouter } from 'react-router-dom';
 
 class ChatRoom extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { messages: [] };
+		// this.state = { messages: this.props.messages };
 		this.bottom = React.createRef();
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
@@ -13,14 +14,16 @@ class ChatRoom extends React.Component {
 	componentDidMount() {
 		//Can have own component for App.cable.subscription
 		App.currentChannel = App.cable.subscriptions.create(
-			{ channel: "ChatChannel" },
+			{ channel: "ChatChannel", id: this.props.match.params.channelId },
 			{ 
 				received: data => {
 					// Instead of setting local this.state, dispatch action to update store
-					this.setState({
-						messages: this.state.messages.concat(data.message)
-					});
+					
+					// this.setState({
+					// 	// messages: this.state.messages.concat(JSON.parse(data.message))
+					// });
 					//this.props.requestMessage(data.message)
+					this.props.receiveMessage(JSON.parse(data.message))
 
 				},
 				speak: function(data) {
@@ -28,6 +31,7 @@ class ChatRoom extends React.Component {
 				}
 			}
 		);
+
 	}
 
 	componentDidUpdate() {
@@ -39,10 +43,12 @@ class ChatRoom extends React.Component {
 	}
 
 	render() {
-		const messageList = this.state.messages.map(message => {
+	
+		const messageList = this.props.messages.map(message => {
+			
 			return (
 				<li key={`${message.id}`} className="messageLi">
-					{message}
+					{message.body}
 					<div ref={this.bottom}/>
 				</li>
 			)
@@ -57,4 +63,4 @@ class ChatRoom extends React.Component {
 	}
 }
 
-export default ChatRoom;
+export default withRouter(ChatRoom);

@@ -2,7 +2,7 @@
 
 class Api::UsersController < ApplicationController
     def index
-        @users = User.all
+        @users = User.includes(:channels).all
         render :index
     end
 
@@ -10,6 +10,8 @@ class Api::UsersController < ApplicationController
         @user = User.new(user_params)
         
         if @user.save
+           
+            Server.first.members << @user
             login!(@user)
             render :show 
         else
@@ -18,7 +20,7 @@ class Api::UsersController < ApplicationController
     end
 
     def show
-        @user = User.find(params[:id])
+        @user = User.includes(:channels).find(params[:id])
         render :show
     end
 

@@ -1,10 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ChatRoom from '../chat/chat_room';
+import ChatRoomContainer from '../chat/chat_room_container';
+import { withRouter } from 'react-router-dom';
 
 class ServerBar extends React.Component {
 	constructor(props) {
 		super(props);
+		
+		this.handleLogout = this.handleLogout.bind(this);
+	}
+
+	componentDidMount() {
+		this.props.getMessages();
+
+	}
+
+	handleLogout(e) {
+		e.preventDefault()
+		this.props.logout()
+			.then(() => {
+				this.props.history.push("/")
+			})
 	}
 
 	render() {
@@ -66,6 +82,7 @@ class ServerBar extends React.Component {
 						<div className="listItem addServer">
 							<div>+</div>
 						</div>
+						<button className="logoutButton" type="submit" onClick={this.handleLogout}>Logout</button> 
 					</div>
 				</div>
 				{/* Base container  */}
@@ -83,7 +100,7 @@ class ServerBar extends React.Component {
 						</div>
 					
 						<div className="mainContent">
-							<ChatRoom />
+							<ChatRoomContainer />
 						</div>
 					</div>
 				</div>
@@ -93,4 +110,4 @@ class ServerBar extends React.Component {
 	}
 }
 
-export default ServerBar;
+export default withRouter(ServerBar);

@@ -9,7 +9,8 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
 	getChannels: () => dispatch(getChannels(channels)),
-	getUserChannels: userId => dispatch(getUserChannels(userId))
+	getUserChannel: userId => dispatch(getUserChannel(userId)),
+	logout: () => dispatch(logout())
 }); 
 
 export default connect(mSTP, mDTP)(ChannelIndex)

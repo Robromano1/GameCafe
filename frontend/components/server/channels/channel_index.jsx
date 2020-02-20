@@ -7,8 +7,9 @@ class ChannelIndex extends React.Component {
 	}
 
 	componentDidMount() {
-		this.props.getUserChannels();
-		this.props.getUserChannels(this.props.currentUser.id);
+		// this.props.getUserChannels();
+		this.props.getUserChannel(this.props.currentUser.id);
+
 	}
 
 	render() {

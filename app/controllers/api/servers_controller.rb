@@ -1,6 +1,6 @@
 class Api::ServersController < ApplicationController
 
-	before_action :ensure_logged_in
+
 	
 	def index 
 		#Need to show servers for current user

@@ -11,7 +11,7 @@ class Message < ApplicationRecord
 		foreign_key: :channel_id,
 		class_name: :Channel
 
-	belong_to :server,
-		through: :channel,
+	has_one :server,
+		through: :channels,
 		source: :server
 end

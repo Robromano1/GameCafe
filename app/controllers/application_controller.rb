@@ -21,12 +21,11 @@ class ApplicationController < ActionController::Base
     end
 
     private
-    # def ensure_logged_in
-    #     redirect_to new_session_url unless logged_in?
-    # end
-    def require_logged_in
+   
+    def ensure_logged_in
         unless current_user
-            render json: { base: ['invalid credentials'] }, status: 401
+            # render json: { base: ['invalid credentials'] }, status: 401
+            redirect_to root_url unless logged_in?
         end
     end
 end

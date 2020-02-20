@@ -1,11 +1,15 @@
 class Api::ServersController < ApplicationController
+
+	before_action :ensure_logged_in
 	
 	def index 
-		@servers = Server.all
+		#Need to show servers for current user
+		@servers = Server.all 
 		render :index
 	end
 
 	def show
+		#Show a specific server for current user
 		@server = Server.find(params[:id])
 		render :show
 	end
@@ -29,9 +33,27 @@ class Api::ServersController < ApplicationController
 	end
 
 	def destroy
-		@server = Server.find(params[:id])
-		if @server && @server.delete
-			render :index 
+		current_id = current_user.id 
+		if current_id 
+			server = Server.find_by(admin_id: params[:admin_id])
+			if server 
+				server.destroy 
+				return
+			else
+				render json: ["Server not found"], status: 404
+			end
+		else	
+				render json: ["You are not the admin"], status: 401
+		end
+	end
+
+	# a server has channels
+	def channels
+		@channels = Channel.where(server_id: params[:id]).to_a
+		if @channels
+			render :index
+		else
+			render json: @channels.errors.full_messages
 		end
 	end
 

@@ -1,5 +1,7 @@
 class Api::ChannelsController < ApplicationController
 
+	before_action :ensure_logged_in
+
 	def index 
 		@channels = Channel.all 
 		render :index
@@ -32,6 +34,16 @@ class Api::ChannelsController < ApplicationController
 		@channel = Channel.find(params[:id])
 		if @channel && @channel.delete
 			render :index 
+		end
+	end
+
+	#channels have messages
+	def messages 
+		@messages = Message.where(channel_id: params[:id]).to_a
+		if @messages
+			render :index 
+		else
+			render json @messages.errors.full_messages
 		end
 	end
 

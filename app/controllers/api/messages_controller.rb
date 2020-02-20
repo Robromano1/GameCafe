@@ -1,4 +1,6 @@
 class Api::MessagesController < ApplicationController
+
+	before_action :ensure_logged_in
 	
 	def index 
 		@messages = Message.all 
@@ -13,7 +15,8 @@ class Api::MessagesController < ApplicationController
 	def create
 		@message = Message.new(message_params)
 		if @message.save 
-			render :show 
+			ChatChannel.send_data("chat_#{@message.channel_id}", @message.as_json)
+			render :show
 		else
 			render json: @message.errors.full_messages, status: 402
 		end

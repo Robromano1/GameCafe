@@ -63,6 +63,7 @@ Now when a user logs in, not only can they create new messages, but they can see
 <p>Show image of user auth/error messages if wrong input is given.</p>
 
 ## Future Features
+- Demo User
 - Unique channel messages
 - Server selection
 - Modals

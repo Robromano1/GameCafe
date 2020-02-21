@@ -24,7 +24,7 @@ class MessageForm extends React.Component {
 		return (
 			<div className="message-form-container">
 				<form className="message-form" onSubmit={this.handleSubmit}>
-					<input 
+					<input className="messageInput"
 						type="text"
 						value={this.state.body}
 						onChange={this.update("body")}

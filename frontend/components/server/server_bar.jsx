@@ -49,9 +49,9 @@ class ServerBar extends React.Component {
 							</div>
 							<div className="iconContainer" draggable="true">
 								<div className="iconWrapper">
-									<Link className="serverIconLink" to="/">
+									{/* <Link className="serverIconLink" to="/"> */}
 										<img className="svg-1" src="https://image.flaticon.com/icons/svg/1385/1385594.svg"/>
-									</Link>
+									{/* </Link> */}
 								</div>
 							</div>
 						</div>
@@ -61,9 +61,9 @@ class ServerBar extends React.Component {
 							</div>
 							<div className="iconContainer" draggable="true">
 								<div className="iconWrapper">
-									<Link className="serverIconLink" to="/">
+									{/* <Link className="serverIconLink" to="/"> */}
 										<img className="svg-1" src="https://image.flaticon.com/icons/svg/344/344757.svg"/>
-									</Link>
+									{/* </Link> */}
 								</div>
 							</div>
 						</div>
@@ -73,9 +73,9 @@ class ServerBar extends React.Component {
 							</div>
 							<div className="iconContainer" draggable="true">
 								<div className="iconWrapper">
-									<Link className="serverIconLink" to="/">
+									{/* <Link className="serverIconLink" to="/"> */}
 										<img className="svg-1" src="https://image.flaticon.com/icons/svg/1055/1055646.svg"/>
-									</Link>
+									{/* </Link> */}
 								</div>
 							</div>
 						</div>

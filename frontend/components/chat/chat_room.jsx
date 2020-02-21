@@ -55,7 +55,7 @@ class ChatRoom extends React.Component {
 		});
 		return (
 			<div className="chatroom-container">
-				<div>ChatRoom</div>
+				<div>#general</div>
 				<div className="message-list">{messageList}</div>
 				<MessageForm />
 			</div>

@@ -171,25 +171,107 @@
 }
 
 .logoutButton {
-	display: flex;
-	justify-content: center;
-	margin-top: 385px;
+	margin-top: 20px;
 	border-radius: 5px;
-	position: absolute;
-	margin-left: 3px;
+	// position: absolute;
+	margin-left: 5px;
 	cursor: pointer;
-	background-color: transparent;
+	// background-color: transparent;
 	font-family: "Roboto", sans-serif;
 	font-weight: bold;
 	font-size: 12px;
 	color: #fff;
 	padding: 10px;
+	position: relative;
+	display: flex;
+	-webkit-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+	box-sizing: border-box;
+	background: none;
+}
+
+.chatroom-container {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	min-width: 0;
+	min-height: 0;
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	display: flex;
+	outline: 0;
+	position: relative;
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	min-height: 0;
+	min-width: 0;
+	z-index: 0;
+	overflow: hidden;
+	height: auto;
+	overflow-y: scroll;
 }
 
 .message-list {
 	color: #fff;
+	border: none;
+	width: 100%;
+	//height: fit-content;
+	//contain: size;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	flex-direction: column;
+	display: flex;
+	justify-content: flex-start;
+	align-items: stretch;
+	//position: relative;
+	//min-height: 0;
+	flex: 1 1 auto;
+	overflow-y: scroll;
+	height: auto;
+	
+	// overflow: hidden;
+  
+}
+
+.messageLi {
+	overflow-y: scroll;
 }
 
 .chatRoom {
-	border: none;
+	overflow-y: scroll;
 }
+
+.mainContent {
+	overflow-y: scroll;
+}
+
+.message-form-container {
+	width: 100%;
+	margin-left: 40px;
+	margin-right: 50px;
+	position: relative;
+	text-indent: 0;
+	border-radius: 8px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	background: #40444b;
+	
+}
+
+.message-form > input {
+	border: none;
+	color: #fff;
+}
+
+
+
+

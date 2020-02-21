@@ -32,7 +32,7 @@ class ChatChannel < ApplicationCable::Channel
   end
  end
  ```
- One of the challenges is how to make sure the messasges persist to the database and ensure that they are pulled from that database when the user logs in. This way the user can see prevoious messages written by other users in that channel, and also see their own previous messages. One way to do this is to connect the chat to the redux store. In when this component mounts, instead of setting the local state, an action will be dispatched to receive messages. Therefore when a user logs in, not only can they create new messages, but they can see previous messages from other users. This way they are always in the loop, and never miss out on the conversation.
+ One of the challenges is how to make sure the messasges persist to the database and ensure that they are pulled from that database when the user logs in. This way the user can see prevoious messages written by other users in that channel, and also see their own previous messages. One way to do this is to connect the chat to the redux store. In when this component mounts, instead of setting the local state, an action will be dispatched to receive messages. 
  ```javaScript
  class ChatRoom extends React.Component {
 	constructor(props) {
@@ -57,3 +57,4 @@ class ChatChannel < ApplicationCable::Channel
 		);
 	}
   ```
+Now when a user logs in, not only can they create new messages, but they can see previous messages from other users. This way they are always in the loop, and never miss out on the conversation.

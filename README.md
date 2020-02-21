@@ -12,8 +12,9 @@ Front-end development: JavaScript ES6, React, Redux, AJAX, HTML, CSS, JQuery
 <br/>
 Back-end development: Ruby on Rails
 
-## Sample features
+## Features
 The primary features of GameCafe are for users to be able to chat, join servers, and join channels. In order for users to be able to chat we need data to pass through a tcp connection. That's where action cables/websockets come into play. Find a channel by id, stream for that channel, and make sure to create messages with the correct data. 
+### Live Chat
 ```Ruby
 class ChatChannel < ApplicationCable::Channel
   def subscribed
@@ -32,7 +33,7 @@ class ChatChannel < ApplicationCable::Channel
   end
  end
  ```
- One of the challenges is how to make sure the messasges persist to the database and ensure that they are pulled from that database when the user logs in. This way the user can see prevoious messages written by other users in that channel, and also see their own previous messages. One way to do this is to connect the chat to the redux store. When this component mounts, instead of setting the local state, an action will be dispatched to receive messages. 
+One of the challenges is how to make sure the messasges persist to the database and ensure that they are pulled from that database when the user logs in. This way the user can see prevoious messages written by other users in that channel, and also see their own previous messages. One way to do this is to connect the chat to the redux store. When this component mounts, instead of setting the local state, an action will be dispatched to receive messages. 
  ```javaScript
  class ChatRoom extends React.Component {
 	constructor(props) {
@@ -58,3 +59,14 @@ class ChatChannel < ApplicationCable::Channel
 	}
   ```
 Now when a user logs in, not only can they create new messages, but they can see previous messages from other users. This way they are always in the loop, and never miss out on the conversation.
+### User Authentication
+<p>Show image of user auth/error messages if wrong input is given.</p>
+
+## Future Features
+- Unique channel messages
+- Server selection
+- Modals
+- User online status
+- Friends list
+- Message reactions
+

@@ -1,2 +1,2 @@
-json.extract! user, :id, :username, :email, :image_url
+json.extract! user, :id, :username, :email
 json.channel_ids user.channels.pluck(:id)

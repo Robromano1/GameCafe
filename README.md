@@ -7,6 +7,8 @@ GameCafe is a platform for people who love gaming, coffee, or just want to be ap
 
 ## Technologies
 Database: Postgresql
+<br/>
 Front-end development: JavaScript ES6, React, Redux, AJAX, HTML, CSS, JQuery
+<br/>
 Back-end development: Ruby on Rails
 

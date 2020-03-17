@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { login } from '../../actions/session_actions';
 import SessionForm from './session_form';
+import { clearErrors } from '../../actions/error_actions';
 
 const mSTP = ({ errors }) => ({
     errors: errors.session,

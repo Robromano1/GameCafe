@@ -7,6 +7,7 @@ export const RECEIVE_USERS = "RECEIVE_USERS";
 export const RECEIVE_USER = "RECEIVE_USER";
 export const UPDATE_USER_CHANNELS = "UPDATE_USER_CHANNELS";
 
+
 //session action creators
 const receiveCurrentUser = currentUser => ({
     type: RECEIVE_CURRENT_USER,

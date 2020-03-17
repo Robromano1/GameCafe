@@ -8,11 +8,17 @@ const mSTP = ({ errors }) => ({
     errors: errors.session,
     formType: 'Signup',
     title: 'Create an account',
-    navLink: <Link to={"/login"}>Already have an account?</Link>
+    navLink: <Link to={"/login"}>Already have an account?</Link>,
+    session: {
+        email: "",
+        username: "",
+        password: ""
+    }
 });
 
 const mDTP = dispatch => ({
-    processForm: user => dispatch(signup(user))
+    processForm: user => dispatch(signup(user)),
+    clearErrors: () => dispatch(clearErrors())
 });
 
 export default connect(mSTP, mDTP)(SessionForm);

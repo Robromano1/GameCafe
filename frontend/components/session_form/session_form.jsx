@@ -5,12 +5,17 @@ class SessionForm extends React.Component {
     constructor(props) {
         super(props)
         
-        this.state = {
-            email: "",
-            username: "",
-            password: ""
-        }
+        // this.state = {
+        //     email: "",
+        //     username: "",
+        //     password: ""
+        // }
+        this.state = this.props.session;
+        this.demoEmail = "demo_user@demo.com";
+        this.demoPassword = "coffeelife123";
+        this.demoLogin = this.demoLogin.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+       
     }
 
     update(field) {
@@ -27,15 +32,6 @@ class SessionForm extends React.Component {
             }) 
     }
 
-    handleGuest(e) {
-        e.preventDefault();
-        this.state = {
-            email: "guestuser@gmail.com",
-            username: "guest_account1",
-            password: "password123"
-        } 
-    }
-
     renderErrors() {
         return (
             <ul>
@@ -48,8 +44,33 @@ class SessionForm extends React.Component {
         );
     }
 
+    demoLogin() {
+        const email = this.demoEmail;
+        const password = this.demoPassword;
+        const speed = 60;
+        for (let i = 0; i < email.length; i++) {
+            setTimeout(() => {
+                this.setState({ email: this.state.email + email[i] });
+            }, i * speed);
+        }
+        for (let j = 0; j < password.length; j++) {
+            setTimeout(() => {
+                this.setState({ password: this.state.password + password[j] })
+            }, (email.length * speed) + j * speed);
+        }
+        setTimeout(() => {
+            this.props.processForm(this.state).then(() => this.props.history.push('/channels/1'));
+        }, (email.length * speed) + (password.length * speed) + speed);
+    }
+
     render() {
         const { formType, navLink, title } = this.props;
+        let demoButton = <div 
+                            className="form-demo"
+                            onClick={this.demoLogin}>
+                                Use my account!
+                         </div>
+                         
         if (formType === 'Signup') {
         
             return (
@@ -158,8 +179,8 @@ class SessionForm extends React.Component {
                                     <span>Need an account?</span>
                                     <p>{navLink}</p>
                                 </div>
-                                <div className="guestUser">
-                                    <button type="submit" onClick={this.handleGuest} className="guestButton">Sign in as a guest</button>
+                                <div className="demo-user">
+                                    {demoButton}
                                 </div>
                             </div>
                         </form> 

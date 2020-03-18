@@ -1,5 +1,7 @@
 class ServerUser < ApplicationRecord
-	
+
+	validates :server_id, :user_id, presence: true
+	validates_uniqueness_of :user_id, :scope => [:server_id]
 
 	belongs_to :server, 
 		primary_key: :id,

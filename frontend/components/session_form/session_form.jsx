@@ -38,17 +38,25 @@ class SessionForm extends React.Component {
             }) 
     }
 
-    renderErrors() {
-        return (
-            <ul>
-                {this.props.errors.map(error => (
-                    <li key={`error-${error.id}`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        );
-    }
+    // renderErrors() {
+    //     const inputs = document.getElementsByClassName('input');
+    //     if(this.props.errors.length) {
+    //         return (
+    //             <ul>
+    //                 {this.props.errors.map(error => (
+    //                     <li key={`error-${error.id}`}>
+    //                         <p className="errors">{error}</p>
+    //                     </li>
+    //                 ))}
+    //             </ul>
+    //         );
+    //         for(let i = 0; i < inputs.length; i++) {
+    //             inputs[i].classList.add('error');
+    //         }
+    //     } else {
+
+    //     }
+    // }
 
     demoLogin() {
         const email = this.demoEmail;
@@ -76,6 +84,26 @@ class SessionForm extends React.Component {
                             onClick={this.demoLogin}>
                                 Use my account!
                          </div>
+        
+        let errors = "";
+        const inputs = document.getElementsByClassName('input');
+
+        if(this.props.errors.length) {
+            errors = this.props.errors.map(error => {
+                return (
+                    <p className="errors">{error}</p>
+                )
+            })
+            for(let i = 0; i < inputs.length; i++) {
+                inputs[i].classList.add("error");
+            }
+        } else {
+            for(let i = 0; i < inputs.length; i++) {
+                if(inputs[i].classList.contains("error")) {
+                    inputs[i].classList.remove("error");
+                }
+            }
+        }
                          
         if (formType === 'Signup') {
         
@@ -86,7 +114,7 @@ class SessionForm extends React.Component {
                     </h1> */}
                     <div className="signup-form-container theme-dark">
                         <form onSubmit={this.handleSubmit}>
-                            {this.renderErrors()}
+                            {errors}
 
                             <h2 className="signup-message">{title}</h2>
                             <div className="input-wrapper">
@@ -150,7 +178,8 @@ class SessionForm extends React.Component {
                                 <h3 className="sub-title">We're so excited to see you again!</h3>
                             </div>
 
-                            {this.renderErrors()}
+                            {/* {this.renderErrors()} */}
+                            {errors}
 
                             <div className="login-wrapper">
                                 <div className="login-email">

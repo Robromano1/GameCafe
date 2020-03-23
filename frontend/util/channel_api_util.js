@@ -20,6 +20,14 @@ export const getUserChannels = userId => (
 	})
 )
 
+export const getServerChannels = serverId => (
+	$.ajax({
+		url: "/api/channels",
+		method: "GET",
+		data: { serverId }
+	})
+)
+
 export const createChannel = channel => (
 	$.ajax({
 		url: "/api/channels",

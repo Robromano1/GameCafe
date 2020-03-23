@@ -3,8 +3,13 @@ class Api::ChannelsController < ApplicationController
 	
 
 	def index 
-		@channels = Channel.all 
-		render :index
+		user_id = params[:userId].to_i
+		@channels = User.find(user_id).channels.all
+		if @channels 
+			render :index
+		else
+			render json: @channels.errors.full_messages, status: 420
+		end
 	end
 
 	def show
@@ -13,11 +18,15 @@ class Api::ChannelsController < ApplicationController
 	end
 
 	def create
-		@channel = Channel.new(channel_params)
-		if @channel.save
-			render :show
+		if channel_params[:channel_name] == ""
+			render json: ["This field is required"]
 		else
-			render json: @channel.errors.full_messages, status: 402
+			@channel = Channel.new(channel_params)
+			if @channel.save
+				render :show
+			else
+				render json: @channel.errors.full_messages, status: 402
+			end
 		end
 	end
 

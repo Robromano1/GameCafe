@@ -9,17 +9,20 @@ class Api::ServersController < ApplicationController
 	end
 
 	def show
-		#Show a specific server for current user
 		@server = Server.find(params[:id])
 		render :show
 	end
 
 	def create
-		@server = Server.new(server_params)
-		if @server.save 
-			render :show 
+			if server_params[:name] == ""
+			render json: ["This field is required"], status
 		else
-			render json: @server.errors.full_messages, status: 422
+			@server = Server.new(server_params)
+			if @server.save 
+				render :show 
+			else
+				render json: @server.errors.full_messages, status: 422
+			end
 		end
 	end
 
@@ -49,7 +52,7 @@ class Api::ServersController < ApplicationController
 
 	# a server has channels
 	def channels
-		@channels = Channel.where(server_id: params[:id]).to_a
+		@channels = Channel.where(server_id: params[:id])&.to_a
 		if @channels
 			render :index
 		else

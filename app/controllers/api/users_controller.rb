@@ -7,15 +7,21 @@ class Api::UsersController < ApplicationController
     end
 
     def create 
-        @user = User.new(user_params)
-        
-        if @user.save
-           
-            Server.first.members << @user
-            login!(@user)
-            render :show 
-        else
-            render json: @user.errors.full_messages, status: 422
+        if user_params[:email] == "" && user_params[:username] == "" && user_params[:password] == ""
+            render json: ["This field is required", "This field is required", "This field is required"], status: 400
+        else 
+
+            @user = User.new(user_params)
+            
+            if @user.save
+            
+                Server.first.members << @user
+                demo = User.find_by(email: 'demo_user@demo.com')
+                login!(@user)
+                render :show 
+            else
+                render json: @user.errors.full_messages, status: 422
+            end
         end
     end
 

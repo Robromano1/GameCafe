@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ChatRoomContainer from '../chat/chat_room_container';
 import { withRouter } from 'react-router-dom';
+import ServerIndexContainer from './server_index_container'
 
 class ServerBar extends React.Component {
 	constructor(props) {

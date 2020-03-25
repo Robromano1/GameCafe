@@ -44,10 +44,13 @@ export const fetchUserServers = userId => dispatch => (
 		.then(userServers => dispatch(receiveUserServers(userServers)))
 );
 
-export const deleteServer = serverId = dispatch => (
-	ServerApiUtil.deleteServer(serverId)
-		.then(() => dispatch(removeServer()))
-);
+// export const deleteServer = serverId = dispatch => {
+// 	debugger
+// 	return (
+// 		ServerApiUtil.deleteServer(serverId)
+// 			.then(() => dispatch(removeServer()))
+// 	)
+// };
 
 
 

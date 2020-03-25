@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class ServerIndexItem extends React.component {
+class ServerIndexItem extends React.Component {
 	constructor(props) {
 		super(props)
 	}

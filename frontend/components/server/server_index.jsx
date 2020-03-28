@@ -2,15 +2,25 @@ import React from 'react';
 import ServerIndexItem from './server_index_item';
 import { Link } from 'react-router-dom';
 import ChatRoomContainer from '../chat/chat_room_container';
+import { withRouter } from 'react-router-dom';
 
 class ServerIndex extends React.Component {
 	constructor(props) {
 		super(props);
+
+		this.handleLogout = this.handleLogout.bind(this);
 	}
 
 	// componentDidMount() {
 	// 	this.props.fetchUserServers(this.props.currentUser.id);
 	// }
+	handleLogout(e) {
+		e.preventDefault()
+		this.props.logout()
+			.then(() => {
+				this.props.history.push("/")
+			})
+	};
 
 	render() {
 		return (
@@ -99,4 +109,4 @@ class ServerIndex extends React.Component {
 	}
 }
 
-export default ServerIndex;
+export default withRouter(ServerIndex);

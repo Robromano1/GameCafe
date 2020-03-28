@@ -9,8 +9,8 @@ class ServerIndexItem extends React.Component {
 	render () {
 		return (
 			//Link to home page/servers/serverid
-			<li id={this.props.server.id} className="server-li">
-				<span classnName="hashtag">#</span>
+			<li key={`${this.props.server.id}`} id={this.props.server.id} className="server-li">
+				<span className="hashtag">#</span>
 				{this.props.server.name}
 			</li>
 		)

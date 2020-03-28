@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ServerBar from './server_bar';
-import { logout } from '../../actions/session_actions';
+// import { logout } from '../../actions/session_actions';
 import { getMessages, receiveMessage } from '../../actions/message_actions';
 
 const mSTP = (state, ownProps) => ({
@@ -8,7 +8,7 @@ const mSTP = (state, ownProps) => ({
 });
 
 const mDTP = dispatch => ({
-	logout: () => dispatch(logout()),
+	// logout: () => dispatch(logout()),
 	getMessages: () => dispatch(getMessages()),
 	
 });

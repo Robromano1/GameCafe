@@ -3,7 +3,7 @@ class ChatChannel < ApplicationCable::Channel
     # stream_from "some_channel"
     # stream_for 'chat_channel'
    
-    @chat_channel = Channel.find_by(id: params[:id]) #Saying @chat_channel is nil
+    @chat_channel = Channel.find_by(id: params[:id]) 
     stream_for @chat_channel
   end
 

@@ -3,10 +3,13 @@ class Api::ServersController < ApplicationController
 
 	
 	def index 
+		 
 		if params[:userId]
+			
 			user_id = params[:userId].to_i
 			@servers = User.find(user_id).servers.all
 			if @servers 
+				# debugger
 				render :index 
 			else
 				render json: @servers.errors.full_messages, status: 420
@@ -31,8 +34,9 @@ class Api::ServersController < ApplicationController
 	end
 
 	def create
-			if server_params[:name] == ""
-			render json: ["This field is required"], status
+		# debugger
+			if server_params[:server_name] == ""
+			render json: ["This field is required"], status: 420
 		else
 			@server = Server.new(server_params)
 			@server.admin_id = current_user.id 

@@ -11,9 +11,10 @@ class ServerIndex extends React.Component {
 		this.handleLogout = this.handleLogout.bind(this);
 	}
 
-	// componentDidMount() {
-	// 	this.props.fetchUserServers(this.props.currentUser);
-	// }
+	componentDidMount() {
+		// debugger
+		this.props.fetchUserServers(this.props.currentUser.id);
+	}
 
 	handleLogout(e) {
 		e.preventDefault()

@@ -1,24 +1,24 @@
-export const fetchServers = () => {
+export const fetchServers = () => (
 	$.ajax({
 		url: '/api/servers',
 		method: 'GET'
 	})
-}
-
-export const fetchServer = id => {
+)
+// change to implicit return ()
+export const fetchServer = id => (
 	$.ajax({
 		url: `/api/servers/${id}`,
 		method: 'GET'
 	})
-}
+)
 
-// export const fetchUserServers = userId => {
-// 	$.ajax({
-// 		url: '/api/servers',
-// 		method: 'GET',
-// 		data: { userId }
-// 	})
-// }
+export const fetchUserServers = userId => (
+	$.ajax({
+		url: '/api/servers',
+		method: 'GET',
+		data: { userId }
+	})
+)
 
 export const createServer = server => {
 	$.ajax({

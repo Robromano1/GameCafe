@@ -2,7 +2,7 @@
 
 class Api::UsersController < ApplicationController
     def index
-        @users = User.includes(:channels).all
+        @users = User.includes(:servers, :channels).all
         render :index
     end
 
@@ -26,7 +26,7 @@ class Api::UsersController < ApplicationController
     end
 
     def show
-        @user = User.includes(:channels).find(params[:id])
+        @user = User.find(params[:id]).includes(:servers, :channels)
         render :show
     end
 

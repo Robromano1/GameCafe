@@ -3,14 +3,31 @@ class Api::ServersController < ApplicationController
 
 	
 	def index 
-		#Need to show servers for current user
-		@servers = Server.all 
-		render :index
+		if params[:userId]
+			user_id = params[:userId].to_i
+			@servers = User.find(user_id).servers.all
+			if @servers 
+				render :index 
+			else
+				render json: @servers.errors.full_messages, status: 420
+			end
+		else
+			@servers = Server.where(:servers => { :private => false})
+			if @servers
+				render :index 
+			else
+				render json: @servers.errors.full_messages, status: 420
+			end
+		end
 	end
 
 	def show
 		@server = Server.find(params[:id])
-		render :show
+		if @server
+			render :show
+		else
+			render json: @server.errors.full_messages, status: 420
+		end
 	end
 
 	def create
@@ -18,7 +35,9 @@ class Api::ServersController < ApplicationController
 			render json: ["This field is required"], status
 		else
 			@server = Server.new(server_params)
+			@server.admin_id = current_user.id 
 			if @server.save 
+				@server.members << current_user
 				render :show 
 			else
 				render json: @server.errors.full_messages, status: 422

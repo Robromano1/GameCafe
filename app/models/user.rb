@@ -15,17 +15,17 @@ class User < ApplicationRecord
         foreign_key: :user_id,
         class_name: :Message
         
-        has_many :server_users,
+    has_many :server_users,
         foreign_key: :user_id
-        
-        has_many :servers,
+    
+    has_many :servers,
         through: :server_users,
         source: :server
-        
-        has_many :channels,
-            through: :servers,
-            source: :channels
-        
+    
+    has_many :channels,
+        through: :servers,
+        source: :channels
+    
     attr_reader :password
     after_initialize :ensure_session_token
 

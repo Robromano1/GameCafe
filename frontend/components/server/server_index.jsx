@@ -12,8 +12,9 @@ class ServerIndex extends React.Component {
 	}
 
 	// componentDidMount() {
-	// 	this.props.fetchUserServers(this.props.currentUser.id);
+	// 	this.props.fetchUserServers(this.props.currentUser);
 	// }
+
 	handleLogout(e) {
 		e.preventDefault()
 		this.props.logout()
@@ -83,8 +84,14 @@ class ServerIndex extends React.Component {
 						<button className="logoutButton" type="submit" onClick={this.handleLogout}>Logout</button>
 					</div>
 				</div>
+			</div>
+		)
+	}
+}
+
+export default withRouter(ServerIndex);
 				{/* Base container  */}
-				<div className="base">
+				{/* <div className="base">
 					<div className="content-1">
 						<div className="sidebar">
 							<div className="serverChannels">
@@ -104,9 +111,4 @@ class ServerIndex extends React.Component {
 						</div>
 					</div>
 				</div>
-			</div>
-		)
-	}
-}
-
-export default withRouter(ServerIndex);
+			</div> */}

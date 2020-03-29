@@ -2,8 +2,8 @@ import * as ServerApiUtil from '../util/server_api_util';
 
 export const RECEIVE_ALL_SERVERS = "RECEIVE_ALL_SERVERS ";
 export const RECEIVE_SERVER = "RECEIVE_SERVER ";
-export const RECEIVE_USER_SERVERS = "RECEIVE_USER_SERVERS";
 export const REMOVE_SERVER = "REMOVE_SERVER";
+export const RECEIVE_SERVER_ERRORS = 'RECEIVE_SERVER_ERRORS';
 
 //action creators
 
@@ -17,20 +17,20 @@ const receiveServer = server => ({
 	server
 });
 
-const receiveUserServers = userId => ({
-	type: RECEIVE_USER_SERVERS,
-	userId
-});
-
 const removeServer = serverId => ({
 	type: REMOVE_SERVER,
 	serverId
 })
 
+const receiveServerErrors = errors => ({
+	type: RECEIVE_SERVER_ERRORS,
+	errors
+});
+
 
 //thunk actions
-export const fetchServers = servers => dispatch => (
-	ServerApiUtil.fetchServers(servers)
+export const fetchServers = () => dispatch => (
+	ServerApiUtil.fetchServers()
 		.then(servers => dispatch(receiveAllServers(servers)))
 );
 
@@ -39,9 +39,14 @@ export const fetchServer = id => dispatch => (
 		.then(server => dispatch(receiveServer(server)))
 );
 
-export const fetchUserServers = userId => dispatch => (
-	ServerApiUtil.fetchUserServers(userId)
-		.then(userServers => dispatch(receiveUserServers(userServers)))
+// export const fetchUserServers = userId => dispatch => (
+// 	ServerApiUtil.fetchUserServers(userId)
+// 		.then(servers => dispatch(receiveAllServers(servers)))
+// );
+
+export const destroyServer = serverId => dispatch => (
+	ServerApiUtil.deleteServer(serverId)
+		.then(() => dispatch(removeServer(serverId)))
 );
 
 // export const deleteServer = serverId = dispatch => {

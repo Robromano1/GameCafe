@@ -12,13 +12,13 @@ export const fetchServer = id => {
 	})
 }
 
-export const fetchUserServers = userId => {
-	$.ajax({
-		url: '/api/servers/',
-		method: 'GET',
-		data: { userId }
-	})
-}
+// export const fetchUserServers = userId => {
+// 	$.ajax({
+// 		url: '/api/servers',
+// 		method: 'GET',
+// 		data: { userId }
+// 	})
+// }
 
 export const createServer = server => {
 	$.ajax({

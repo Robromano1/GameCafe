@@ -7,7 +7,7 @@ import { getChannels } from '../../../util/channel_api_util';
 const mSTP = (state, ownProps) => ({
 	channel: state.entities.channels[ownProps.params.match.channelId],
 	messages: state.entities.messages,
-	currentUser = state.session.id
+	currentUser: state.session.id
 });
 
 const mDTP = (dispatch) => ({

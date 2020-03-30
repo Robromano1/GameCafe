@@ -6,6 +6,7 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import SplashPageContainer from './splash_page/splash_page_container';
 import ServerContainer from './server/server_container';
 import ChatRoom from './chat/chat_room';
+import ChannelBarContainer from './channels/channel_bar_container';
 import {
     Route,
     Redirect,
@@ -27,6 +28,7 @@ const App = () => (
             <AuthRoute exact path="/login" component={LogInFormContainer}/>
             <AuthRoute exact path="/signup" component={SignUpFormContainer}/>
             <Route exact path="/channels/:channelId" component={ServerContainer} />
+            <Route exact path="/my/channels" component={ChannelBarContainer}/>
             {/* <Route exact path="/channels/@me" component={ChatRoom} /> */}
             <Route exact path="/" component={SplashPageContainer}/>
         </Switch>

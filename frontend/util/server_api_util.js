@@ -20,17 +20,17 @@ export const fetchUserServers = userId => (
 	})
 )
 
-export const createServer = server => {
+export const createServer = server => (
 	$.ajax({
 		url: '/api/servers',
 		method: "POST",
 		data: { server }
 	})
-}
+)
 
-export const deleteServer = id => {
+export const deleteServer = id => (
 	$.ajax({
 		url: `/api/servers/${id}`,
 		method: "DELETE"
 	})
-}
+)

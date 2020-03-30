@@ -11,10 +11,10 @@ class ServerBar extends React.Component {
 		// this.handleLogout = this.handleLogout.bind(this);
 	}
 
-	componentDidMount() {
-		this.props.getMessages();
+	// componentDidMount() {
+	// 	this.props.getMessages();
 
-	}
+	// }
 
 	render() {
 		return (
@@ -79,18 +79,18 @@ class ServerBar extends React.Component {
 			// 		</div>
 			// 	</div>
 			// 	{/* Base container  */}
-			// 	<div className="base">
-			// 		<div className="content-1">
-			// 			<div className="sidebar">
-			// 				<div className="serverChannels">
-			// 					<div className="searchBar">
-			// 						<button type="button" className="searchButton">Find or start a conversation</button>
-			// 					</div>
-			// 					<div className="scrollWrap scrollTheme">
+				// <div className="base">
+				// 	<div className="content-1">
+				// 		<div className="sidebar">
+				// 			<div className="serverChannels">
+				// 				<div className="searchBar">
+				// 					<button type="button" className="searchButton">Find or start a conversation</button>
+				// 				</div>
+				// 				<div className="scrollWrap scrollTheme">
 
-			// 					</div>
-			// 				</div>
-			// 			</div>
+				// 				</div>
+				// 			</div>
+				// 		</div>
 					
 			// 			<div className="mainContent">
 			// 				<div className="chatRoom">

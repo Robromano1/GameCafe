@@ -4,12 +4,12 @@ import ServerBar from './server_bar';
 import { getMessages, receiveMessage } from '../../actions/message_actions';
 
 const mSTP = (state, ownProps) => ({
-	channelId: state.entities.users.channel_ids
+	//channelId: state.entities.users.channel_ids
 });
 
 const mDTP = dispatch => ({
 	// logout: () => dispatch(logout()),
-	getMessages: () => dispatch(getMessages()),
+	//getMessages: () => dispatch(getMessages()),
 	
 });
 

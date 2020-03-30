@@ -4,6 +4,7 @@ class Api::ChannelsController < ApplicationController
 
 	def index 
 		user_id = params[:userId].to_i
+		# debugger
 		@channels = User.find(user_id).channels.all
 		if @channels 
 			render :index

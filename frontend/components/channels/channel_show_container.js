@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import ChannelShow from './channel_show';
-import { getChannel, getUserChannel, destroyChannel} from '../../../actions/channel_actions';
-import { getChannelMessages } from '../../../actions/message_actions';
-import { getChannels } from '../../../util/channel_api_util';
+import { getChannel, getUserChannel, destroyChannel} from '../../actions/channel_actions';
+import { getChannelMessages } from '../../actions/message_actions';
+
 
 const mSTP = (state, ownProps) => ({
 	channel: state.entities.channels[ownProps.params.match.channelId],

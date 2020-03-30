@@ -36,7 +36,7 @@ export const getChannels = () => dispatch => (
 );
 
 export const getChannel = id => dispatch => (
-	ChannelApiUtil.getChannels(id)
+	ChannelApiUtil.getChannel(id)
 		.then(channel => {
 			dispatch(receiveChannel(channel))
 		},

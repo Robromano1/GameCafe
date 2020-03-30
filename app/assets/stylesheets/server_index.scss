@@ -1,0 +1,30 @@
+.userServers {
+	display: flex;
+	flex-direction: column;
+	margin: 0px;
+	padding: 20px;
+	justify-content: center;
+	
+}
+
+.userServers > li {
+	margin-bottom: 5px;
+	align-items: center;
+	color: white;
+	box-sizing: border-box;
+	border-radius: 50%;
+	background-color: #37383f;
+	font-weight: 400;
+	font-size: 16px;
+	overflow: hidden;
+	height: 40px;
+	// min-height: 50px;
+	// max-height: 50px;
+	width: 40px;
+	// min-width: 50px;
+	// max-width: 50px;
+	margin-left: 10px;
+	margin-left: -15px;
+	text-align: center;
+	padding: 12px;
+}

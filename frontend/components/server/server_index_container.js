@@ -5,7 +5,7 @@ import { logout } from '../../actions/session_actions';
 
 const mSTP = (state, ownProps) => ({
 	currentUser: state.entities.users[state.session.id],
-	servers: state.entities.servers
+	servers: Object.values(state.entities.servers)
 });
 
 const mDTP = dispatch => ({

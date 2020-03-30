@@ -25,6 +25,15 @@ class ServerIndex extends React.Component {
 	};
 
 	render() {
+		let { servers } = this.props;
+		let userServers = [];
+		servers.map(serv => {
+			userServers.push(
+			<li key={serv.id} id={serv.id}>
+				{`${serv.server_name[0]}`}
+			</li>
+			)
+		})
 		return (
 			<div id="app-mount" className="appMount">
 				{/* Side server scroll bar */}
@@ -49,33 +58,9 @@ class ServerIndex extends React.Component {
 							</div>
 							<div className="iconContainer" draggable="true">
 								<div className="iconWrapper">
-									{/* <Link className="serverIconLink" to="/"> */}
-									<img className="svg-1" src="https://image.flaticon.com/icons/svg/1385/1385594.svg" />
-									{/* </Link> */}
-								</div>
-							</div>
-						</div>
-						<div className="listItem">
-							<div className="pill-2 pillWrapper">
-								<span className="item-2b"></span>
-							</div>
-							<div className="iconContainer" draggable="true">
-								<div className="iconWrapper">
-									{/* <Link className="serverIconLink" to="/"> */}
-									<img className="svg-1" src="https://image.flaticon.com/icons/svg/344/344757.svg" />
-									{/* </Link> */}
-								</div>
-							</div>
-						</div>
-						<div className="listItem">
-							<div className="pill-2 pillWrapper">
-								<span className="item-2b"></span>
-							</div>
-							<div className="iconContainer" draggable="true">
-								<div className="iconWrapper">
-									{/* <Link className="serverIconLink" to="/"> */}
-									<img className="svg-1" src="https://image.flaticon.com/icons/svg/1055/1055646.svg" />
-									{/* </Link> */}
+									<ul className="userServers">
+										{userServers}
+									</ul>
 								</div>
 							</div>
 						</div>

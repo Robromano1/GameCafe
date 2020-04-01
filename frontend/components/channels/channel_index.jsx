@@ -10,8 +10,14 @@ class ChannelIndex extends React.Component {
 
 	componentDidMount() {
 		// this.props.getUserChannels();
-		this.props.getUserChannel(this.props.currentUser.id);
-		<ServerBarContainer/>
+		//this.props.getUserChannel(this.props.currentUser.id);
+		//<ServerBarContainer/>
+		const { getServerChannels } = this.props;
+		debugger
+		const serverId = this.props.match.params.serverId
+		if (serverId) {
+			getServerChannels(serverId);
+		}
 	}
 
 	render() {

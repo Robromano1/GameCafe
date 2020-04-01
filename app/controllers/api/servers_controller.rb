@@ -26,7 +26,7 @@ class Api::ServersController < ApplicationController
 
 	def show
 		@server = Server.find(params[:id])
-		debugger
+		# debugger
 		if @server
 			render :show
 		else

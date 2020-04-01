@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ChannelIndex from './channel_index';
-import { getChannels, getUserChannel } from '../../actions/channel_actions';
+import { getServerChannels } from '../../actions/channel_actions';
 
 const mSTP = state => ({
 	currentUser: state.entities.users[state.session.id],
@@ -8,8 +8,9 @@ const mSTP = state => ({
 });
 
 const mDTP = dispatch => ({
-	getChannels: () => dispatch(getChannels(channels)),
-	getUserChannel: userId => dispatch(getUserChannel(userId))
+	getServerChannels: serverId => dispatch(getServerChannels(serverId))
+	// getChannels: () => dispatch(getChannels(channels)),
+	// getUserChannel: userId => dispatch(getUserChannel(userId))
 	//logout: () => dispatch(logout())
 }); 
 

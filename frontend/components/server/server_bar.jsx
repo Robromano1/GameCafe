@@ -11,10 +11,16 @@ class ServerBar extends React.Component {
 		// this.handleLogout = this.handleLogout.bind(this);
 	}
 
-	// componentDidMount() {
-	// 	this.props.getMessages();
-
-	// }
+	componentDidMount() {
+		// debugger
+		this.props.fetchUserServers(this.props.currentUser.id)
+			.then(request => {
+				debugger
+				if(!this.props.match.params.serverId) {
+					this.props.history.push(`${Object.values(request.servers)[0].id}`)
+				}
+			});
+	}
 
 	render() {
 		return (

@@ -12,10 +12,6 @@ class ServerIndex extends React.Component {
 		this.handleLogout = this.handleLogout.bind(this);
 	}
 
-	componentDidMount() {
-		// debugger
-		this.props.fetchUserServers(this.props.currentUser.id);
-	}
 
 	handleLogout(e) {
 		e.preventDefault()
@@ -28,7 +24,9 @@ class ServerIndex extends React.Component {
 	render() {
 		let { servers } = this.props;
 		let userServers = [];
+		//debugger
 		servers.map(serv => {
+			//debugger
 			userServers.push(
 			<li key={serv.id} id={serv.id}>
 				{`${serv.server_name[0]}`}
@@ -71,7 +69,7 @@ class ServerIndex extends React.Component {
 						<button className="logoutButton" type="submit" onClick={this.handleLogout}>Logout</button>
 					</div>
 				</div>
-				<ServerShowContainer/>
+				<ServerShowContainer />
 			</div>
 		)
 	}

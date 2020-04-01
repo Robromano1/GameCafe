@@ -10,7 +10,7 @@ const mSTP = (state, ownProps) => ({
 
 const mDTP = dispatch => ({
 	logout: () => dispatch(logout()),
-	fetchUserServers: (userId) => dispatch(fetchUserServers(userId))
+	
 });
 
 export default connect(mSTP, mDTP)(ServerIndex);

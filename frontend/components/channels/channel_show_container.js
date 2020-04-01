@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ChannelShow from './channel_show';
-import { getChannel, getUserChannel, destroyChannel} from '../../actions/channel_actions';
+import { getChannel, destroyChannel} from '../../actions/channel_actions';
 import { getMessages } from '../../actions/message_actions';
 
 
@@ -15,7 +15,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => ({
 	getChannel: id => dispatch(getChannel(id)),
-	getUserChannel: userId => dispatch(getUserChannel(userId)),
+	//getUserChannel: userId => dispatch(getUserChannel(userId)),
 	destroyChannel: id => dispatch(destroyChannel(id)),
 	getMessages: channelId => dispatch(getMessages(channelId))
 });

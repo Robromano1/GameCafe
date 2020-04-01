@@ -48,7 +48,9 @@ const App = () => (
         <Switch>
             <AuthRoute exact path="/login" component={LogInFormContainer}/>
             <AuthRoute exact path="/signup" component={SignUpFormContainer}/>
+            <Route exact path="/channels/" component={ServerContainer} />
             <Route exact path="/channels/:serverId" component={ServerContainer} />
+            
             {/* <Route exact path="/my/channels" component={ChannelBarContainer}/> */}
             {/* <Route exact path="/show/channel" component={ChannelShowContainer}/> */}
             {/* <Route exact path="/show/:serverId" component={ServerShowContainer}/> */}

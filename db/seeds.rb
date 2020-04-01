@@ -8,8 +8,9 @@
 
 User.destroy_all
 Channel.destroy_all
-Message.destroy_all
-Membership.destroy_all
+#Message.destroy_all
+ServerUser.destroy_all
+Server.destroy_all
 
 rob = User.create!(email: "rob@rob.com", username: "RobbyBizz", password: "codelife")
 bond = User.create!(email: "bond@JamesBond.com", username: "bond007", password: "Goldeneye")
@@ -34,4 +35,4 @@ demo_member = ServerUser.create!(user_id: demo.id, server_id: app_academy.id)
 demo_member = ServerUser.create!(user_id: demo.id, server_id: codeLife.id)
 demo_member = ServerUser.create!(user_id: demo.id, server_id: coffee_talk.id)
 
-gamer_channel.messages.create!(text: 'Welcome to the gaming channel', author_id: demo.id)
+gamer_channel.messages.create!(body: 'Welcome to the gaming channel', user_id: demo.id, channel_id: gamer_channel.id)

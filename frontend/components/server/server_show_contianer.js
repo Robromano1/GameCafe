@@ -4,10 +4,10 @@ import { fetchServer, destroyServer, fetchUserServers } from '../../actions/serv
 import { getChannels } from '../../actions/channel_actions';
 
 const mSTP = (state, ownProps) => {
-	debugger
+	//debugger
 	return ({
 		server: state.entities.servers,
-		servers: state.entities.servers,
+		//servers: state.entities.servers,
 		channels: state.entities.channels,
 		users: state.entities.users,
 		currentUserId: state.session.id,

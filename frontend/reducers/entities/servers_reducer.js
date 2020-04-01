@@ -10,7 +10,8 @@ const serversReducer = (state = {}, action) => {
 			//  debugger
 			return merge({}, action.servers);
 		case RECEIVE_SERVER:
-			return merge({}, state, action.server);
+			
+			return merge({}, state, {[action.server.id]: action.server});
 		case REMOVE_SERVER: 
 			newState = merge({}, state);
 			delete newState[action.serverId];

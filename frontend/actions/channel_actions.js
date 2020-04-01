@@ -43,11 +43,16 @@ export const getChannel = id => dispatch => (
 			errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
-export const getUserChannel = userId => dispatch => {
-	return ChannelApiUtil.getUserChannels(userId)
-		.then(channels => dispatch(receiveChannels(channels)),
-			errors => dispatch(receiveErrors(errors.responseJSON)));
-};
+export const getServerChannels = serverId => dispatch => (
+	ChannelApiUtil.getServerChannels(serverId)
+		.then(channels => dispatch(receiveChannels(channels)))
+);
+
+// export const getUserChannel = userId => dispatch => {
+// 	return ChannelApiUtil.getUserChannels(userId)
+// 		.then(channels => dispatch(receiveChannels(channels)),
+// 			errors => dispatch(receiveErrors(errors.responseJSON)));
+// };
 
 export const createChannel = channel => dispatch => (
 	ChannelApiUtil.createChannel(channel)

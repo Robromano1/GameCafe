@@ -92,11 +92,11 @@ class ServerBar extends React.Component {
 				// 			</div>
 				// 		</div>
 					
-			// 			<div className="mainContent">
-			// 				<div className="chatRoom">
-			// 					<ChatRoomContainer />
-			// 				</div>
-			// 			</div>
+						// <div className="mainContent">
+						// 	<div className="chatRoom">
+						// 		<ChatRoomContainer />
+						// 	</div>
+						// </div>
 			// 		</div>
 			// 	</div>
 			// </div>

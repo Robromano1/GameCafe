@@ -3,6 +3,7 @@ import ServerIndexItem from './server_index_item';
 import { Link } from 'react-router-dom';
 import ChatRoomContainer from '../chat/chat_room_container';
 import { withRouter } from 'react-router-dom';
+import ServerShowContainer from './server_show_contianer';
 
 class ServerIndex extends React.Component {
 	constructor(props) {
@@ -70,6 +71,7 @@ class ServerIndex extends React.Component {
 						<button className="logoutButton" type="submit" onClick={this.handleLogout}>Logout</button>
 					</div>
 				</div>
+				<ServerShowContainer/>
 			</div>
 		)
 	}

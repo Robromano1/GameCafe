@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import ChannelShowContainer from './channel_show_container';
+import ServerBarContainer from '../server/server_bar_container';
 
 class ChannelIndex extends React.Component {
 	constructor(props) {
@@ -9,7 +11,7 @@ class ChannelIndex extends React.Component {
 	componentDidMount() {
 		// this.props.getUserChannels();
 		this.props.getUserChannel(this.props.currentUser.id);
-
+		<ServerBarContainer/>
 	}
 
 	render() {
@@ -24,15 +26,20 @@ class ChannelIndex extends React.Component {
 		})
 		
 		return (
-			<div className="channelIndexContainer">
-				<div className="channelIndexWrapper">
-					<div className="channels">
-						<ul>
-							{serverChannels}
-						</ul>
+			<>
+				<div className="channelIndexContainer">
+					<div className="channelIndexWrapper">
+						<div className="channels">
+							<ul>
+								{serverChannels}
+							</ul>
+						</div>
 					</div>
 				</div>
-			</div>
+				{/* <div className="channelShow">
+					<ChannelShowContainer/>
+				</div> */}
+			</>
 		)
 	}
 }

@@ -12,31 +12,32 @@ class Api::ServersController < ApplicationController
 				# debugger
 				render :index 
 			else
-				render json: @servers.errors.full_messages, status: 420
+				render json: @servers.errors.full_messages, status: 422
 			end
 		else
 			@servers = Server.where(:servers => { :private => false})
 			if @servers
 				render :index 
 			else
-				render json: @servers.errors.full_messages, status: 420
+				render json: @servers.errors.full_messages, status: 422
 			end
 		end
 	end
 
 	def show
 		@server = Server.find(params[:id])
+		debugger
 		if @server
 			render :show
 		else
-			render json: @server.errors.full_messages, status: 420
+			render json: @server.errors.full_messages, status: 422
 		end
 	end
 
 	def create
 		# debugger
 			if server_params[:server_name] == ""
-			render json: ["This field is required"], status: 420
+			render json: ["This field is required"], status: 422
 		else
 			@server = Server.new(server_params)
 			@server.admin_id = current_user.id 

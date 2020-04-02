@@ -23,7 +23,7 @@ class ChannelIndex extends React.Component {
 	render() {
 		let { channels } = this.props;
 		let serverChannels = [];
-		debugger
+		// debugger
 		channels.map(channel => {
 			serverChannels.push(
 				<li key={channel.id} id={channel.id}>

@@ -10,10 +10,13 @@ class ChannelShow extends React.Component {
 	}
 
 	componentDidMount() {
-		const { getChannel, getMessages } = this.props;
-		const channelId = this.props.match.params.channelId;
-
-		getChannel(channelId).then(getMessages(channeld));
+		//fetch messages
+		const { getMessages } = this.props;
+		const channelId = this.props.channel.id;
+		debugger
+		if (channelId) {
+			getMessages(channelId);
+		}
 		
 		
 	}
@@ -21,9 +24,9 @@ class ChannelShow extends React.Component {
 	render(){
 		return (
 			<div className="mainContent">
-				<div className="chatRoom">
+				{/* <div className="chatRoom">
 					<ChatRoomContainer />
-				</div>
+				</div> */}
 			</div>
 		)
 	}

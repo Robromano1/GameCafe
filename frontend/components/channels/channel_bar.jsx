@@ -10,6 +10,20 @@ class ChannelBar extends React.Component {
 
 	}
 
+	componentDidMount() {
+		// this.props.getUserChannels();
+		//this.props.getUserChannel(this.props.currentUser.id);
+		//<ServerBarContainer/>
+		const { getServerChannels } = this.props;
+		//debugger
+		//const serverId = this.props.match.params.serverId
+		const serverId = Object.values(this.props.server)[0].id
+		debugger
+		if (serverId) {
+			getServerChannels(serverId);
+		}
+	}
+
 	render() {
 		return (
 			<div className="base">

@@ -7,7 +7,7 @@ import { getMessages } from '../../actions/message_actions';
 const mSTP = (state, ownProps) => {
 	//debugger
 	return ({
-		//channel: state.entities.channels[ownProps.params.match.channelId],
+		channel: state.entities.channels[ownProps.params.match.channelId],
 		messages: state.entities.messages,
 		currentUser: state.session.id
 	})

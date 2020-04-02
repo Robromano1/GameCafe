@@ -10,6 +10,7 @@ class ServerPage extends React.Component {
 	}
 
 	render() {
+		// debugger
 		return (
 			<div>
 				<ServerBarContainer />

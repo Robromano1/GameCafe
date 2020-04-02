@@ -7,6 +7,7 @@ class Api::ServersController < ApplicationController
 		if params[:userId]
 			
 			user_id = params[:userId].to_i
+			
 			@servers = User.find(user_id).servers.all
 			if @servers 
 				# debugger

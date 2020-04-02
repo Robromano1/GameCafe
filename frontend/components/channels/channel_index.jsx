@@ -8,21 +8,22 @@ class ChannelIndex extends React.Component {
 		super(props);
 	}
 
-	componentDidMount() {
-		// this.props.getUserChannels();
-		//this.props.getUserChannel(this.props.currentUser.id);
-		//<ServerBarContainer/>
-		const { getServerChannels } = this.props;
-		debugger
-		const serverId = this.props.match.params.serverId
-		if (serverId) {
-			getServerChannels(serverId);
-		}
-	}
+	// componentDidMount() {
+	// 	// this.props.getUserChannels();
+	// 	//this.props.getUserChannel(this.props.currentUser.id);
+	// 	//<ServerBarContainer/>
+	// 	const { getServerChannels } = this.props;
+	// 	//debugger
+	// 	const serverId = this.props.match.params.serverId
+	// 	if (serverId) {
+	// 		getServerChannels(serverId);
+	// 	}
+	// }
 
 	render() {
 		let { channels } = this.props;
 		let serverChannels = [];
+		debugger
 		channels.map(channel => {
 			serverChannels.push(
 				<li key={channel.id} id={channel.id}>
@@ -44,7 +45,7 @@ class ChannelIndex extends React.Component {
 				</div>
 				{/* <div className="channelShow">
 					<ChannelShowContainer/>
-				</div> */}
+				</div>  */}
 			</>
 		)
 	}

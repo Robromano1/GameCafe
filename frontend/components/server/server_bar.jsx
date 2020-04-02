@@ -7,7 +7,8 @@ import ServerIndexContainer from './server_index_container'
 class ServerBar extends React.Component {
 	constructor(props) {
 		super(props);
-		
+		//debugger
+		// console.log(this.props);
 		// this.handleLogout = this.handleLogout.bind(this);
 	}
 
@@ -15,14 +16,16 @@ class ServerBar extends React.Component {
 		// debugger
 		this.props.fetchUserServers(this.props.currentUser.id)
 			.then(request => {
-				debugger
+				// debugger
 				if(!this.props.match.params.serverId) {
+					// debugger
 					this.props.history.push(`${Object.values(request.servers)[0].id}`)
 				}
 			});
 	}
 
 	render() {
+		// debugger
 		return (
 			<ServerIndexContainer />
 			// <div id="app-mount" className="appMount">

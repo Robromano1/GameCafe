@@ -3,8 +3,16 @@ class Api::MessagesController < ApplicationController
 	
 	
 	def index 
-		@messages = Message.all 
-		render :index
+		if params[:channelId]
+			channel_id = params[:channelId].to_i
+			@messages = Channel.find(channel_id).messages.includes(:user)
+		end
+
+		if @messages 
+			render :index
+		else
+			render json: @messages.errors.full_messages, status: 422
+		end
 	end
 
 	def show

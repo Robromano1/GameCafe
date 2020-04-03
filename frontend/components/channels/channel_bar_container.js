@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getServerChannels } from '../../actions/channel_actions';
 
 const mSTP = state => {
-	debugger
+	//debugger
 	return ({
 		server: Object.values(state.entities.servers)
 	})

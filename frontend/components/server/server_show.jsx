@@ -10,7 +10,7 @@ class ServerShow extends React.Component {
 
 	componentDidMount() {
 
-		const { getChannels, fetchServer } = this.props;
+		const { getServerChannels, fetchServer } = this.props;
 		// debugger
 		const serverId = parseInt(this.props.match.params.serverId);
 		// debugger

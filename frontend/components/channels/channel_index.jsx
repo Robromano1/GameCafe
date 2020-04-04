@@ -44,7 +44,7 @@ class ChannelIndex extends React.Component {
 					</div>
 				</div>
 				<div className="channelShow">
-					{/* <ChannelShowContainer/> */}
+					<ChannelShowContainer/>
 				</div> 
 			</>
 		)

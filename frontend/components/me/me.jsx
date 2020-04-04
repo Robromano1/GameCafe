@@ -12,7 +12,7 @@ const Channels = props => {
 				component={ServerBarContainer}
 			/>
 			<Switch>
-				<Route path="/channels/:serverId/:channelId" component={ChannelShowContainer}/>
+				<Route path="/channels/:serverId/:channelId" component={ServerShowContainer}/>
 				<Route path="/channels/:serverId" component={ServerShowContainer}/>
 			</Switch>
 		</>

@@ -73,7 +73,7 @@ class SessionForm extends React.Component {
             }, (email.length * speed) + j * speed);
         }
         setTimeout(() => {
-            this.props.processForm(this.state).then(() => this.props.history.push('/channels/'));
+            this.props.processForm(this.state).then(() => this.props.history.push('/channels'));
         }, (email.length * speed) + (password.length * speed) + speed);
     }
 

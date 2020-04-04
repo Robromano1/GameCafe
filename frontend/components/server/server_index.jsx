@@ -69,7 +69,7 @@ class ServerIndex extends React.Component {
 						<button className="logoutButton" type="submit" onClick={this.handleLogout}>Logout</button>
 					</div>
 				</div>
-				<ServerShowContainer />
+				{/* <ServerShowContainer /> */}
 			</div>
 		)
 	}

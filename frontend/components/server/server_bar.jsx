@@ -19,7 +19,7 @@ class ServerBar extends React.Component {
 				// debugger
 				if(!this.props.match.params.serverId) {
 					// debugger
-					this.props.history.push(`${Object.values(request.servers)[0].id}`)
+					this.props.history.push(`/channels/${Object.values(request.servers)[0].id}`)
 				}
 			});
 	}

@@ -15,7 +15,7 @@ class ChannelShow extends React.Component {
 		//fetch messages
 		const { getChannel, fetchChannelMessages } = this.props;
 		debugger
-		const channelId = this.props.channel.id;
+		const channelId = parseInt(this.props.match.params.channelId);
 		//debugger
 		if (channelId) {
 			getChannel(channelId)

@@ -18,3 +18,5 @@ const Channels = props => {
 		</>
 	)
 }
+
+export default Channels;

@@ -39,8 +39,8 @@ class ServerShow extends React.Component {
 										<button type="button" className="searchButton">Find or start a conversation</button>
 									</div>
 									<div className="scrollWrap scrollTheme">
-											<ChannelBarContainer/>
 
+									<ChannelBarContainer/>
 									</div>
 								</div>
 							</div>

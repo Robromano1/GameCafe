@@ -67,7 +67,7 @@ class ChannelShow extends React.Component {
 			<></>
 			// <div className="appMount" id="app-mount">	
 			// 	<div className="base">
-			// 		<div className="content-1">
+			// 		<div>
 			// 			<div className="mainContent">
 			// 				<div className="chatRoom">
 			// 					<ChatRoomContainer/>

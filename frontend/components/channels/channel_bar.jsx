@@ -31,10 +31,10 @@ class ChannelBar extends React.Component {
 			// 		<div className="sidebar">
 			// 			<div className="serverChannels">
 			// 				<div className="searchBar">
+			// 					<ChannelIndexContainer/>
 			// 					<button type="button" className="searchButton">Find or start a conversation</button>
 			// 				</div>
 			// 				<div className="scrollWrap scrollTheme">
-			// 					<ChannelIndexContainer/>
 			// 				</div>
 			// 			</div>
 			// 		</div>

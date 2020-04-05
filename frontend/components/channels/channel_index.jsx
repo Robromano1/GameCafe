@@ -33,7 +33,7 @@ class ChannelIndex extends React.Component {
 		})
 		
 		return (
-			<>
+			// <>
 				<div className="channelIndexContainer">
 					<div className="channelIndexWrapper">
 						<div className="channels">
@@ -43,10 +43,24 @@ class ChannelIndex extends React.Component {
 						</div>
 					</div>
 				</div>
-				<div className="channelShow">
-					<ChannelShowContainer/>
-				</div> 
-			</>
+			// 	<div className="channelShow">
+			// 		<ChannelShowContainer/>
+			// 	</div> 
+			// </>
+			// <div className="base">
+			// 	<div className="content-1">
+			// 		<div className="sidebar">
+			// 			<div className="serverChannels">
+			// 				<div className="searchBar">
+			// 					<ul>
+			// 						{serverChannels}
+			// 					</ul>
+			// 				</div>
+			// 			</div>
+			// 		</div>
+			// 		<ChannelShowContainer/>
+			// 	</div>
+			// </div>
 		)
 	}
 }

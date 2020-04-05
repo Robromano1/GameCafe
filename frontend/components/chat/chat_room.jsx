@@ -24,7 +24,7 @@ class ChatRoom extends React.Component {
 					// });
 					//this.props.requestMessage(data.message)
 					this.props.receiveMessage(JSON.parse(data.message))
-
+					// break
 				},
 				speak: function(data) {
 					return this.perform("speak", data);

@@ -11,10 +11,8 @@ const Channels = props => {
 			<Route exact path={['/channels', '/channels/:serverId', '/channels/:serverId/:channelId']}
 				component={ServerBarContainer}
 			/>
-			<Switch>
-				<Route path="/channels/:serverId/:channelId" component={ChannelBarContainer}/>
-				<Route path="/channels/:serverId" component={ServerShowContainer}/>
-			</Switch>
+			<Route path="/channels/:serverId" component={ServerShowContainer}/>
+			<Route path="/channels/:serverId/:channelId" component={ChannelBarContainer}/>
 		</>
 	)
 }

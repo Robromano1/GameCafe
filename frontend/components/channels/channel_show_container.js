@@ -5,7 +5,7 @@ import { fetchChannelMessages } from '../../actions/message_actions';
 
 
 const mSTP = (state, ownProps) => {
-	debugger
+	// debugger
 	return ({
 		channel: state.entities.channels,
 		messages: state.entities.messages,

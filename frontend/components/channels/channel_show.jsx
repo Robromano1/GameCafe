@@ -34,10 +34,10 @@ class ChannelShow extends React.Component {
 	// };
 
 	componentDidMount() {
-		debugger
+		// debugger
 		//fetch messages
 		const { getChannel, fetchChannelMessages } = this.props;
-		debugger
+		// debugger
 		const channelId = parseInt(this.props.match.params.channelId);
 		//debugger
 		// this.chatRoom();
@@ -64,18 +64,18 @@ class ChannelShow extends React.Component {
 
 	render(){
 		return (
-			<></>
-			// <div className="appMount" id="app-mount">	
-			// 	<div className="base">
-			// 		<div>
-			// 			<div className="mainContent">
-			// 				<div className="chatRoom">
-			// 					<ChatRoomContainer/>
-			// 				</div>
-			// 			</div>
-			// 		</div>
-			// 	</div>
-			// </div>
+			//<></>
+		<div className="appMount" id="app-mount">	
+			<div className="base">
+				<div>
+					<div className="mainContent">
+						<div className="chatRoom">
+							<ChatRoomContainer/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 
 			// <div id = "app-mount" className = "appMount">

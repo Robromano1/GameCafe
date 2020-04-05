@@ -21,15 +21,21 @@ class ServerIndex extends React.Component {
 			})
 	};
 
+	goToServer() {
+		<ServerShowContainer/>
+	}
+
 	render() {
 		let { servers } = this.props;
 		let userServers = [];
-		//debugger
+		// debugger
 		servers.map(serv => {
-			//debugger
+			// debugger
 			userServers.push(
 			<li key={serv.id} id={serv.id}>
-				{`${serv.server_name[0]}`}
+				<Link to={`/channels/${serv.id}`}>
+					{`${serv.server_name[0]}`}
+				</Link>
 			</li>
 			)
 		})
@@ -72,7 +78,7 @@ class ServerIndex extends React.Component {
 						<button className="logoutButton" type="submit" onClick={this.handleLogout}>Logout</button>
 					</div>
 				</div>
-				<ServerShowContainer/>
+				{/* <ServerShowContainer/> */}
 			</div>
 
 

@@ -21,6 +21,19 @@ class ServerShow extends React.Component {
 
 	}
 
+	componentDidUpdate(prevProps) {
+		// debugger
+		if (prevProps.match.params.serverId != this.props.match.params.serverId) {
+			// debugger
+			const { getServerChannels, fetchServer } = this.props;
+			const serverId = parseInt(this.props.match.params.serverId);
+		
+			if (serverId) {
+				fetchServer(serverId)
+					.then(() => getServerChannels(serverId));
+		}}
+	}
+
 	
 
 	render() {

@@ -30,7 +30,23 @@ class ServerShow extends React.Component {
 		}
 		return (
 			<>
-				<ChannelBarContainer/>
+			{/* <div id="app-mount" className="appMount"> */}
+					<div className="base">
+						<div className="content-1">
+							<div className="sidebar">
+								<div className="serverChannels">
+									<div className="searchBar">
+										<button type="button" className="searchButton">Find or start a conversation</button>
+									</div>
+									<div className="scrollWrap scrollTheme">
+											<ChannelBarContainer/>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				{/* </div> */}
 			</>
 		)
 	}

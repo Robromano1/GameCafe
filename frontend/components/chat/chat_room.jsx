@@ -58,11 +58,13 @@ class ChatRoom extends React.Component {
 			)
 		});
 		return (
-			<div className="chatroom-container">
+			<>
 				<div>#general</div>
-				<div className="message-list">{messageList}</div>
+				<div className="message-list">
+					{messageList}
+				</div>
 				<MessageForm />
-			</div>
+			</>
 		);
 	}
 }

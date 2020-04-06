@@ -33,7 +33,7 @@ class ServerIndex extends React.Component {
 			// debugger
 			userServers.push(
 			<li key={serv.id} id={serv.id}>
-				<Link to={`/channels/${serv.id}`}>
+				<Link to={`/channels/${serv.id}/${serv.channel_ids[0]}`}>
 					{`${serv.server_name[0]}`}
 				</Link>
 			</li>
@@ -42,44 +42,47 @@ class ServerIndex extends React.Component {
 		return (
 
 
-			<div id="app-mount" className="appMount">
-				{/* Side server scroll bar */}
-				<div className="scrollWrap scrollTheme">
-					<div className="scroll serverPad scroll2">
-						<div className="listItem">
-							<div className="pill-1 pillWrapper">
-								<span className="item-2"></span>
-							</div>
-							<div className="listItemWrapper">
-								<div className="logoWrapper">
-									{/* Add logo image with link to home */}
+			// <div id="app-mount" className="appMount">
+				// {/* Side server scroll bar */}
+				<>
+					<div className="scrollWrap scrollTheme">
+						<div className="scroll serverPad scroll2">
+							<div className="listItem">
+								<div className="pill-1 pillWrapper">
+									<span className="item-2"></span>
+								</div>
+								<div className="listItemWrapper">
+									<div className="logoWrapper">
+										{/* Add logo image with link to home */}
+									</div>
 								</div>
 							</div>
-						</div>
-						<div className="listItem">
-							<div className="serverSeperator"></div>
-						</div>
-						<div className="listItem">
-							<div className="pill-2 pillWrapper">
-								<span className="item-2b"></span>
+							<div className="listItem">
+								<div className="serverSeperator"></div>
 							</div>
-							<div className="iconContainer" draggable="true">
-								<div className="iconWrapper">
-									<ul className="userServers">
-										{userServers}
-									</ul>
+							<div className="listItem">
+								<div className="pill-2 pillWrapper">
+									<span className="item-2b"></span>
+								</div>
+								<div className="iconContainer" draggable="true">
+									<div className="iconWrapper">
+										<ul className="userServers">
+											{userServers}
+										</ul>
+									</div>
 								</div>
 							</div>
-						</div>
 
-						<div className="listItem addServer">
-							<div>+</div>
+							<div className="listItem addServer">
+								<div>+</div>
+							</div>
+							<button className="logoutButton" type="submit" onClick={this.handleLogout}>Logout</button>
 						</div>
-						<button className="logoutButton" type="submit" onClick={this.handleLogout}>Logout</button>
 					</div>
-				</div>
-				{/* <ServerShowContainer/> */}
-			</div>
+				
+					<ServerShowContainer/>
+				</>
+			// </div>
 
 
 

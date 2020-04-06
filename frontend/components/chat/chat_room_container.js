@@ -4,7 +4,7 @@ import { receiveMessage } from '../../actions/message_actions';
 
 
 const mSTP = (state, ownProps) => {
-	
+	debugger
 	return {
 		messages: Object.values(state.entities.messages),
 		

@@ -9,7 +9,30 @@ class ChatRoom extends React.Component {
 		// this.state = { messages: this.props.messages };
 		this.bottom = React.createRef();
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.chatRoom = this.chatRoom.bind(this);
 	}
+
+	chatRoom() {
+		// debugger
+		App.currentChannel = App.cable.subscriptions.create(
+			{
+				channel: "ChatChannel",
+				id: parseInt(this.props.match.params.channelId),
+				userId: this.props.currentUserId
+			},
+			{
+				received: data => {
+					switch (data.type) {
+						case 'message':
+							this.props.receiveMessage(JSON.parse(data.message));
+							break;
+					}
+				},
+				speak: function (data) { return this.perform('speak', data) },
+				load: function () { return this.perform('load') }
+			}
+		);
+	};
 
 	componentDidMount() {
 		//Can have own component for App.cable.subscription
@@ -36,11 +59,26 @@ class ChatRoom extends React.Component {
 
 	// componentDidUpdate() {
 	// 	//debugger
-	// 	if (this.bottom) {
-	// 		this.bottom.current.scrollIntoView();
-	// 	}
+	// 	// if (this.bottom) {
+	// 	// 	this.bottom.current.scrollIntoView();
+	// 	// }
+
+
 		
 	// }
+
+	componentDidUpdate(prevProps) {
+		if (!prevProps.channel || parseInt(this.props.match.params.channelId) !== prevProps.channel.id) {
+			if (App.currentChannel) {
+				App.currentChannel.unsubscribe();
+			}
+		}
+
+		this.chatRoom()
+		// const channelId = this.props.match.params.channelId
+		// this.props.getChannel(channelId)
+		// 	.then(() => this.props.fetchChannelMessages(channelId))
+	}
 
 	handleSubmit(e) {
 		e.preventDefault();

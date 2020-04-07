@@ -13,7 +13,8 @@ class ChannelShow extends React.Component {
 	}
 
 	// chatRoom() {
-	// 	App.currentChannel = App.cable.subscription.create(
+	// 	debugger
+	// 	App.currentChannel = App.cable.subscriptions.create(
 	// 		{
 	// 			channel: "ChatChannel",
 	// 			id: parseInt(this.props.match.params.channelId),
@@ -48,19 +49,19 @@ class ChannelShow extends React.Component {
 		}		
 	}
 
-	// componentDidUpdate(prevProps) {
-	// 	if(!prevProps.channel || parseInt(this.props.match.params.channelId) !== prevProps.channel.id) {
-	// 		if (App.currentChannel) {
-	// 			App.currentChannel.unsubscribe();
-	// 		}
-	// 	}
-
-	// 	this.chatRoom()
-	// 	const channelId = this.props.match.params.channelId
-	// 	this.props.getChannel(channelId)
-	// 		.then(() => this.props.fetchChannelMessages(channelId))
-	// }
-
+	componentDidUpdate(prevProps) {
+		// debugger
+		if(prevProps.match.params.channelId != this.props.match.params.channelId) {
+			// debugger
+			const { getChannel, fetchChannelMessages } = this.props;
+			const channelId = parseInt(this.props.match.params.channelId);
+	
+			if (channelId) {
+				getChannel(channelId)
+					.then(() => fetchChannelMessages(channelId));
+			}
+		}
+	}
 
 	render(){
 		return (

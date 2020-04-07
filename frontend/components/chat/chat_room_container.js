@@ -1,19 +1,25 @@
 import { connect } from 'react-redux';
 import ChatRoom from './chat_room';
-import { receiveMessage } from '../../actions/message_actions';
-
+import { receiveMessage, fetchChannelMessages } from '../../actions/message_actions';
+import { getChannel } from '../../actions/channel_actions';
 
 const mSTP = (state, ownProps) => {
-	debugger
+	// debugger
 	return {
 		messages: Object.values(state.entities.messages),
+		channel: state.entities.channels,
+		currentUserId: state.session.id,
+		currentUser: state.entities.users[state.session.id]
 		
 	}
 
 }
 
 const mDTP = dispatch => ({
-	receiveMessage: message => dispatch(receiveMessage(message))
+	receiveMessage: message => dispatch(receiveMessage(message)),
+	getChannel: id => dispatch(getChannel(id)),
+	fetchChannelMessages: channelId => dispatch(fetchChannelMessages(channelId))
+
 })
 
 export default connect(mSTP, mDTP)(ChatRoom)

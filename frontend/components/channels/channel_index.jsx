@@ -26,7 +26,7 @@ class ChannelIndex extends React.Component {
 		// debugger
 		channels.map(channel => {
 			serverChannels.push(
-				<li key={channel.id} id={channel.id}>
+				<li className="channelList" key={channel.id} id={channel.id}>
 					{`${channel.channel_name}`}
 				</li>
 			)

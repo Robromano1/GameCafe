@@ -6,6 +6,12 @@
 	margin: 2px;
 	padding: 5px;
 	list-style: decimal;
+	color: #dcddde;
+	user-select: text;
+	margin-left: -72px;
+	padding-left: 72px;
+	overflow: hidden;
+	text-indent: 0;
 }
 
 .chatroom-container {

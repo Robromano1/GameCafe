@@ -85,9 +85,8 @@ class ChatRoom extends React.Component {
 	}
 
 	render() {
-		debugger
 		const messageList = this.props.messages.map(message => {
-			debugger
+			// debugger
 			return (
 				<li key={`${message.id}`} className="messageLi">
 					{message.body}
@@ -95,9 +94,11 @@ class ChatRoom extends React.Component {
 				</li>
 			)
 		});
+		debugger
 		return (
 			<>
-				<div>#general</div>
+				<div className="chatTitle">Welcome</div>
+				
 				<div className="message-list">
 					{messageList}
 				</div>

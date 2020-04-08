@@ -75,6 +75,10 @@ class ChatRoom extends React.Component {
 		}
 
 		this.chatRoom()
+		// debugger
+		if (this.bottom.current) {
+			this.bottom.current.scrollIntoView();
+		}
 		// const channelId = this.props.match.params.channelId
 		// this.props.getChannel(channelId)
 		// 	.then(() => this.props.fetchChannelMessages(channelId))
@@ -88,10 +92,10 @@ class ChatRoom extends React.Component {
 		const messageList = this.props.messages.map(message => {
 			// debugger
 			return (
-				<li key={`${message.id}`} className="messageLi">
+				<div key={`${message.id}`} className="messageLi">
 					{message.body}
 					<div ref={this.bottom}/>
-				</li>
+				</div>
 			)
 		});
 		debugger

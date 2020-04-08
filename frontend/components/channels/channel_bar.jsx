@@ -10,36 +10,22 @@ class ChannelBar extends React.Component {
 
 	}
 
-	componentDidMount() {
-		// this.props.getUserChannels();
-		//this.props.getUserChannel(this.props.currentUser.id);
-		//<ServerBarContainer/>
-		//const { getServerChannels } = this.props;
+	// componentDidMount() {
+	// 	// this.props.getUserChannels();
+	// 	//this.props.getUserChannel(this.props.currentUser.id);
+	// 	//<ServerBarContainer/>
+	// 	//const { getServerChannels } = this.props;
 	
-		//const serverId = this.props.match.params.serverId
-		// const serverId = Object.values(this.props.server)[0].id
+	// 	//const serverId = this.props.match.params.serverId
+	// 	// const serverId = Object.values(this.props.server)[0].id
 		
-		// if (serverId) {
-		// 	getServerChannels(serverId);
-		// }
-	}
+	// 	// if (serverId) {
+	// 	// 	getServerChannels(serverId);
+	// 	// }
+	// }
 
 	render() {
 		return (
-			// <div className="base">
-			// 	<div className="content-1">
-			// 		<div className="sidebar">
-			// 			<div className="serverChannels">
-			// 				<div className="searchBar">
-			// 					<ChannelIndexContainer/>
-			// 					<button type="button" className="searchButton">Find or start a conversation</button>
-			// 				</div>
-			// 				<div className="scrollWrap scrollTheme">
-			// 				</div>
-			// 			</div>
-			// 		</div>
-			// 	</div>
-			// </div>
 			<>
 				<ChannelIndexContainer/>
 			</>

@@ -12,13 +12,11 @@ const mSTP = (state, ownProps) => {
 		currentUserId: state.session.id,
 		currentUser: state.entities.users[state.session.id]
 		
-		// channelId: state.entities.channels[ownProps.match.params.channelId]
 	})
 };
 
 const mDTP = (dispatch) => ({
 	getChannel: id => dispatch(getChannel(id)),
-	//getUserChannel: userId => dispatch(getUserChannel(userId)),
 	destroyChannel: id => dispatch(destroyChannel(id)),
 	fetchChannelMessages: channelId => dispatch(fetchChannelMessages(channelId))
 });

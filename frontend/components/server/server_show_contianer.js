@@ -7,7 +7,6 @@ const mSTP = (state, ownProps) => {
 
 	return ({
 		server: state.entities.servers,
-		//servers: state.entities.servers,
 		channels: state.entities.channels,
 		users: state.entities.users,
 		currentUserId: state.session.id,

@@ -40,15 +40,6 @@ class ServerShow extends React.Component {
 			return <></>;
 		}
 		return (
-			// <div className="base">
-			// 	<div className="content-1">
-			// 		<div className="sidebar">
-			// 			<div className="serverChannels">
-			// 				<ChannelBarContainer/>
-			// 			</div>
-			// 		</div>
-			// 	</div>
-			// </div>
 			<>
 				<ChannelBarContainer/>
 			</>

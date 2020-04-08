@@ -42,10 +42,6 @@ class ChatRoom extends React.Component {
 				received: data => {
 					// Instead of setting local this.state, dispatch action to update store
 					
-					// this.setState({
-					// 	// messages: this.state.messages.concat(JSON.parse(data.message))
-					// });
-					//this.props.requestMessage(data.message)
 					this.props.receiveMessage(JSON.parse(data.message))
 					// break
 				},
@@ -57,15 +53,12 @@ class ChatRoom extends React.Component {
 
 	}
 
-	// componentDidUpdate() {
+	componentDidUpdate() {
 	
-	// 	// if (this.bottom) {
-	// 	// 	this.bottom.current.scrollIntoView();
-	// 	// }
-
-
-		
-	// }
+		if (this.bottom) {
+			this.bottom.current.scrollIntoView();
+		}
+	}
 
 	componentDidUpdate(prevProps) {
 		if (!prevProps.channel || parseInt(this.props.match.params.channelId) !== prevProps.channel.id) {

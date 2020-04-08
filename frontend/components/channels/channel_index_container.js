@@ -12,9 +12,6 @@ const mSTP = state => {
 
 const mDTP = dispatch => ({
 	getServerChannels: serverId => dispatch(getServerChannels(serverId))
-	// getChannels: () => dispatch(getChannels(channels)),
-	// getUserChannel: userId => dispatch(getUserChannel(userId))
-	//logout: () => dispatch(logout())
 }); 
 
 export default connect(mSTP, mDTP)(ChannelIndex)

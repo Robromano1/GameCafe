@@ -82,15 +82,15 @@ class ChatRoom extends React.Component {
 	}
 
 	render() {
-		debugger
+		
 		let messageList;
 		if (this.props.messages && this.props.user){
 			messageList = this.props.messages.map(message => {
-				debugger
+				
 				return (
 					<div key={`${message.id}`} className="messageLi">
 						<div className="username">
-							{this.props.user[message.user_id].username}
+							{message.user_id}
 						</div>
 						{message.body}
 						<div ref={this.bottom}/>

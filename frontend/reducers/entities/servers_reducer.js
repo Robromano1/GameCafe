@@ -2,12 +2,11 @@ import { RECEIVE_ALL_SERVERS, RECEIVE_USER_SERVERS, RECEIVE_SERVER, REMOVE_SERVE
 import { merge } from 'lodash';
 
 const serversReducer = (state = {}, action) => {
-	// debugger
+
 	Object.freeze(state);
 	let newState;
 	switch(action.type) {
 		case RECEIVE_ALL_SERVERS:
-			//  debugger
 			return merge({}, action.servers);
 		case RECEIVE_SERVER:
 			

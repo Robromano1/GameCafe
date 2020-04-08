@@ -11,9 +11,8 @@ class ServerShow extends React.Component {
 	componentDidMount() {
 
 		const { getServerChannels, fetchServer } = this.props;
-		// debugger
 		const serverId = parseInt(this.props.match.params.serverId);
-		// debugger
+		
 		if(serverId) {
 			fetchServer(serverId)
 				.then(() => getServerChannels(serverId));
@@ -22,9 +21,8 @@ class ServerShow extends React.Component {
 	}
 
 	componentDidUpdate(prevProps) {
-		// debugger
-		if (prevProps.match.params.serverId != this.props.match.params.serverId) {
-			// debugger
+		
+		if (prevProps.match.params.serverId != this.props.match.params.serverId) {	
 			const { getServerChannels, fetchServer } = this.props;
 			const serverId = parseInt(this.props.match.params.serverId);
 		
@@ -37,7 +35,7 @@ class ServerShow extends React.Component {
 	
 
 	render() {
-		//debugger
+	
 		if(Object.keys(this.props.server).length === 0) {
 			return <></>;
 		}

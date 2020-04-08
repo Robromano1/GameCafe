@@ -13,7 +13,7 @@ class ChannelShow extends React.Component {
 	}
 
 	// chatRoom() {
-	// 	debugger
+
 	// 	App.currentChannel = App.cable.subscriptions.create(
 	// 		{
 	// 			channel: "ChatChannel",
@@ -35,12 +35,12 @@ class ChannelShow extends React.Component {
 	// };
 
 	componentDidMount() {
-		// debugger
+		
 		//fetch messages
 		const { getChannel, fetchChannelMessages } = this.props;
-		// debugger
+		
 		const channelId = parseInt(this.props.match.params.channelId);
-		//debugger
+	
 		// this.chatRoom();
 
 		if (channelId) {
@@ -50,9 +50,9 @@ class ChannelShow extends React.Component {
 	}
 
 	componentDidUpdate(prevProps) {
-		// debugger
+		
 		if(prevProps.match.params.channelId != this.props.match.params.channelId) {
-			// debugger
+			
 			const { getChannel, fetchChannelMessages } = this.props;
 			const channelId = parseInt(this.props.match.params.channelId);
 	

@@ -13,7 +13,7 @@ class ChannelIndex extends React.Component {
 	// 	//this.props.getUserChannel(this.props.currentUser.id);
 	// 	//<ServerBarContainer/>
 	// 	const { getServerChannels } = this.props;
-	// 	//debugger
+	
 	// 	const serverId = this.props.match.params.serverId
 	// 	if (serverId) {
 	// 		getServerChannels(serverId);
@@ -23,7 +23,7 @@ class ChannelIndex extends React.Component {
 	render() {
 		let { channels } = this.props;
 		let serverChannels = [];
-		// debugger
+	
 		channels.map(channel => {
 			serverChannels.push(
 				<li className="channelList" key={channel.id} id={channel.id}>

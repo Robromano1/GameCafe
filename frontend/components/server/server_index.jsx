@@ -21,16 +21,16 @@ class ServerIndex extends React.Component {
 			})
 	};
 
-	goToServer() {
-		<ServerShowContainer/>
-	}
+	// goToServer() {
+	// 	<ServerShowContainer/>
+	// }
 
 	render() {
 		let { servers } = this.props;
 		let userServers = [];
-		// debugger
+
 		servers.map(serv => {
-			// debugger
+	
 			userServers.push(
 			<li key={serv.id} id={serv.id}>
 				<Link to={`/channels/${serv.id}/${serv.channel_ids[0]}`}>
@@ -53,7 +53,7 @@ class ServerIndex extends React.Component {
 								</div>
 								<div className="listItemWrapper">
 									<div className="logoWrapper">
-										{/* Add logo image with link to home */}
+										<img className="svg-1" src="https://image.flaticon.com/icons/svg/1385/1385594.svg" />
 									</div>
 								</div>
 							</div>

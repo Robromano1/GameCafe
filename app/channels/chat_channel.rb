@@ -10,10 +10,8 @@ class ChatChannel < ApplicationCable::Channel
   def speak(data)
     #message = Message.create({body: data['message'], user_id: 1, channel_id: 1})
     #Action cable only allows broadcast of objects, not strings
-    # debugger
     message = @chat_channel.messages.new(body: data['message'])
     message.user_id = current_user.id
-    # debugger
     
     if message.save! 
       socket = { message: message.to_json, type: 'message'}

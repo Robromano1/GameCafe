@@ -50,7 +50,6 @@ export const destroyServer = serverId => dispatch => (
 );
 
 // export const deleteServer = serverId = dispatch => {
-// 	debugger
 // 	return (
 // 		ServerApiUtil.deleteServer(serverId)
 // 			.then(() => dispatch(removeServer()))

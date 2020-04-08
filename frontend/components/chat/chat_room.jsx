@@ -13,7 +13,7 @@ class ChatRoom extends React.Component {
 	}
 
 	chatRoom() {
-		// debugger
+		
 		App.currentChannel = App.cable.subscriptions.create(
 			{
 				channel: "ChatChannel",
@@ -58,7 +58,7 @@ class ChatRoom extends React.Component {
 	}
 
 	// componentDidUpdate() {
-	// 	//debugger
+	
 	// 	// if (this.bottom) {
 	// 	// 	this.bottom.current.scrollIntoView();
 	// 	// }
@@ -75,7 +75,7 @@ class ChatRoom extends React.Component {
 		}
 
 		this.chatRoom()
-		// debugger
+	
 		if (this.bottom.current) {
 			this.bottom.current.scrollIntoView();
 		}
@@ -90,15 +90,18 @@ class ChatRoom extends React.Component {
 
 	render() {
 		const messageList = this.props.messages.map(message => {
-			// debugger
+		
 			return (
 				<div key={`${message.id}`} className="messageLi">
+					{/* <div className="username">
+						{this.props.currentUser.username}
+					</div> */}
 					{message.body}
 					<div ref={this.bottom}/>
 				</div>
 			)
 		});
-		debugger
+	
 		return (
 			<>
 				<div className="chatTitle">Welcome</div>

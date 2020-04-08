@@ -86,7 +86,7 @@ class SessionForm extends React.Component {
                          </div>
         
         let errors = "";
-        const inputs = document.getElementsByClassName('input');
+        const inputs = document.getElementsByClassName('session-form-input');
 
         if(this.props.errors.length) {
             errors = this.props.errors.map(error => {
@@ -94,6 +94,7 @@ class SessionForm extends React.Component {
                     <p className="errors">{error}</p>
                 )
             })
+            
             for(let i = 0; i < inputs.length; i++) {
                 inputs[i].classList.add("error");
             }
@@ -101,6 +102,57 @@ class SessionForm extends React.Component {
             for(let i = 0; i < inputs.length; i++) {
                 if(inputs[i].classList.contains("error")) {
                     inputs[i].classList.remove("error");
+                }
+            }
+        }
+
+        let signupErrors = this.props.errors;
+        let emailError, usernameError, passError;
+        if (
+            signupErrors[0] == "This field is required" &&
+            signupErrors[1] == "This field is required" &&
+            signupErrors[2] == "This field is required"
+        ) {
+            emailError = signupErrors[0];
+            usernameError = signupErrors[1];
+            passError = signupErrors[2];
+        }
+
+        const emailErrorStyle = document.getElementsByClassName("email-section")
+        if(this.props.errors.length) {
+            for(let i = 0; i < emailErrorStyle.length; i++) {
+                emailErrorStyle[i].classList.add("emailError")
+            }
+        } else {
+            for(let i = 0; i < emailErrorStyle.length; i++) {
+                if(emailErrorStyle[i].classList.contains("emailError")){
+                    emailErrorStyle[i].classList.remove("emailError")
+                }
+            }
+        }
+
+        const usernameErrorStyle = document.getElementsByClassName("username-section")
+        if (this.props.errors.length) {
+            for (let i = 0; i < usernameErrorStyle.length; i++) {
+                usernameErrorStyle[i].classList.add("usernameError")
+            }
+        } else {
+            for (let i = 0; i < usernameErrorStyle.length; i++) {
+                if (usernameErrorStyle[i].classList.contains("usernameError")) {
+                    usernameErrorStyle[i].classList.remove("usernameError")
+                }
+            }
+        }
+
+        const passErrorStyle = document.getElementsByClassName("pass-section")
+        if (this.props.errors.length) {
+            for (let i = 0; i < passErrorStyle.length; i++) {
+                passErrorStyle[i].classList.add("passError")
+            }
+        } else {
+            for (let i = 0; i < passErrorStyle.length; i++) {
+                if (passErrorStyle[i].classList.contains("passError")) {
+                    passErrorStyle[i].classList.remove("passError")
                 }
             }
         }
@@ -114,12 +166,13 @@ class SessionForm extends React.Component {
                     </h1> */}
                     <div className="signup-form-container theme-dark">
                         <form onSubmit={this.handleSubmit}>
-                            {errors}
+                            {/* {errors} */}
 
                             <h2 className="signup-message">{title}</h2>
                             <div className="input-wrapper">
                                 <div className="email-field">
                                     <h5>EMAIL</h5>
+                                    <div className="errors email-section">{emailError}</div>
                                         <input 
                                             id="session-form-email-input"
                                             className="session-form-input"
@@ -130,6 +183,7 @@ class SessionForm extends React.Component {
                                 </div>
                                 <div className="username-field">
                                     <h5>USERNAME</h5>
+                                    <div className="errors username-section">{usernameError}</div>
                                         <input 
                                             id="session-form-username-input"
                                             className="session-form-input"
@@ -140,6 +194,7 @@ class SessionForm extends React.Component {
                                 </div>
                                 <div className="password-field">
                                     <h5>PASSWORD</h5>
+                                    <div className="errors pass-section">{passError}</div>
                                         <input 
                                             id="session-form-password-input"
                                             className="session-form-input"
@@ -186,6 +241,7 @@ class SessionForm extends React.Component {
                                     <h5>EMAIL</h5>
                                         <input 
                                             id="session-form-email-input"
+                                            className="session-form-input"
                                             type="email"
                                             value={this.state.email}
                                             onChange={this.update('email')} 
@@ -195,6 +251,7 @@ class SessionForm extends React.Component {
                                     <h5>PASSWORD</h5>
                                         <input 
                                             id="session-form-password-input"
+                                            className="session-form-input"
                                             type="password"
                                             value={this.state.password}
                                             onChange={this.update('password')} 

@@ -10,7 +10,7 @@ class Api::ServersController < ApplicationController
 			
 			@servers = User.find(user_id).servers.all
 			if @servers 
-				# debugger
+				
 				render :index 
 			else
 				render json: @servers.errors.full_messages, status: 422
@@ -27,7 +27,7 @@ class Api::ServersController < ApplicationController
 
 	def show
 		@server = Server.find(params[:id])
-		# debugger
+		
 		if @server
 			render :show
 		else
@@ -36,7 +36,7 @@ class Api::ServersController < ApplicationController
 	end
 
 	def create
-		# debugger
+		
 			if server_params[:server_name] == ""
 			render json: ["This field is required"], status: 422
 		else

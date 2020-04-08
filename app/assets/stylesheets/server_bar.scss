@@ -73,6 +73,7 @@
 	height: 48px;
 	position: relative;
 	cursor: pointer;
+	
 }
 
 .svg-1 {
@@ -238,9 +239,16 @@
 	flex: 1 1 auto;
 	overflow-y: scroll;
 	height: auto;
+	margin-left: 10px;
+	font-family: "Roboto", sans-serif;
 	
 	// overflow: hidden;
   
+}
+
+.username {
+	font-size: 14px;
+	color: #8E9297;
 }
 
 .messageLi {

@@ -7,25 +7,25 @@ import ServerIndexContainer from './server_index_container'
 class ServerBar extends React.Component {
 	constructor(props) {
 		super(props);
-		//debugger
+
 		// console.log(this.props);
 		// this.handleLogout = this.handleLogout.bind(this);
 	}
 
 	componentDidMount() {
-		// debugger
+	
 		this.props.fetchUserServers(this.props.currentUser.id)
 			.then(request => {
-				// debugger
+			
 				if(!this.props.match.params.serverId) {
-					// debugger
+				
 					this.props.history.push(`/channels/${Object.values(request.servers)[0].id}/${Object.values(request.servers)[0].channel_ids[0]}`)
 				}
 			});
 	}
 
 	render() {
-		// debugger
+	
 		return (
 			<ServerIndexContainer />
 			// <div id="app-mount" className="appMount">

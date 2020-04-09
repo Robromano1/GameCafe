@@ -90,7 +90,7 @@ class ChatRoom extends React.Component {
 				return (
 					<div key={`${message.id}`} className="messageLi">
 						<div className="username">
-							{message.user_id}
+							{message.user.username}
 						</div>
 						{message.body}
 						<div ref={this.bottom}/>

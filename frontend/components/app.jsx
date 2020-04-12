@@ -10,6 +10,7 @@ import ChannelBarContainer from './channels/channel_bar_container';
 import ChannelShowContainer from './channels/channel_show_container';
 import ServerShowContainer from './server/server_show_contianer';
 import Me from './me/me';
+import ServerFormContainer from './server/server_form_container';
 import {
     Route,
     Redirect,
@@ -50,6 +51,7 @@ const App = () => (
             <AuthRoute exact path="/login" component={LogInFormContainer}/>
             <AuthRoute exact path="/signup" component={SignUpFormContainer}/>
             <Route path="/channels" component={Me}/>
+            <Route path="/create/server" component={ServerFormContainer}/>
             {/* <Route exact path={["/channels/", "/channels/:serverId"]} component={ServerContainer} /> */}
             {/* <Route exact path="/channels/:serverId" component={ServerContainer} /> */}
             

@@ -4,6 +4,7 @@ import ChatRoomContainer from '../chat/chat_room_container';
 import ServerShowContainer from '../server/server_show_contianer';
 import { getChannel } from '../../util/channel_api_util';
 import App from '../app';
+import Modal from '../server/server_form_container';
 
 class ChannelShow extends React.Component {
 	constructor(props) {

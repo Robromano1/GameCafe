@@ -51,7 +51,6 @@ const App = () => (
             <AuthRoute exact path="/login" component={LogInFormContainer}/>
             <AuthRoute exact path="/signup" component={SignUpFormContainer}/>
             <Route path="/channels" component={Me}/>
-            <Route path="/create/server" component={ServerFormContainer}/>
             {/* <Route exact path={["/channels/", "/channels/:serverId"]} component={ServerContainer} /> */}
             {/* <Route exact path="/channels/:serverId" component={ServerContainer} /> */}
             

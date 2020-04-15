@@ -6,9 +6,10 @@ class ServerForm extends React.Component {
 		super(props);
 
 		this.state = this.props.server;
-
+		
 		this.openModal = this.openModal.bind(this);
 		this.closeModal = this.closeModal.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	handleSubmit(e) {
@@ -19,7 +20,9 @@ class ServerForm extends React.Component {
 	};
 
 	update(field) {
-		e => this.setState({[field]: e.target.value})
+		return e => {
+			this.setState({[field]: e.target.value})
+		}
 	};
 
 	openModal(e) {
@@ -63,6 +66,7 @@ class ServerForm extends React.Component {
 	// }
 
 	render() {
+		debugger
 		return(
 			<>
 				{/* <button id="modalBtn" className="modal-button" onClick={this.openModal}>+</button> */}
@@ -77,6 +81,9 @@ class ServerForm extends React.Component {
 								<input type="text"
 											 className="serverName"
 											 placeholder="Enter a server name"
+										   value={this.state.server_name}
+											 onChange={this.update('server_name')}
+											  
 								/>
 							</label>
 							<div className="formFooter">

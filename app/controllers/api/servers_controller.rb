@@ -36,18 +36,21 @@ class Api::ServersController < ApplicationController
 	end
 
 	def create
-		
-			if server_params[:server_name] == ""
-			render json: ["This field is required"], status: 422
+			# debugger
+		# if server_params[:server_name] == ""
+		# 	render json: ["This field is required"], status: 422
+		# else
+		@server = Server.new(server_params)
+		# debugger
+		@server.admin_id = current_user.id 
+
+		if @server.save 
+			@server.members << current_user
+				
+			# @server.channels << Channel.new({channel_name: 'general', server_id: @server.id, description: 'general channel'})
+			render :show 
 		else
-			@server = Server.new(server_params)
-			@server.admin_id = current_user.id 
-			if @server.save 
-				@server.members << current_user
-				render :show 
-			else
-				render json: @server.errors.full_messages, status: 422
-			end
+			render json: @server.errors.full_messages, status: 422
 		end
 	end
 

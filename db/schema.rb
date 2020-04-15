@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_18_224443) do
+ActiveRecord::Schema.define(version: 2020_04_15_210530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,9 +45,9 @@ ActiveRecord::Schema.define(version: 2020_02_18_224443) do
   create_table "servers", force: :cascade do |t|
     t.string "server_name", null: false
     t.integer "admin_id", null: false
-    t.string "description", null: false
-    t.string "server_image", null: false
-    t.boolean "private", null: false
+    t.string "description"
+    t.string "server_image"
+    t.boolean "private"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["admin_id"], name: "index_servers_on_admin_id"

@@ -98,6 +98,10 @@
   // height: 40px;
 }
 
+.serverName:focus {
+	outline: none;
+}
+
 .formFooter {
 	flex: 0 0 auto;
 	background-color: #f6f6f7;

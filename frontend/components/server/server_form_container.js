@@ -5,13 +5,11 @@ import { createServer } from '../../actions/server_actions';
 const mSTP = state => ({
 	server: {
 		server_name: "",
-		description: "",
-		server_image: false,
-		private: false,
-		admin_id: "",
-		channel_ids: []
+		description: "Change this description",
+		server_image: true,
+		admin_id: state.entities.users[state.session.id].id
 	},
-	formType: "Create"
+	
 });
 
 const mDTP = dispatch => ({

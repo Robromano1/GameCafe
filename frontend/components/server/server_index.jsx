@@ -14,6 +14,7 @@ class ServerIndex extends React.Component {
 
     this.handleLogout = this.handleLogout.bind(this);
     this.openModal = this.openModal.bind(this);
+    this.selected = this.selected.bind(this);
     // this.clsoeModal = this.clsoeModal.bind(this);
     //this.openModal = this.openModal.bind(this);
     // this.modal = this.modal.bind(this);
@@ -82,15 +83,25 @@ class ServerIndex extends React.Component {
   //   modal.style.display = "block";
   // }
 
+  selected() {
+   let serverList = document.getElementById('serverList')
+  //  debugger
+   if (!serverList.classList.contains('selected')) {
+     serverList.classList.add('selected')
+   } else {
+     serverList.classList.remove('selected')
+   }
+  }
+
   render() {
     let { servers } = this.props;
     let userServers = [];
 
     servers.map((serv) => {
       userServers.push(
-        <li key={serv.id} id={serv.id}>
+        <li key={serv.id} id={serv.id} className="serverLis">
           <Link to={`/channels/${serv.id}/${serv.channel_ids[0]}`}>
-            {`${serv.server_name[0]}`}
+            <span id="serverList" onClick={this.selected}>{`${serv.server_name[0]}`}</span>
           </Link>
         </li>
       );

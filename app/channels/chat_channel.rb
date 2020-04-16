@@ -14,7 +14,14 @@ class ChatChannel < ApplicationCable::Channel
     message.user_id = current_user.id
     
     if message.save! 
-      socket = { message: message.to_json, type: 'message'}
+      msg = {
+        body: message.body, 
+        user_id: message.user_id, 
+        channel_id: message.channel_id,
+        user: { username: current_user.username },
+        created_at: message.created_at
+      }
+      socket = { message: msg.to_json, type: 'message'}
       ChatChannel.broadcast_to(@chat_channel, socket)
     end
   end

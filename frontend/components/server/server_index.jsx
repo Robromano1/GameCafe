@@ -28,6 +28,7 @@ class ServerIndex extends React.Component {
   }
 
   openModal(e) {
+    e.stopPropagation();
     const modal = document.getElementById('serverModal')
     modal.style.display = 'block';
     // e.stopPropagation();
@@ -41,6 +42,7 @@ class ServerIndex extends React.Component {
   };
 
   closeModal(e) {
+    e.stopPropagation();
     // e.preventDefault();
     const modal = document.getElementById('serverModal')
     // debugger
@@ -137,7 +139,7 @@ class ServerIndex extends React.Component {
                 </div>
               </div>
             </div>
-            {/* <div className="listItem addServer" onClick={this.openModal}>+</div> */}
+            <div className="listItem addServer" onClick={this.openModal}>+</div>
             <button
               className="logoutButton"
               type="submit"
@@ -148,7 +150,7 @@ class ServerIndex extends React.Component {
           </div>
         </div>
 
-        {/* <ServerFormContainer/> */}
+        <ServerFormContainer/>
         <ServerShowContainer />
       </>
     );

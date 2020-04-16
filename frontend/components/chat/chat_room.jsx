@@ -53,12 +53,12 @@ class ChatRoom extends React.Component {
 
 	}
 
-	componentDidUpdate() {
+	// componentDidUpdate() {
 	
-		if (this.bottom) {
-			this.bottom.current.scrollIntoView();
-		}
-	}
+	// 	if (this.bottom) {
+	// 		this.bottom.current.scrollIntoView();
+	// 	}
+	// }
 
 	componentDidUpdate(prevProps) {
 		if (!prevProps.channel || parseInt(this.props.match.params.channelId) !== prevProps.channel.id) {

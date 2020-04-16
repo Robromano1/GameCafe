@@ -19,15 +19,14 @@ class Api::ChannelsController < ApplicationController
 	end
 
 	def create
-		if channel_params[:channel_name] == ""
-			render json: ["This field is required"]
+		# if channel_params[:channel_name] == "", status: 422
+		# 	render json: ["This field is required"]
+		# else
+		@channel = Channel.new(channel_params)
+		if @channel.save
+			render :show
 		else
-			@channel = Channel.new(channel_params)
-			if @channel.save
-				render :show
-			else
-				render json: @channel.errors.full_messages, status: 402
-			end
+			render json: @channel.errors.full_messages, status: 402
 		end
 	end
 

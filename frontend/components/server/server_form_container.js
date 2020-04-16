@@ -7,7 +7,7 @@ const mSTP = state => ({
 		server_name: "",
 		description: "Change this description",
 		server_image: true,
-		admin_id: state.entities.users[state.session.id].id
+		// admin_id: state.entities.users[state.session.id].id
 	},
 	
 });

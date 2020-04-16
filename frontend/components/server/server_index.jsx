@@ -137,7 +137,7 @@ class ServerIndex extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="listItem addServer" onClick={this.openModal}>+</div>
+            {/* <div className="listItem addServer" onClick={this.openModal}>+</div> */}
             <button
               className="logoutButton"
               type="submit"
@@ -148,7 +148,7 @@ class ServerIndex extends React.Component {
           </div>
         </div>
 
-        <ServerFormContainer/>
+        {/* <ServerFormContainer/> */}
         <ServerShowContainer />
       </>
     );

@@ -14,7 +14,7 @@ class ServerForm extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-
+		
 		this.props.createServer(this.state)
 			.then(this.props.history.push('/channels'))
 	};
@@ -66,7 +66,7 @@ class ServerForm extends React.Component {
 	// }
 
 	render() {
-		debugger
+		// debugger
 		return(
 			<>
 				{/* <button id="modalBtn" className="modal-button" onClick={this.openModal}>+</button> */}

@@ -84,6 +84,7 @@ class ChatRoom extends React.Component {
 	render() {
 		
 		let messageList;
+		
 		if (this.props.messages && this.props.user){
 			messageList = this.props.messages.map(message => {
 				

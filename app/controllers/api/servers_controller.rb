@@ -46,8 +46,8 @@ class Api::ServersController < ApplicationController
 
 		if @server.save 
 			@server.members << current_user
-				
-			# @server.channels << Channel.new({channel_name: 'general', server_id: @server.id, description: 'general channel'})
+			
+			@server.channels << Channel.new({channel_name: 'general', server_id: @server.id, description: 'general channel'})
 			render :show 
 		else
 			render json: @server.errors.full_messages, status: 422

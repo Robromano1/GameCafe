@@ -48,7 +48,7 @@ class ServerForm extends React.Component {
     }
     // // e.preventDefault();
     const modal = document.getElementById("serverModal");
-    // debugger
+    
     modal.style.display = "none";
 
     // e.stopPropagation();
@@ -73,7 +73,7 @@ class ServerForm extends React.Component {
   // }
 
   render() {
-    // debugger
+   
     return (
       <>
         {/* <button id="modalBtn" className="modal-button" onClick={this.openModal}>+</button> */}

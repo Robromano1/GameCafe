@@ -45,7 +45,7 @@ class ServerIndex extends React.Component {
     e.stopPropagation();
     // e.preventDefault();
     const modal = document.getElementById('serverModal')
-    // debugger
+    
     modal.style.display = 'none';
 
     // e.stopPropagation();
@@ -62,7 +62,7 @@ class ServerIndex extends React.Component {
   //   e.stopPropagation();
 
   //   const modalNode = document.getElementsByClassName('modalWrapper')[0];
-  //   debugger
+  
   //   if (!modalNode.classList.contains('modal-content')) {
   //     modalNode.classList.add('modal-content')
   //   } else {
@@ -87,7 +87,7 @@ class ServerIndex extends React.Component {
 
   selected() {
    let serverList = document.getElementById('serverList')
-  //  debugger
+ 
    if (!serverList.classList.contains('selected')) {
      serverList.classList.add('selected')
    } else {

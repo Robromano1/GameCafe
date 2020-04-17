@@ -139,14 +139,16 @@ class ServerIndex extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="listItem addServer" onClick={this.openModal}>+</div>
-            <button
-              className="logoutButton"
-              type="submit"
-              onClick={this.handleLogout}
-              >
-              Logout
-            </button>
+            <div className="logoutContainer">
+              <div className="listItem addServer" onClick={this.openModal}>+</div>
+              <button
+                className="logoutButton"
+                type="submit"
+                onClick={this.handleLogout}
+                >
+                Logout
+              </button>
+            </div>
           </div>
         </div>
 

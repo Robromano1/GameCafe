@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import ChannelShowContainer from './channel_show_container';
 import ServerBarContainer from '../server/server_bar_container';
+import ChannelFormContainer from './channel_form_container';
 
 class ChannelIndex extends React.Component {
   constructor(props) {
@@ -49,11 +50,12 @@ class ChannelIndex extends React.Component {
             <div className="serverChannels">
               <ul>{serverChannels}</ul>
             </div>
-            <div className="listItem addServer" onClick={this.openModal}>
-              +
+            <div className="newChannel" onClick={this.openModal}>
+              NEW CHANNEL
             </div>
           </div>
-          <ChannelShowContainer />z
+          <ChannelFormContainer/>
+          <ChannelShowContainer />
         </div>
       </div>
     );

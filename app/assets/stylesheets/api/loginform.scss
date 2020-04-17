@@ -143,3 +143,21 @@
 .error {
     border: 1px solid red;
 }
+
+.session-form-input {
+	font-size: 16px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	border-radius: 3px;
+	color: var(--text-normal);
+	background-color: var(--deprecated-text-input-bg);
+	border: 1px solid var(--deprecated-text-input-border);
+	-webkit-transition: border-color .2s ease-in-out;
+	transition: border-color .2s ease-in-out;
+}
+
+.session-form-input:focus {
+	outline: none;
+	border-color: #7289da;
+}

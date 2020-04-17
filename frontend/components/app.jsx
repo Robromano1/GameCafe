@@ -11,6 +11,7 @@ import ChannelShowContainer from './channels/channel_show_container';
 import ServerShowContainer from './server/server_show_contianer';
 import Me from './me/me';
 import ServerFormContainer from './server/server_form_container';
+import ChannelFormContainer from './channels/channel_form_container';
 import {
     Route,
     Redirect,

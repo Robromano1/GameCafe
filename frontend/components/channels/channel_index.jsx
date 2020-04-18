@@ -22,11 +22,13 @@ class ChannelIndex extends React.Component {
   // }
 
   openModal(e) {
+    e.stopPropagation();
     const modal = document.getElementById("channelModal");
     modal.style.display = "block";
   }
 
   closeModal(e) {
+    e.stopPropagation();
     const modal = document.getElementById("channelModal");
     modal.style.display = "none";
   }
@@ -54,8 +56,8 @@ class ChannelIndex extends React.Component {
               NEW CHANNEL
             </div>
           </div>
-          <ChannelFormContainer/>
           <ChannelShowContainer />
+          <ChannelFormContainer/>
         </div>
       </div>
     );

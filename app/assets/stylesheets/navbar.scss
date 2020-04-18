@@ -64,7 +64,7 @@ a {
 }
 
 a:-webkit-any-link {
-	color: -webkit-link;
+	// color: -webkit-link;
   cursor: pointer;
 }
 
@@ -104,7 +104,7 @@ li {
 	text-align: -webkit-match-parent;
 }
 
-.desktopMenuMore {
+.desktopMenuMore > a {
 	color: #fff;
 	font-size: 14px;
 	text-decoration: none;
@@ -154,6 +154,7 @@ li {
 }
 
 .navListLinkCopy {
+	color: #FFF;
 	border-radius: 3px;
 	display: block;
 	padding: 5px 10px;

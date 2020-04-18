@@ -44,7 +44,7 @@ class NavBar extends React.Component {
 									<ul className="headerNav">
 										<li tabIndex="-1" role="none" className="desktopSubMenu">
 											<span className="desktopMenuMore" role="menuItem" tabIndex="0" aria-haspopup="true" aria-expanded="false" aria-controls="subMenuDropdown">
-												Developer
+												<a href="https://robromano1.github.io/" target="_blank">Developer</a>
 												{/* <img src="https://discordapp.com/assets/779a770c34fcb823a598a7277301adaf.svg" className="dropdownArrow" alt="openNav"/> */}
 											</span>
 											<ul id="subMenuDropdown" className="moreListItems moreList" role="menu" aria-label="Developer">
@@ -61,7 +61,7 @@ class NavBar extends React.Component {
 											</ul>
 										</li>
 										<li className="desktopSubMenu">
-											<span className="navListLinkCopy">Community</span>
+											<a href="https://robromano1.github.io/" className="navListLinkCopy" target="_blank">Community</a>
 										</li>
 										<li className="desktopSubMenu">
 											<span className="navListLinkCopy">Support</span>

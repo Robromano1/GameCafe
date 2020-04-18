@@ -5,12 +5,17 @@ class ChannelForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = this.props.channel;
-
+    this.state = {
+      channel_name: "",
+      description: "default description",
+      server_id: parseInt(this.props.match.params.serverId)
+    }
+    
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    debugger
   }
 
   handleSubmit(e) {
@@ -50,6 +55,7 @@ class ChannelForm extends React.Component {
   }
 
   render() {
+    
     return (
       <>
         <div id="channelModal" className="channel-modal">

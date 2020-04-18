@@ -6,6 +6,7 @@ import ServerIndexContainer from '../server/server_index_container';
 class ServerShow extends React.Component {
 	constructor(props) {
 		super(props);
+	
 	}
 
 	componentDidMount() {

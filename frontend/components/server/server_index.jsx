@@ -103,7 +103,7 @@ class ServerIndex extends React.Component {
       userServers.push(
         <li key={serv.id} id={serv.id} className="serverLis">
           <Link to={`/channels/${serv.id}/${serv.channel_ids[0]}`}>
-            <span id="serverList" onClick={this.selected}>{`${serv.server_name[0]}`}</span>
+            <span id="serverList">{`${serv.server_name[0]}`}</span>
           </Link>
         </li>
       );

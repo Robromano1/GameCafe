@@ -4,10 +4,12 @@ class ChatChannel < ApplicationCable::Channel
     # stream_for 'chat_channel'
    
     @chat_channel = Channel.find(params[:id].to_i) 
+    
     stream_for @chat_channel
   end
 
   def speak(data)
+    
     #message = Message.create({body: data['message'], user_id: 1, channel_id: 1})
     #Action cable only allows broadcast of objects, not strings
     message = @chat_channel.messages.new(body: data['message'])

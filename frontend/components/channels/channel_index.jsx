@@ -7,6 +7,7 @@ import ChannelFormContainer from './channel_form_container';
 class ChannelIndex extends React.Component {
   constructor(props) {
     super(props);
+   
   }
 
   // componentDidMount() {
@@ -36,11 +37,15 @@ class ChannelIndex extends React.Component {
   render() {
     let { channels } = this.props;
     let serverChannels = [];
+    
+    const serverId = parseInt(this.props.match.params.serverId)
 
     channels.map((channel) => {
       serverChannels.push(
         <li className="channelList" key={channel.id} id={channel.id}>
-          {`${channel.channel_name}`}
+          <Link className="channelLink" to={`/channels/${serverId}/${channel.id}`}>
+            {`${channel.channel_name}`}
+          </Link>
         </li>
       );
     });
@@ -57,7 +62,7 @@ class ChannelIndex extends React.Component {
             </div>
           </div>
           <ChannelShowContainer />
-          <ChannelFormContainer/>
+          <ChannelFormContainer serverId={serverId}/>
         </div>
       </div>
     );

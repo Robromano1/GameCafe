@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 class ChannelForm extends React.Component {
   constructor(props) {
     super(props);
-
+ 
     this.state = {
       channel_name: "",
       description: "default description",
@@ -15,14 +15,21 @@ class ChannelForm extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
-    debugger
+    
   }
 
   handleSubmit(e) {
     e.preventDefault();
-
+    console.log(this.state.server_id)
+    console.log(this.props.match.params.serverId)
 		this.props.createChannel(this.state)
 			.then(() => this.closeModal());
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.serverId !== prevProps.match.params.serverId) {
+      this.setState({ server_id: this.props.match.params.serverId });
+    }
   }
 
   // handleSubmit(e) {
@@ -55,7 +62,7 @@ class ChannelForm extends React.Component {
   }
 
   render() {
-    
+    console.log(this.state.server_id)
     return (
       <>
         <div id="channelModal" className="channel-modal">

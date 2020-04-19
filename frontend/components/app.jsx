@@ -51,7 +51,7 @@ const App = () => (
         <Switch>
             <AuthRoute exact path="/login" component={LogInFormContainer}/>
             <AuthRoute exact path="/signup" component={SignUpFormContainer}/>
-            <Route path="/channels" component={Me}/>
+            <ProtectedRoute path="/channels" component={Me}/>
             {/* <Route exact path={["/channels/", "/channels/:serverId"]} component={ServerContainer} /> */}
             {/* <Route exact path="/channels/:serverId" component={ServerContainer} /> */}
             
@@ -59,7 +59,7 @@ const App = () => (
             {/* <Route exact path="/show/channel" component={ChannelShowContainer}/> */}
             {/* <Route exact path="/show/:serverId" component={ServerShowContainer}/> */}
             {/* <Route exact path="/channels/@me" component={ChatRoom} /> */}
-            <Route exact path="/" component={SplashPageContainer}/>
+            <AuthRoute exact path="/" component={SplashPageContainer}/>
         </Switch>
     </div>
 )

@@ -62,13 +62,13 @@ class ChatRoom extends React.Component {
 
 	componentDidUpdate(prevProps) {
 		if (!prevProps.channel || parseInt(this.props.match.params.channelId) !== prevProps.channel.id) {
-			if (App.currentChannel) {
-				App.currentChannel.unsubscribe();
-			}
+			// if (App.currentChannel) {
+			// 	// App.currentChannel.unsubscribe();
+			this.chatRoom()
+			// }
 		}
 
-		this.chatRoom()
-	
+		
 		if (this.bottom.current) {
 			this.bottom.current.scrollIntoView();
 		}

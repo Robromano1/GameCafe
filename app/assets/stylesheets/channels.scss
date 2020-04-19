@@ -8,7 +8,6 @@
 	text-align: center;
 	margin-right: 45px;
 	margin-top: 70px;
-	font-family: "Roboto", sans-serif;
 	font-size: 16px;
 	line-height: 20px;
 	font-weight: 500;
@@ -21,6 +20,12 @@
 	margin-bottom: -50px;
 }
 
+.channelList > a {
+	color: #8e9297;
+	font-family: "Roboto", sans-serif;
+}
+
 .chatTitle {
 	color: #8e9297
 }
+

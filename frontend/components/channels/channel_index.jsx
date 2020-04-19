@@ -38,7 +38,8 @@ class ChannelIndex extends React.Component {
     let { channels } = this.props;
     let serverChannels = [];
     
-    const serverId = parseInt(this.props.match.params.serverId)
+    const serverId = parseInt(this.props.match.params.serverId);
+    const channelId = parseInt(this.props.match.params.channelId);
 
     channels.map((channel) => {
       serverChannels.push(
@@ -61,7 +62,7 @@ class ChannelIndex extends React.Component {
               NEW CHANNEL
             </div>
           </div>
-          <ChannelShowContainer />
+          <ChannelShowContainer channelId={channelId}/>
           <ChannelFormContainer serverId={serverId}/>
         </div>
       </div>

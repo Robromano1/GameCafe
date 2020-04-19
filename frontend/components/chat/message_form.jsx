@@ -16,7 +16,7 @@ class MessageForm extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-		console.log(App.currentChannel);
+		// console.log(App.cable.subscriptions.subscriptions);
 		App.currentChannel.speak({ message: this.state.body });
 		// App.cable.subscriptions.subscriptions[App.cable.subscriptions.subscriptions.length - 1].speak({ message: this.state.body });
 		this.setState({ body: "" });

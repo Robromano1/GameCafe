@@ -41,7 +41,7 @@ class ChannelShow extends React.Component {
 			<div className="mainContent">
 				<div className="chatRoom">
 					<div className="chatroom-container">	
-							<ChatRoomContainer/>
+							<ChatRoomContainer channelId={this.props.channelId}/>
 					</div>
 				</div>
 			</div>

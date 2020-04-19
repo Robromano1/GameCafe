@@ -7,8 +7,8 @@ class ChannelForm extends React.Component {
  
     this.state = {
       channel_name: "",
-      description: "default description",
-      server_id: parseInt(this.props.match.params.serverId)
+      description: "default description"
+      
     }
     
     this.openModal = this.openModal.bind(this);
@@ -20,17 +20,21 @@ class ChannelForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state.server_id)
-    console.log(this.props.match.params.serverId)
-		this.props.createChannel(this.state)
+    // console.log(this.state.server_id)
+    // console.log(this.props.match.params.serverId)
+    const serverId = parseInt(this.props.location.pathname.split("/")[2]);
+   
+    const thing = Object.assign({}, this.state)
+    thing['server_id'] = serverId
+		this.props.createChannel(thing)
 			.then(() => this.closeModal());
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.match.params.serverId !== prevProps.match.params.serverId) {
-      this.setState({ server_id: this.props.match.params.serverId });
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   if (this.props.match.params.serverId !== prevProps.match.params.serverId) {
+  //     this.setState({ server_id: this.props.match.params.serverId });
+  //   }
+  // }
 
   // handleSubmit(e) {
   //   e.preventDefault();
@@ -62,7 +66,7 @@ class ChannelForm extends React.Component {
   }
 
   render() {
-    console.log(this.state.server_id)
+    // console.log(this.state.server_id)
     return (
       <>
         <div id="channelModal" className="channel-modal">

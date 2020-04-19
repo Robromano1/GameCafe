@@ -17,6 +17,7 @@ class ChatChannel < ApplicationCable::Channel
     
     if message.save! 
       msg = {
+        id: message.id,
         body: message.body, 
         user_id: message.user_id, 
         channel_id: message.channel_id,

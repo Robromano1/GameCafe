@@ -12,12 +12,27 @@ class ChatRoom extends React.Component {
 		this.chatRoom = this.chatRoom.bind(this);
 	}
 
-	chatRoom() {
+	chatRoom(channelId) {
+
+		// App.currentChannel = App.cable.subscriptions.create(
+    //   { channel: "ChatChannel", id: this.props.match.params.channelId },
+    //   {
+    //     received: (data) => {
+    //       // Instead of setting local this.state, dispatch action to update store
+
+    //       this.props.receiveMessage(JSON.parse(data.message));
+    //       // break
+    //     },
+    //     speak: function (data) {
+    //       return this.perform("speak", data);
+    //     },
+    //   }
+    // );
 		
 		App.currentChannel = App.cable.subscriptions.create(
 			{
 				channel: "ChatChannel",
-				id: parseInt(this.props.match.params.channelId),
+				id: channelId,
 				userId: this.props.currentUserId
 			},
 			{
@@ -36,20 +51,24 @@ class ChatRoom extends React.Component {
 
 	componentDidMount() {
 		//Can have own component for App.cable.subscription
-		App.currentChannel = App.cable.subscriptions.create(
-			{ channel: "ChatChannel", id: this.props.match.params.channelId },
-			{ 
-				received: data => {
-					// Instead of setting local this.state, dispatch action to update store
+		// App.currentChannel = App.cable.subscriptions.create(
+		// 	{ channel: "ChatChannel", id: this.props.match.params.channelId },
+		// 	{ 
+		// 		received: data => {
+		// 			// Instead of setting local this.state, dispatch action to update store
 					
-					this.props.receiveMessage(JSON.parse(data.message))
-					// break
-				},
-				speak: function(data) {
-					return this.perform("speak", data);
-				}
-			}
-		);
+		// 			this.props.receiveMessage(JSON.parse(data.message));
+		// 			// break
+		// 		},
+		// 		speak: function(data) {
+		// 			return this.perform("speak", data);
+		// 		}
+		// 	}
+		// );
+		if (this.props.channelId) {
+
+			this.chatRoom(this.props.channelId);
+		}
 
 	}
 
@@ -61,12 +80,14 @@ class ChatRoom extends React.Component {
 	// }
 
 	componentDidUpdate(prevProps) {
-		if (!prevProps.channel || parseInt(this.props.match.params.channelId) !== prevProps.channel.id) {
-			// if (App.currentChannel) {
-			// 	// App.currentChannel.unsubscribe();
-			this.chatRoom()
-			// }
-		}
+		
+		if (this.props.channelId && this.props.channelId !== prevProps.channelId) {
+      if (App.currentChannel) {
+        App.currentChannel.unsubscribe();
+       
+        this.chatRoom(this.props.channelId);
+      }
+    }
 
 		
 		if (this.bottom.current) {

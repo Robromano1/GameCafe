@@ -20,8 +20,6 @@ class ChannelForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // console.log(this.state.server_id)
-    // console.log(this.props.match.params.serverId)
     const serverId = parseInt(this.props.location.pathname.split("/")[2]);
    
     const thing = Object.assign({}, this.state)
@@ -66,7 +64,7 @@ class ChannelForm extends React.Component {
   }
 
   render() {
-    // console.log(this.state.server_id)
+    
     return (
       <>
         <div id="channelModal" className="channel-modal">

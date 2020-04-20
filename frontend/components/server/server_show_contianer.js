@@ -4,7 +4,7 @@ import { fetchServer, destroyServer, fetchUserServers } from '../../actions/serv
 import { getChannels, getServerChannels } from '../../actions/channel_actions';
 
 const mSTP = (state, ownProps) => {
-	// debugger
+	
 	return ({
 		server: state.entities.servers,
 		// serverId: parseInt(ownProps.match.params.serverId),

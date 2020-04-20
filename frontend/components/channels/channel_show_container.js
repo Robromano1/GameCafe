@@ -17,7 +17,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => ({
 	getChannel: id => dispatch(getChannel(id)),
-	destroyChannel: id => dispatch(destroyChannel(id)),
+	deleteChannel: id => dispatch(destroyChannel(id)),
 	fetchChannelMessages: channelId => dispatch(fetchChannelMessages(channelId))
 });
 

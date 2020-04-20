@@ -7,7 +7,11 @@ import ChannelFormContainer from './channel_form_container';
 class ChannelIndex extends React.Component {
   constructor(props) {
     super(props);
-   
+
+    // this.openModal = this.openModal.bind(this);
+    // this.closeModal = this.closeModal.bind(this);
+    // this.openDelete = this.openDelete.bind(this);
+    // this.closeDelete = this.closeDelete.bind(this);
   }
 
   // componentDidMount() {
@@ -34,17 +38,35 @@ class ChannelIndex extends React.Component {
     modal.style.display = "none";
   }
 
+  openDelete(e) {
+    e.stopPropagation();
+    const deleteModal = document.getElementById("deleteChannelModal");
+    deleteModal.style.display = "block";
+  }
+
+  closeDelete(e) {
+    if (e) {
+      e.stopPropagation();
+    }
+
+    const deleteModal = document.getElementById("deleteChannelModal");
+    deleteModal.style.display = "none";
+  }
+
   render() {
     let { channels } = this.props;
     let serverChannels = [];
-    
+
     const serverId = parseInt(this.props.match.params.serverId);
     const channelId = parseInt(this.props.match.params.channelId);
 
     channels.map((channel) => {
       serverChannels.push(
         <li className="channelList" key={channel.id} id={channel.id}>
-          <Link className="channelLink" to={`/channels/${serverId}/${channel.id}`}>
+          <Link
+            className="channelLink"
+            to={`/channels/${serverId}/${channel.id}`}
+          >
             {`${channel.channel_name}`}
           </Link>
         </li>
@@ -61,9 +83,12 @@ class ChannelIndex extends React.Component {
             <div className="newChannel" onClick={this.openModal}>
               NEW CHANNEL
             </div>
+            <div className="deleteChannel" onClick={this.openDelete}>
+              DELETE CHANNEL
+            </div>
           </div>
-          <ChannelShowContainer channelId={channelId}/>
-          <ChannelFormContainer serverId={serverId}/>
+          <ChannelShowContainer channelId={channelId} />
+          <ChannelFormContainer serverId={serverId} />
         </div>
       </div>
     );

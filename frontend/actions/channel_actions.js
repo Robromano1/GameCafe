@@ -21,9 +21,9 @@ const receiveErrors = errors => ({
 	errors
 });
 
-const deleteChannel = id => ({
+const deleteChannel = channelId => ({
 	type: DELETE_CHANNEL,
-	id
+	channelId
 });
 
 //thunk action creators
@@ -62,9 +62,9 @@ export const createChannel = channel => dispatch => (
 			errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
-export const destroyChannel = id => dispatch => {
-	return ChannelApiUtil.deleteChannel(id)
-		.then(channel => dispatch(deleteChannel(channel)),
+export const destroyChannel = channelId => dispatch => {
+	return ChannelApiUtil.deleteChannel(channelId)
+		.then(() => dispatch(deleteChannel(channelId)),
 			errors => dispatch(receiveErrors(errors.respinseJSON)));
 };
 

@@ -14,7 +14,7 @@ const channelsReducer = (state = {}, action) => {
 			return newState;
 		case DELETE_CHANNEL:
 			newState = merge({}, state);
-			delete newState[action.id]
+			delete newState[action.channelId]
 			return newState;
 		// case UPDATE_USER_CHANNELS:
 		// 	newState = merge({}, state);

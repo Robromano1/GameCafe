@@ -42,7 +42,7 @@ class Api::ChannelsController < ApplicationController
 	def destroy
 		@channel = Channel.find(params[:id])
 		if @channel && @channel.delete
-			render :index 
+			return 
 		end
 	end
 

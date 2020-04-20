@@ -15,6 +15,8 @@ class ServerIndex extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
     this.openModal = this.openModal.bind(this);
     this.selected = this.selected.bind(this);
+    this.openDelete = this.openDelete.bind(this);
+    this.closeDelete = this.closeDelete.bind(this);
     // this.clsoeModal = this.clsoeModal.bind(this);
     //this.openModal = this.openModal.bind(this);
     // this.modal = this.modal.bind(this);
@@ -29,8 +31,8 @@ class ServerIndex extends React.Component {
 
   openModal(e) {
     e.stopPropagation();
-    const modal = document.getElementById('serverModal')
-    modal.style.display = 'block';
+    const modal = document.getElementById("serverModal");
+    modal.style.display = "block";
     // e.stopPropagation();
 
     // const modalNode = document.getElementsByClassName('modal')[0];
@@ -39,14 +41,14 @@ class ServerIndex extends React.Component {
     // } else {
     //   modalNode.classList.remove('openModal')
     // }
-  };
+  }
 
   closeModal(e) {
     e.stopPropagation();
     // e.preventDefault();
-    const modal = document.getElementById('serverModal')
-    
-    modal.style.display = 'none';
+    const modal = document.getElementById("serverModal");
+
+    modal.style.display = "none";
 
     // e.stopPropagation();
 
@@ -57,12 +59,27 @@ class ServerIndex extends React.Component {
     //   modalNode.classList.remove('closeModal')
     // }
   }
-  
+
+  openDelete(e) {
+    e.stopPropagation();
+    const deleteModal = document.getElementById("deleteModal");
+    deleteModal.style.display = "block";
+  }
+
+  closeDelete(e) {
+    if (e) {
+      e.stopPropagation();
+    }
+
+    const deleteModal = document.getElementById("deleteModal");
+    deleteModal.style.display = "none";
+  }
+
   // toggleServerModal(e) {
   //   e.stopPropagation();
 
   //   const modalNode = document.getElementsByClassName('modalWrapper')[0];
-  
+
   //   if (!modalNode.classList.contains('modal-content')) {
   //     modalNode.classList.add('modal-content')
   //   } else {
@@ -86,13 +103,13 @@ class ServerIndex extends React.Component {
   // }
 
   selected() {
-   let serverList = document.getElementById('serverList')
- 
-   if (!serverList.classList.contains('selected')) {
-     serverList.classList.add('selected')
-   } else {
-     serverList.classList.remove('selected')
-   }
+    let serverList = document.getElementById("serverList");
+
+    if (!serverList.classList.contains("selected")) {
+      serverList.classList.add("selected");
+    } else {
+      serverList.classList.remove("selected");
+    }
   }
 
   render() {
@@ -107,8 +124,8 @@ class ServerIndex extends React.Component {
           </Link>
         </li>
       );
-		});
-		
+    });
+
     return (
       <>
         <div className="scrollWrap scrollTheme">
@@ -140,19 +157,24 @@ class ServerIndex extends React.Component {
               </div>
             </div>
             <div className="logoutContainer">
-              <div className="listItem addServer" onClick={this.openModal}>+</div>
+              <div className="listItem addServer" onClick={this.openModal}>
+                +
+              </div>
               <button
                 className="logoutButton"
                 type="submit"
                 onClick={this.handleLogout}
-                >
+              >
                 Logout
               </button>
+            </div>
+            <div className="deleteContainer" onClick={this.openDelete}>
+              Delete Server
             </div>
           </div>
         </div>
 
-        <ServerFormContainer/>
+        <ServerFormContainer />
         <ServerShowContainer />
       </>
     );

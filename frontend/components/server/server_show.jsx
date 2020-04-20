@@ -2,10 +2,15 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import ChannelBarContainer from '../channels/channel_bar_container';
 import ServerIndexContainer from '../server/server_index_container';
+import BridgeContainer from '../bridge_container';
 
 class ServerShow extends React.Component {
 	constructor(props) {
 		super(props);
+
+		this.openDelete = this.openDelete.bind(this);
+		this.closeDelete = this.closeDelete.bind(this);
+		this.deleteServer = this.deleteServer.bind(this);
 	
 	}
 
@@ -33,15 +38,59 @@ class ServerShow extends React.Component {
 		}}
 	}
 
+	openDelete(e) {
+		e.stopPropagation();
+		const deleteModal = document.getElementById("deleteModal");
+    deleteModal.style.display = "block";
+	}
+
+	closeDelete(e) {
+		if (e) {
+			e.stopPropagation();
+		}
+
+		const deleteModal = document.getElementById("deleteModal");
+		deleteModal.style.display = "none";
+	}
+
+	deleteServer() {
+		// debugger
+		const serverId = parseInt(this.props.location.pathname.split("/")[2]);
+		this.props.deleteServer(serverId)
+			.then(() => {
+				this.closeDelete(),
+				<BridgeContainer/>
+			});
+	}
+
 	
 
 	render() {
-	
+		// debugger
 		if(Object.keys(this.props.server).length === 0) {
 			return <></>;
 		}
 		return (
 			<>
+				<div id="deleteModal" className="delete-modal">
+					<div className="deleteModalContent">
+						<h4 className="deleteServerHeader">DELETE SERVER</h4>
+						<div className="deleteBody">
+							Are you sure you want to delete this server?
+							This cannot be undone.
+						</div>
+						<div className="deleteModalFooter">
+							<div className="deleteModalBtns">
+								<span className="deleteCloseBtn" onClick={this.closeDelete}>
+									Cancel
+								</span>
+								<button type="submit" className="deleteServerBtn" onClick={this.deleteServer}>
+									Delete Server
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
 				<ChannelBarContainer/>
 			</>
 			

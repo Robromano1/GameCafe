@@ -66,9 +66,11 @@ class Api::ServersController < ApplicationController
 	def destroy
 		current_id = current_user.id 
 		if current_id 
-			server = Server.find_by(admin_id: params[:admin_id])
-			if server 
-				server.destroy 
+			
+			@server = Server.find(params[:id])
+			
+			if @server 
+				@server.destroy 
 				return
 			else
 				render json: ["Server not found"], status: 404

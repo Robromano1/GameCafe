@@ -5,7 +5,7 @@ import { createChannel } from '../../actions/channel_actions';
 const mSTP = (state, ownProps) => {
 	
 	return {
-		// serverId: ownProps.match.params.serverId
+		channels: Object.values(state.entities.channels)
 	}	
 };
 

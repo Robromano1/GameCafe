@@ -21,11 +21,15 @@ class ChannelForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const serverId = parseInt(this.props.location.pathname.split("/")[2]);
-   
-    const thing = Object.assign({}, this.state)
-    thing['server_id'] = serverId
-		this.props.createChannel(thing)
-			.then(() => this.closeModal());
+    
+    // debugger
+    const newState = Object.assign({}, this.state)
+    newState['server_id'] = serverId
+		this.props.createChannel(newState)
+			.then(() => {
+        this.closeModal()
+        this.props.history.push(`/channels/${serverId}/${this.props.channels.slice(-1)[0].id}`)
+      })       
   }
 
   // componentDidUpdate(prevProps) {

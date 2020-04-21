@@ -14,12 +14,13 @@ class ServerForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
+    
     this.props.createServer(this.state)
       .then(() => {
         this.closeModal()
-        this.props.history.push('/channels')
-    })
+        this.props.history.push(`/channels/${this.props.servers.slice(-1)[0].id}/${this.props.servers.slice(-1)[0].channel_ids[0]}`)
+      });
+    debugger
   }
 
   update(field) {

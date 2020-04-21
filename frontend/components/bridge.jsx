@@ -7,7 +7,7 @@ class Bridge extends React.Component {
 	}
 
 	componentDidMount() {
-		debugger
+		
 		this.props.history.push('/channels')
 	}
 }

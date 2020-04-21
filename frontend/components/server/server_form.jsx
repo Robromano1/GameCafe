@@ -20,7 +20,7 @@ class ServerForm extends React.Component {
         this.closeModal()
         this.props.history.push(`/channels/${this.props.servers.slice(-1)[0].id}/${this.props.servers.slice(-1)[0].channel_ids[0]}`)
       });
-    debugger
+   
   }
 
   update(field) {

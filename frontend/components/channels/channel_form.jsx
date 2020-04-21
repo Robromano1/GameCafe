@@ -22,7 +22,7 @@ class ChannelForm extends React.Component {
     e.preventDefault();
     const serverId = parseInt(this.props.location.pathname.split("/")[2]);
     
-    // debugger
+    
     const newState = Object.assign({}, this.state)
     newState['server_id'] = serverId
 		this.props.createChannel(newState)

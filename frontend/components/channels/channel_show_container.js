@@ -7,7 +7,7 @@ import { fetchChannelMessages } from '../../actions/message_actions';
 const mSTP = (state, ownProps) => {
 
 	return ({
-		channel: state.entities.channels,
+		channels: Object.values(state.entities.channels),
 		messages: state.entities.messages,
 		currentUserId: state.session.id,
 		currentUser: state.entities.users[state.session.id]

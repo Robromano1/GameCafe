@@ -52,9 +52,11 @@ class ChannelShow extends React.Component {
   deleteChannel() {
 		
     const channelId = parseInt(this.props.location.pathname.split("/")[3]);
+    const serverId = parseInt(this.props.location.pathname.split("/")[2]);
+    // debugger
     this.props.deleteChannel(channelId).then(() => {
 			this.closeDelete(), 
-			(<BridgeContainer />);
+        this.props.history.push(`/channels/${serverId}/${this.props.channels.slice(-1)[0].id}`);
     });
   }
 

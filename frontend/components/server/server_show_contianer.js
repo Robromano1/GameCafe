@@ -16,7 +16,7 @@ const mSTP = (state, ownProps) => {
 };
 
 const mDTP = (dispatch, action) => {
-	// debugger
+	
 	return ({
 		action: action,
 		fetchServer: id => dispatch(fetchServer(id)),

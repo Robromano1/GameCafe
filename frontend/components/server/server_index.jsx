@@ -104,7 +104,7 @@ class ServerIndex extends React.Component {
 
   selected() {
     let serverLis = document.getElementById("serverLis");
-    // debugger
+   
     if (!serverLis.classList.contains("selected")) {
       serverLis.classList.add("selected");
     } else {
@@ -116,7 +116,7 @@ class ServerIndex extends React.Component {
     let { servers } = this.props;
     let userServers = [];
     const serverId = parseInt(this.props.location.pathname.split('/')[2]);
-    debugger
+    
     servers.map((serv) => {
       userServers.push(
         <Link key={serv.id} id={serv.id} to={`/channels/${serv.id}/${serv.channel_ids[0]}`} className="serverLink">
@@ -125,10 +125,10 @@ class ServerIndex extends React.Component {
           </li>
         </Link>
       );
-        // debugger
+       
         // if (userServers.length && serv.id === serverId) {
         //   const serverItem = document.getElementsByClassName('userServers');
-        //   // debugger
+        
         //   if (!serverItem.classList.contains('selected')) {
         //     serverItem.classList.addClass('selected');
         //   } else {

@@ -8,7 +8,7 @@
 	
 }
 
-.userServers > li {
+.userServers > .serverLink > li {
 	margin-bottom: 5px;
 	align-items: center;
 	color: white;
@@ -28,6 +28,14 @@
 	margin-left: -15px;
 	text-align: center;
 	padding: 12px;
+	transition: all .2s ease-out;
+}
+
+.userServers > .serverLink > li:hover {
+	background-color: #7289da;
+	cursor: pointer;
+	border-radius: 30%;
+	transition: all .2s ease-in;
 }
 
 .userServers > li > a {
@@ -36,10 +44,16 @@
 
 .addServer {
 	cursor: pointer;
+	color: #43b581;
+}
+
+.addServer:hover {
+	color: #FFF;
+	background-color: #43b581;
 }
 
 .selected {
-	color: green;
+	background-color: #F04747;
 }
 
 .logoutContainer {

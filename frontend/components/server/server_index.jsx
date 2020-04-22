@@ -103,29 +103,40 @@ class ServerIndex extends React.Component {
   // }
 
   selected() {
-    let serverList = document.getElementById("serverList");
-
-    if (!serverList.classList.contains("selected")) {
-      serverList.classList.add("selected");
+    let serverLis = document.getElementById("serverLis");
+    // debugger
+    if (!serverLis.classList.contains("selected")) {
+      serverLis.classList.add("selected");
     } else {
-      serverList.classList.remove("selected");
+      serverLis.classList.remove("selected");
     }
   }
 
   render() {
     let { servers } = this.props;
     let userServers = [];
-
+    const serverId = parseInt(this.props.location.pathname.split('/')[2]);
+    debugger
     servers.map((serv) => {
       userServers.push(
-        <li key={serv.id} id={serv.id} className="serverLis">
-          <Link to={`/channels/${serv.id}/${serv.channel_ids[0]}`}>
-            <span id="serverList">{`${serv.server_name[0]}`}</span>
-          </Link>
-        </li>
+        <Link key={serv.id} id={serv.id} to={`/channels/${serv.id}/${serv.channel_ids[0]}`} className="serverLink">
+          <li className="serverLis">
+              <span id="serverList">{`${serv.server_name[0]}`}</span>
+          </li>
+        </Link>
       );
+        // debugger
+        // if (userServers.length && serv.id === serverId) {
+        //   const serverItem = document.getElementsByClassName('userServers');
+        //   // debugger
+        //   if (!serverItem.classList.contains('selected')) {
+        //     serverItem.classList.addClass('selected');
+        //   } else {
+        //     serverItem.classList.remove('selected');
+        //   }
+        // };
     });
-
+    
     return (
       <>
         <div className="scrollWrap scrollTheme">

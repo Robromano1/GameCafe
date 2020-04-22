@@ -15,12 +15,16 @@ const mSTP = (state, ownProps) => {
 	})
 };
 
-const mDTP = dispatch => ({
-	fetchServer: id => dispatch(fetchServer(id)),
-	deleteServer: serverId => dispatch(destroyServer(serverId)),
-	getChannels: () => dispatch(getChannels()),
-	fetchUserServers: (userId) => dispatch(fetchUserServers(userId)),
-	getServerChannels: serverId => dispatch(getServerChannels(serverId))
-});
+const mDTP = (dispatch, action) => {
+	// debugger
+	return ({
+		action: action,
+		fetchServer: id => dispatch(fetchServer(id)),
+		deleteServer: serverId => dispatch(destroyServer(serverId)),
+		getChannels: () => dispatch(getChannels()),
+		fetchUserServers: (userId) => dispatch(fetchUserServers(userId)),
+		getServerChannels: serverId => dispatch(getServerChannels(serverId))
+	})
+};
 
 export default connect(mSTP, mDTP)(ServerShow);

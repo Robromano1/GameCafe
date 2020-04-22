@@ -70,7 +70,7 @@ class ServerShow extends React.Component {
 	
 
 	render() {
-
+		
 		if(Object.keys(this.props.server).length === 0) {
 			return <></>;
 		}

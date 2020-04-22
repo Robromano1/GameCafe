@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import ServerIndex from './server_index';
 import { fetchUserServers, fetchServers } from '../../actions/server_actions';
-import { logout } from '../../actions/session_actions';
+import { logout, clearUser } from '../../actions/session_actions';
 
 const mSTP = (state, ownProps) => ({
 	currentUser: state.entities.users[state.session.id],
@@ -10,7 +10,7 @@ const mSTP = (state, ownProps) => ({
 
 const mDTP = dispatch => ({
 	logout: () => dispatch(logout()),
-	
+	clearUser: () => dispatch(clearUser())
 });
 
 export default connect(mSTP, mDTP)(ServerIndex);

@@ -6,6 +6,7 @@ export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const RECEIVE_USERS = "RECEIVE_USERS";
 export const RECEIVE_USER = "RECEIVE_USER";
 export const UPDATE_USER_CHANNELS = "UPDATE_USER_CHANNELS";
+export const CLEAR_USER = "CLEAR_USER";
 
 
 //session action creators
@@ -27,6 +28,10 @@ const receiveUsers = users => ({
     type: RECEIVE_USERS,
     users
 })
+
+export const clearUser = () => ({
+    type: CLEAR_USER
+});
 
 export const updateUserChannels = (channelId, userId) => ({
     type: UPDATE_USER_CHANNELS,

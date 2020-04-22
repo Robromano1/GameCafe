@@ -25,6 +25,7 @@ class ServerIndex extends React.Component {
   handleLogout(e) {
     e.preventDefault();
     this.props.logout().then(() => {
+      this.props.clearUser(),
       this.props.history.push("/");
     });
   }

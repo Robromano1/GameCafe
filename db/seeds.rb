@@ -37,7 +37,7 @@ member = ServerUser.create!(user_id: hawkeye.id, server_id: marvel.id)
 member = ServerUser.create!(user_id: black_widow.id, server_id: marvel.id)
 demo_member = ServerUser.create!(user_id: demo.id, server_id: marvel.id)
 
-avengers = Channel.create!(channel_name: "Superhero stuff", description: "Superhero talk",  server_id: marvel.id)
+avengers = Channel.create!(channel_name: "Avengers", description: "Superhero talk",  server_id: marvel.id)
 
 avengers.messages.create!(body: "Whoa I love this new chat, now we can all stay in touch", user_id: spiderman.id, channel_id: avengers.id)
 avengers.messages.create!(body: "It still won't allow you to be worthy of my hammer", user_id: thor.id, channel_id: avengers.id)

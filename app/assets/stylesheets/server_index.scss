@@ -45,11 +45,14 @@
 .addServer {
 	cursor: pointer;
 	color: #43b581;
+	transition: all .2s ease-out;
 }
 
 .addServer:hover {
 	color: #FFF;
 	background-color: #43b581;
+	border-radius: 30%;
+	transition: all .2s ease-in;
 }
 
 .userServers > .selected > li {

@@ -120,7 +120,7 @@ class ChatRoom extends React.Component {
 		
 		return (
 			<>
-				<div className="chatTitle">{channel}</div>
+				<div className="chatTitle">{`# ${channel}`}</div>
 				
 				<div className="message-list">
 					{messageList}

@@ -78,6 +78,10 @@ class ChannelIndex extends React.Component {
   render() {
     let { channels } = this.props;
     let serverChannels = [];
+    let serverTitle;
+    if (this.props.currentServer) {
+      serverTitle = this.props.currentServer.server_name;
+    }
 
     const serverId = parseInt(this.props.match.params.serverId);
     const channelId = parseInt(this.props.match.params.channelId);
@@ -89,7 +93,7 @@ class ChannelIndex extends React.Component {
             className="channelLink"
             to={`/channels/${serverId}/${channel.id}`}
           >
-            {`${channel.channel_name}`}
+            {`# ${channel.channel_name}`}
           </Link>
         </li>
       );
@@ -135,6 +139,9 @@ class ChannelIndex extends React.Component {
                 </a>
               </li>
             </ul>
+            <div className="serverTitle">
+              <h1>{serverTitle}</h1>
+            </div>
             <div className="serverChannels" onClick={this.selected}>
               <ul>{serverChannels}</ul>
             </div>

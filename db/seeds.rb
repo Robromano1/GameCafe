@@ -12,6 +12,9 @@ Message.destroy_all
 ServerUser.destroy_all
 Server.destroy_all
 
+
+demo = User.create!(email: "demo_user@demo.com", username: "demo_user", password: "coffeelife123")
+
 # Avengers
 spiderman = User.create!(email: "spidey@marvel.com", username: "Spiderman", password: "marvel123")
 thor = User.create!(email: "thor@marvel.com", username: "Thor", password: "marvel123")
@@ -46,7 +49,7 @@ superheroes.messages.create!(body: "Well I have target practice soon, my bow is 
 superheroes.messages.create!(body: "Cya Hawkeye, Calm down Hulk, the sun is getting low.", user_id: black_widow.id, channel_id: superheroes.id)
 
 # Star Wars
-obi-wan = User.create!(email: "obi-wan@starwars.com", username: "Obi-Wan", password: "starwars123")
+obi_wan = User.create!(email: "obi-wan@starwars.com", username: "Obi-Wan", password: "starwars123")
 luke = User.create!(email: "luke@starwars.com", username: "Luke Skywalker", password: "starwars123")
 yoda = User.create!(email: "yoda@starwars.com", username: "Yoda", password: "starwars123")
 han = User.create!(email: "han@starwars.com", username: "Han Solo", password: "starwars123")
@@ -59,7 +62,7 @@ kylo = User.create!(email: "kylo@starwars.com", username: "Kylo Ren", password: 
 jedi= Server.create!(server_name: "Jedi", server_image: "true", description: "Preserving balance to the force", private: true, admin_id: han.id)
 sith = Server.create!(server_name: "Sith", server_image: "true", description: "We must destroy the jedi", private: true, admin_id: palpatine.id)
 
-member = ServerUser.create!(user_id: obi-wan.id, server_id: jedi.id)
+member = ServerUser.create!(user_id: obi_wan.id, server_id: jedi.id)
 member = ServerUser.create!(user_id: luke.id, server_id: jedi.id)
 member = ServerUser.create!(user_id: yoda.id, server_id: jedi.id)
 member = ServerUser.create!(user_id: han.id, server_id: jedi.id)
@@ -74,7 +77,7 @@ demo_member = ServerUser.create!(user_id: demo.id, server_id: sith.id)
 falcon = Channel.create!(channel_name: "Millennium Falcon", description: "Best ship in the galaxy",  server_id: jedi.id)
 bad_guys = Channel.create!(channel_name: "Bad Guys", description: "We are the sith",  server_id: sith.id)
 
-falcon.messages.create!(body: "Luke you're late for your training.", user_id: obi-wan.id, channel_id: falcon.id)
+falcon.messages.create!(body: "Luke you're late for your training.", user_id: obi_wan.id, channel_id: falcon.id)
 falcon.messages.create!(body: "Sorry Obi-Wan I'll be there in 10 minutes.", user_id: luke.id, channel_id: falcon.id)
 falcon.messages.create!(body: "Train you must, defeat Vader you will.", user_id: yoda.id, channel_id: falcon.id)
 falcon.messages.create!(body: "Uh oh Luke is going to be in big trouble, LOL.", user_id: han.id, channel_id: falcon.id)
@@ -146,7 +149,6 @@ rich = User.create!(email: "rich@rich.com", username: "reech", password: "richh1
 kai = User.create!(email: "kai@kai.com", username: "kaiba", password: "kaiba1")
 paul = User.create!(email: "paul@paul.com", username: "paulll", password: "paull1")
 chris = User.create!(email: "chris@chris.com", username: "chrisg", password: "chris1")
-demo = User.create!(email: "demo_user@demo.com", username: "demo_user", password: "coffeelife123")
 
 coffee_lovers = Server.create!(server_name: "Coffee", server_image: "true", description: "The best server for coffee lovers", private: true, admin_id: rob.id)
 gamers = Server.create!(server_name: "Gamers", server_image: "true", description: "We are gamers!", private: false, admin_id: demo.id)
@@ -173,9 +175,9 @@ gamer_channel.messages.create!(body: 'Nothing, much just playing a game.', user_
 gamer_channel.messages.create!(body: 'This app is pretty cool.', user_id: paul.id, channel_id: gamer_channel.id)
 gamer_channel.messages.create!(body: 'Yeah it really is!', user_id: chris.id, channel_id: gamer_channel.id)
 
-coffee_talk_channel.messages.create!(body: 'Welcome to the coffee channel!', user_id: demo.id, channel_id: coffee_channel.id)
-coffee_talk_channel.messages.create!(body: 'Can I have a caramel cold brew?', user_id: rob.id, channel_id: coffee_channel.id)
-coffee_talk_channel.messages.create!(body: "Get a caramel latte, it's better!", user_id: rich.id, channel_id: coffee_channel.id)
-coffee_talk_channel.messages.create!(body: 'Yeah I like the caramel latte too!', user_id: kai.id, channel_id: coffee_channel.id)
-coffee_talk_channel.messages.create!(body: "I'm not much of a coffee drinker, I like tea better.", user_id: paul.id, channel_id: coffee_channel.id)
-coffee_talk_channel.messages.create!(body: "Why are you in this channel Paul?", user_id: chris.id, channel_id: coffee_channel.id)
+coffee_channel.messages.create!(body: 'Welcome to the coffee channel!', user_id: demo.id, channel_id: coffee_channel.id)
+coffee_channel.messages.create!(body: 'Can I have a caramel cold brew?', user_id: rob.id, channel_id: coffee_channel.id)
+coffee_channel.messages.create!(body: "Get a caramel latte, it's better!", user_id: rich.id, channel_id: coffee_channel.id)
+coffee_channel.messages.create!(body: 'Yeah I like the caramel latte too!', user_id: kai.id, channel_id: coffee_channel.id)
+coffee_channel.messages.create!(body: "I'm not much of a coffee drinker, I like tea better.", user_id: paul.id, channel_id: coffee_channel.id)
+coffee_channel.messages.create!(body: "Why are you in this channel Paul?", user_id: chris.id, channel_id: coffee_channel.id)

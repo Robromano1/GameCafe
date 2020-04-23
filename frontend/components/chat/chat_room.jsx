@@ -98,6 +98,10 @@ class ChatRoom extends React.Component {
 	render() {
 		
 		let messageList;
+		let channel;
+		if(this.props.channel) {
+			channel = this.props.channel.channel_name
+		}
 	
 		if (this.props.messages && this.props.user){
 			messageList = this.props.messages.map(message => {
@@ -113,10 +117,10 @@ class ChatRoom extends React.Component {
 				)
 			});
 		}
-	
+		
 		return (
 			<>
-				<div className="chatTitle">Welcome</div>
+				<div className="chatTitle">{channel}</div>
 				
 				<div className="message-list">
 					{messageList}

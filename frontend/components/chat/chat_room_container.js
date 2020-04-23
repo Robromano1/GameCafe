@@ -4,13 +4,13 @@ import { receiveMessage, fetchChannelMessages } from '../../actions/message_acti
 import { getChannel } from '../../actions/channel_actions';
 
 const mSTP = (state, ownProps) => {
-	
+
 	return {
 		messages: Object.values(state.entities.messages),
-		channel: state.entities.channels,
+		channel: Object.values(state.entities.currentChannel)[0],
 		user: state.entities.users[state.session.id],
 		currentUserId: state.session.id,
-		currentUser: state.entities.users[state.session.id]
+		currentUser: state.entities.users[state.session.id] 
 		
 	}
 

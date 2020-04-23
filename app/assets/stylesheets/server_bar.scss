@@ -262,11 +262,16 @@
 }
 
 .chatRoom {
-	overflow-y: scroll;
+	display: flex;
+	justify-content: stretch;
+	position: relative;
+	align-items: stretch;
+	flex: 1 1 auto;
 }
 
 .mainContent {
 	overflow-y: scroll;
+	margin-bottom: 5px;
 }
 
 .message-form-container {

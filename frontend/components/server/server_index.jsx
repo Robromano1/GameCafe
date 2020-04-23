@@ -104,13 +104,16 @@ class ServerIndex extends React.Component {
   // }
 
   selected() {
-    let serverLis = document.getElementById("serverLis");
-   
-    if (!serverLis.classList.contains("selected")) {
-      serverLis.classList.add("selected");
-    } else {
-      serverLis.classList.remove("selected");
-    }
+    setTimeout(() => {
+      let serverList = document.getElementsByClassName('serverLink');
+      Object.values(serverList).map(server => {
+        if (!server.classList.contains("selected") && parseInt(server.id) === this.props.currentServer.id) {
+          server.classList.add("selected");
+        } else {
+          server.classList.remove('selected');
+        }
+      })
+    }, 300);
   }
 
   render() {
@@ -126,16 +129,6 @@ class ServerIndex extends React.Component {
           </li>
         </Link>
       );
-       
-        // if (userServers.length && serv.id === serverId) {
-        //   const serverItem = document.getElementsByClassName('userServers');
-        
-        //   if (!serverItem.classList.contains('selected')) {
-        //     serverItem.classList.addClass('selected');
-        //   } else {
-        //     serverItem.classList.remove('selected');
-        //   }
-        // };
     });
     
     return (
@@ -164,7 +157,7 @@ class ServerIndex extends React.Component {
               </div>
               <div className="iconContainer" draggable="true">
                 <div className="iconWrapper">
-                  <ul className="userServers">{userServers}</ul>
+                  <ul className="userServers" onMouseUp={this.selected}>{userServers}</ul>
                 </div>
               </div>
             </div>

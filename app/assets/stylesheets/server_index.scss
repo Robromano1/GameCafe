@@ -52,8 +52,9 @@
 	background-color: #43b581;
 }
 
-.selected {
-	background-color: #F04747;
+.userServers > .selected > li {
+	background-color: #7289da;
+	border-radius: 30%;
 }
 
 .logoutContainer {

@@ -12,6 +12,7 @@ class ChannelIndex extends React.Component {
     // this.closeModal = this.closeModal.bind(this);
     // this.openDelete = this.openDelete.bind(this);
     // this.closeDelete = this.closeDelete.bind(this);
+    this.selected = this.selected.bind(this);
   }
 
   // componentDidMount() {
@@ -51,6 +52,19 @@ class ChannelIndex extends React.Component {
 
     const deleteModal = document.getElementById("deleteChannelModal");
     deleteModal.style.display = "none";
+  }
+
+  selected() {
+    setTimeout(() => {
+      let channelList = document.getElementsByClassName('channelList');
+      Object.values(channelList).map(channel => {
+        if (!channel.classList.contains("currentCh") && parseInt(channel.id) === parseInt(this.props.location.pathname.split("/")[3])) {
+          channel.classList.add("currentCh");
+        } else {
+          channel.classList.remove('currentCh');
+        }
+      })
+    }, 300);
   }
 
   render() {
@@ -113,7 +127,7 @@ class ChannelIndex extends React.Component {
                 </a>
               </li>
             </ul>
-            <div className="serverChannels">
+            <div className="serverChannels" onClick={this.selected}>
               <ul>{serverChannels}</ul>
             </div>
             <div className="newChannel" onClick={this.openModal}>

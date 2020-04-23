@@ -27,6 +27,13 @@ class ChannelIndex extends React.Component {
   // 	}
   // }
 
+  componentDidMount() {
+    setTimeout(() => {
+      let channelList = document.getElementsByClassName('channelList');
+      channelList[0].classList.add("currentCh")
+    }, 300);
+  }
+
   openModal(e) {
     e.stopPropagation();
     const modal = document.getElementById("channelModal");

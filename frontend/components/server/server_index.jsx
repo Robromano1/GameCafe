@@ -22,6 +22,13 @@ class ServerIndex extends React.Component {
     // this.modal = this.modal.bind(this);
   }
 
+  componentDidMount() {
+    setTimeout(() => {
+      let serverList = document.getElementsByClassName('serverLink');
+      serverList[0].classList.add("selected");
+    }, 300);
+  }
+
   handleLogout(e) {
     e.preventDefault();
     this.props.logout().then(() => {

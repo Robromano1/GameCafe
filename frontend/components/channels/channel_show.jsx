@@ -11,7 +11,8 @@ class ChannelShow extends React.Component {
   constructor(props) {
 		super(props);
 		
-		this.deleteChannel = this.deleteChannel.bind(this);
+    this.deleteChannel = this.deleteChannel.bind(this);
+    this.selected = this.selected.bind(this);
   }
 
   componentDidMount() {
@@ -54,10 +55,26 @@ class ChannelShow extends React.Component {
     const channelId = parseInt(this.props.location.pathname.split("/")[3]);
     const serverId = parseInt(this.props.location.pathname.split("/")[2]);
     
-    this.props.deleteChannel(channelId).then(() => {
-			this.closeDelete(), 
-        this.props.history.push(`/channels/${serverId}/${this.props.channels.slice(-1)[0].id}`);
-    });
+    if (this.props.channels.length > 1) {
+      this.props.deleteChannel(channelId).then(() => {
+        this.closeDelete(), 
+        this.props.history.push(`/channels/${serverId}/${this.props.channels.slice(-1)[0].id}`),
+        this.selected();
+      });
+    }
+  }
+
+  selected() {
+    setTimeout(() => {
+      let channelList = document.getElementsByClassName('channelList');
+      Object.values(channelList).map(channel => {
+        if (parseInt(channel.id) === parseInt(this.props.location.pathname.split("/")[3])) {
+          channel.classList.add("currentCh");
+        } else {
+          channel.classList.remove('currentCh');
+        }
+      })
+    }, 300);
   }
 
   render() {

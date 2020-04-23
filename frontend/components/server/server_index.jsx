@@ -114,7 +114,7 @@ class ServerIndex extends React.Component {
     setTimeout(() => {
       let serverList = document.getElementsByClassName('serverLink');
       Object.values(serverList).map(server => {
-        if (!server.classList.contains("selected") && parseInt(server.id) === this.props.currentServer.id) {
+        if (parseInt(server.id) === this.props.currentServer.id) {
           server.classList.add("selected");
         } else {
           server.classList.remove('selected');
@@ -164,7 +164,7 @@ class ServerIndex extends React.Component {
               </div>
               <div className="iconContainer" draggable="true">
                 <div className="iconWrapper">
-                  <ul className="userServers" onMouseUp={this.selected}>{userServers}</ul>
+                  <ul className="userServers" onClick={this.selected}>{userServers}</ul>
                 </div>
               </div>
             </div>

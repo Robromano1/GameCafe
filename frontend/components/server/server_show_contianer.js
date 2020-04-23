@@ -11,7 +11,8 @@ const mSTP = (state, ownProps) => {
 		channels: state.entities.channels,
 		users: state.entities.users,
 		currentUserId: state.session.id,
-		currentUser: state.entities.users[state.session.id]
+		currentUser: state.entities.users[state.session.id],
+		currentServer: Object.values(state.entities.currentServer)[0]
 	})
 };
 

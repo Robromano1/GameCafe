@@ -11,6 +11,7 @@ class ServerShow extends React.Component {
 		this.openDelete = this.openDelete.bind(this);
 		this.closeDelete = this.closeDelete.bind(this);
 		this.deleteServer = this.deleteServer.bind(this);
+		this.selected = this.selected.bind(this);
 	
 	}
 
@@ -59,12 +60,28 @@ class ServerShow extends React.Component {
 		const server = Object.values(this.props.server)[0].id;
 		const channel = Object.values(this.props.server)[0].channel_ids[0];
 		
-		this.props.deleteServer(serverId)
-			.then(() => {
-				this.closeDelete();
-				this.props.history.push(`/channels/${server}/${channel}`)
-			});
+		if (Object.values(this.props.server).length > 1) {
+			this.props.deleteServer(serverId)
+				.then(() => {
+					this.closeDelete();
+					this.props.history.push(`/channels/${server}/${channel}`);
+					this.selected();
+				});
+		}
 	
+	}
+
+	selected() {
+		setTimeout(() => {
+			let serverList = document.getElementsByClassName('serverLink');
+			Object.values(serverList).map(server => {
+				if (parseInt(server.id) === this.props.currentServer.id) {
+					server.classList.add("selected");
+				} else {
+					server.classList.remove('selected');
+				}
+			})
+		}, 300);
 	}
 
 	

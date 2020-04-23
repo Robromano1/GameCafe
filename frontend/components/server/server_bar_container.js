@@ -4,7 +4,8 @@ import { getMessages, receiveMessage } from '../../actions/message_actions';
 import { fetchUserServers } from '../../actions/server_actions';
 
 const mSTP = (state, ownProps) => ({
-	currentUser: state.entities.users[state.session.id]
+	currentUser: state.entities.users[state.session.id],
+	servers: Object.values(state.entities.servers)
 });
 
 const mDTP = dispatch => ({

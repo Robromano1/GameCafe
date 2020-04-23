@@ -27,12 +27,13 @@ class ChannelIndex extends React.Component {
   // 	}
   // }
 
-  // componentDidMount() {
-  //   setTimeout(() => {
-  //     let channelList = document.getElementsByClassName('channelList');
-  //     channelList[0].classList.add("currentCh")
-  //   }, 300);
-  // }
+  componentDidMount() {
+    this.selected();
+  }
+
+  componentDidUpdate() {
+    this.selected();
+  }
 
   openModal(e) {
     e.stopPropagation();
@@ -65,7 +66,7 @@ class ChannelIndex extends React.Component {
     setTimeout(() => {
       let channelList = document.getElementsByClassName('channelList');
       Object.values(channelList).map(channel => {
-        if (!channel.classList.contains("currentCh") && parseInt(channel.id) === parseInt(this.props.location.pathname.split("/")[3])) {
+        if (parseInt(channel.id) === parseInt(this.props.location.pathname.split("/")[3])) {
           channel.classList.add("currentCh");
         } else {
           channel.classList.remove('currentCh');

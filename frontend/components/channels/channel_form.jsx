@@ -15,6 +15,7 @@ class ChannelForm extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.selected = this.selected.bind(this);
     
   }
 
@@ -29,7 +30,21 @@ class ChannelForm extends React.Component {
 			.then(() => {
         this.closeModal()
         this.props.history.push(`/channels/${serverId}/${this.props.channels.slice(-1)[0].id}`)
+        this.selected();
       })       
+  }
+
+  selected() {
+    setTimeout(() => {
+      let channelList = document.getElementsByClassName('channelList');
+      Object.values(channelList).map(channel => {
+        if (parseInt(channel.id) === parseInt(this.props.location.pathname.split("/")[3])) {
+          channel.classList.add("currentCh");
+        } else {
+          channel.classList.remove('currentCh');
+        }
+      })
+    }, 300);
   }
 
   // componentDidUpdate(prevProps) {

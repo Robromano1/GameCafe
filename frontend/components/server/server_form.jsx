@@ -10,6 +10,7 @@ class ServerForm extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.selected = this.selected.bind(this);
   }
 
   handleSubmit(e) {
@@ -19,8 +20,22 @@ class ServerForm extends React.Component {
       .then(() => {
         this.closeModal()
         this.props.history.push(`/channels/${this.props.servers.slice(-1)[0].id}/${this.props.servers.slice(-1)[0].channel_ids[0]}`)
+        this.selected();
       });
    
+  }
+
+  selected() {
+    setTimeout(() => {
+      let serverList = document.getElementsByClassName('serverLink');
+      Object.values(serverList).map(server => {
+        if (parseInt(server.id) === this.props.currentServer.id) {
+          server.classList.add("selected");
+        } else {
+          server.classList.remove('selected');
+        }
+      })
+    }, 300);
   }
 
   update(field) {

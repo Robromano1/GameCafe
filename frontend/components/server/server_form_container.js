@@ -10,7 +10,8 @@ const mSTP = state => ({
 		// admin_id: state.entities.users[state.session.id].id
 	},
 	servers: Object.values(state.entities.servers),
-	channels: Object.values(state.entities.channels)
+	channels: Object.values(state.entities.channels),
+	currentServer: Object.values(state.entities.currentServer)[0]
 	
 });
 

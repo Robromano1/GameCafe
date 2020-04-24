@@ -87,7 +87,7 @@ class SessionForm extends React.Component {
         
         let errors = "";
         const inputs = document.getElementsByClassName('session-form-input');
-
+        debugger
         if(this.props.errors.length) {
             errors = this.props.errors.map(error => {
                 return (
@@ -119,6 +119,7 @@ class SessionForm extends React.Component {
         }
 
         const emailErrorStyle = document.getElementsByClassName("email-section")
+       
         if(this.props.errors.length) {
             for(let i = 0; i < emailErrorStyle.length; i++) {
                 emailErrorStyle[i].classList.add("emailError")

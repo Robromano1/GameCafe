@@ -55,12 +55,13 @@ class ServerShow extends React.Component {
 	}
 
 	deleteServer() {
-	
+		
 		const serverId = parseInt(this.props.location.pathname.split("/")[2]);
 		const server = Object.values(this.props.server)[0].id;
 		const channel = Object.values(this.props.server)[0].channel_ids[0];
 		
 		if (Object.values(this.props.server).length > 1) {
+			
 			this.props.deleteServer(serverId)
 				.then(() => {
 					this.closeDelete();

@@ -31,7 +31,10 @@ class ChannelForm extends React.Component {
         this.closeModal()
         this.props.history.push(`/channels/${serverId}/${this.props.channels.slice(-1)[0].id}`)
         this.selected();
-      })       
+      }) 
+    this.setState({
+      channel_name: ""
+    })      
   }
 
   selected() {
@@ -97,6 +100,7 @@ class ChannelForm extends React.Component {
                   className="channelInput"
                   value={this.state.channel_name}
                   onChange={this.update("channel_name")}
+
                 />
               </label>
               <div className="chFormFooter">

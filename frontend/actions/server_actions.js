@@ -51,7 +51,7 @@ export const createServer = server => dispatch => (
 
 export const destroyServer = serverId => dispatch => (
 	ServerApiUtil.deleteServer(serverId)
-		.then(() => (dispatch(removeServer(serverId))))		
+		.then(() => (dispatch(removeServer(serverId))))	
 );
 
 // export const deleteServer = serverId = dispatch => {

@@ -10,6 +10,7 @@ class ChatRoom extends React.Component {
 		this.bottom = React.createRef();
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.chatRoom = this.chatRoom.bind(this);
+		this.time = this.time.bind(this);
 	}
 
 	chatRoom(channelId) {
@@ -95,6 +96,15 @@ class ChatRoom extends React.Component {
 		e.preventDefault();
 	}
 
+	time(date) {
+		const newDate = new Date(date);
+		const day = newDate.getDate();
+		const month = newDate.getMonth() + 1;
+		const year = newDate.getFullYear();
+		return `${month}/${day}/${year}`;
+
+	};
+
 	render() {
 		
 		let messageList;
@@ -110,6 +120,9 @@ class ChatRoom extends React.Component {
 					<div key={`${message.id}`} className="messageLi">
 						<div className="username">
 							{message.user.username}
+							<div className='time'>
+								{this.time(message.created_at)}
+							</div>
 						</div>
 						{message.body}
 						<div ref={this.bottom}/>

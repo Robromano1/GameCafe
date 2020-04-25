@@ -87,11 +87,11 @@ class SessionForm extends React.Component {
         
         let errors = "";
         const inputs = document.getElementsByClassName('session-form-input');
-        debugger
+        
         if(this.props.errors.length) {
-            errors = this.props.errors.map(error => {
+            errors = this.props.errors.map((error, idx) => {
                 return (
-                    <p className="errors">{error}</p>
+                    <p key={idx} className="errors">{error}</p>
                 )
             })
             

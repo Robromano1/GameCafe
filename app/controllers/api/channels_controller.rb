@@ -40,9 +40,19 @@ class Api::ChannelsController < ApplicationController
 	end
 
 	def destroy
+		current_id = current_user.id
 		@channel = Channel.find(params[:id])
-		if @channel && @channel.delete
-			return 
+		server = Server.find_by(id: @channel.server_id)
+	
+		if @channel 
+			if current_id == server.admin_id
+				@channel.delete
+				return 
+			else 
+				render json: ["You are not the admin"], status: 401
+			end
+		else
+			render json: ["Channel not found"], status: 404
 		end
 	end
 

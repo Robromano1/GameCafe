@@ -12,7 +12,8 @@ const mSTP = (state, ownProps) => {
 		users: state.entities.users,
 		currentUserId: state.session.id,
 		currentUser: state.entities.users[state.session.id],
-		currentServer: Object.values(state.entities.currentServer)[0]
+		currentServer: Object.values(state.entities.currentServer)[0],
+		errors: state.errors.server
 	})
 };
 

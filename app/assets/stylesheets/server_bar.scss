@@ -252,13 +252,13 @@
 }
 
 .username {
-	font-size: 14px;
-	color: #FFFFFF;
 	margin-bottom: 5px;
-}
-
-.messageLi {
-	overflow-y: scroll;
+	margin-right: .25rem;
+	font-size: 16px;
+	font-weight: 500;
+	color: #FFF;
+	vertical-align: baseline;
+	position: relative;
 }
 
 .chatRoom {

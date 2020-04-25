@@ -65,18 +65,17 @@ class Api::ServersController < ApplicationController
 
 	def destroy
 		current_id = current_user.id 
-		if current_id 
-			
-			@server = Server.find(params[:id])
-			
-			if @server 
+		@server = Server.find(params[:id])
+	
+		if @server 
+			if current_id == @server.admin_id
 				@server.destroy 
 				return
 			else
-				render json: ["Server not found"], status: 404
+				render json: ["You are not the admin"], status: 401
 			end
 		else	
-				render json: ["You are not the admin"], status: 401
+				render json: ["Server not found"], status: 404
 		end
 	end
 

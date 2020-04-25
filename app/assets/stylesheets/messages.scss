@@ -12,6 +12,8 @@
 	padding-left: 72px;
 	overflow: hidden;
 	text-indent: 0;
+	overflow: hidden;
+	overflow-y: scroll;
 }
 
 .chatroom-container {
@@ -42,4 +44,19 @@
 .messageInput:focus {
 	outline: none;
 }
+
+.time {
+	display: inline-block;
+	// margin-top: -18px;
+	margin-left: 5px;
+	font-size: .75rem;
+	// margin-bottom: 5px;
+	color: #72767d;
+	font-weight: 500;
+	cursor: default;
+	line-height: 1.375rem;
+	vertical-align: baseline;
+}
+
+
 

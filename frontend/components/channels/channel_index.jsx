@@ -13,8 +13,8 @@ class ChannelIndex extends React.Component {
     // this.openDelete = this.openDelete.bind(this);
     // this.closeDelete = this.closeDelete.bind(this);
     this.selected = this.selected.bind(this);
-    // this.toggleChDelete = this.toggleChDelete.bind(this);
-    // this.toggleNewCh = this.toggleNewCh.bind(this);
+    this.toggleChDelete = this.toggleChDelete.bind(this);
+    this.toggleNewCh = this.toggleNewCh.bind(this);
   }
 
   // componentDidMount() {
@@ -85,7 +85,9 @@ class ChannelIndex extends React.Component {
     const deleteCh = document.getElementById('deleteChannel');
    
     if (this.props.currentServer && this.props.currentUser.id !== this.props.currentServer.admin_id) {
-      deleteCh.classList.add('notAdmin');
+      deleteCh.style.display = "none";
+    } else {
+      deleteCh.style.display = "block";
     }
   }
 
@@ -93,7 +95,7 @@ class ChannelIndex extends React.Component {
     const newCh = document.getElementById('newChannel');
   
     if (this.props.currentServer && this.props.currentUser.id !== this.props.currentServer.admin_id) {
-      newCh.style.display = "none ";
+      newCh.style.display = "none";
     } else {
       newCh.style.display = 'block';
     }
@@ -180,12 +182,23 @@ class ChannelIndex extends React.Component {
             </ul>
             <div className="serverTitle">
               <h1>{serverTitle}</h1>
+              <div id="newChannel" className="createChannelBtn" onClick={this.openModal}>
+                <svg className="channelSvg" 
+                     aria-hidden="false" 
+                     width="18" height="18" 
+                     viewBox="0 0 24 24">
+                     <path 
+                        fill="#b9bbbe" 
+                        d="M12 2.00098C6.486 2.00098 2 6.48698 2 12.001C2 17.515 6.486 22.001 12 22.001C17.514 22.001 22 17.515 22 12.001C22 6.48698 17.514 2.00098 12 2.00098ZM17 13.001H13V17.001H11V13.001H7V11.001H11V7.00098H13V11.001H17V13.001Z">
+                     </path>
+                </svg>
+              </div>
             </div>
             <div className="serverChannels" onClick={this.selected}>
               <ul>{serverChannels}</ul>
-              <div id="newChannel" onClick={this.openModal}>
+              {/* <div id="newChannel" onClick={this.openModal}>
                 NEW CHANNEL
-              </div>
+              </div> */}
               <div id="deleteChannel" className="deleteCh" onClick={this.openDelete}>
                 DELETE CHANNEL
               </div>

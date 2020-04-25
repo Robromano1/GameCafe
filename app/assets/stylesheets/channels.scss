@@ -66,3 +66,17 @@
 .channelList > .currentCh > a {
 	color: #FFF;
 }
+
+.serverTitle {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	position: relative;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 5px;
+}
+
+.createChannelBtn {
+	margin-top: -17px;
+}

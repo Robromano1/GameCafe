@@ -1,22 +1,23 @@
 #newChannel {
 	cursor: pointer;
-	font-family: "Roboto", sans-serif;
-	font-size: 14px;
-	color: #8e9297;
-	border: 1px solid #8e9297;
-	padding: 15px 5px 15px 5px;
+	// font-family: "Roboto", sans-serif;
+	// font-size: 14px;
+	// color: #8e9297;
+	// border: 1px solid #8e9297;
+	// padding: 15px 5px 15px 5px;
 	// height: 100%;
-	margin-bottom: 20px;
-	text-align: center;
-	width: 50%;
-	border-radius: 5px;
+	// margin-bottom: 20px;
+	// text-align: center;
+	// width: 50%;
+	// border-radius: 5px;
 	// margin-left: 50px;
-	margin: 0 auto;
+	// margin: 0 auto;
 }
 
-#newChannel:hover {
-	color: #7289da;
-	border-color: #7289da;
+#newChannel > svg:hover {
+	// color: #7289da;
+	// border-color: #7289da;
+	fill: #7289da;
 }
 
 .channelModalBtn {

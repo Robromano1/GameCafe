@@ -13,6 +13,7 @@ class ChannelShow extends React.Component {
 		
     this.deleteChannel = this.deleteChannel.bind(this);
     this.selected = this.selected.bind(this);
+   
   }
 
   componentDidMount() {
@@ -22,6 +23,8 @@ class ChannelShow extends React.Component {
     if (channelId) {
       getChannel(channelId).then(() => fetchChannelMessages(channelId));
     }
+
+    
   }
 
   componentDidUpdate(prevProps) {

@@ -11,7 +11,7 @@ class ServerShow extends React.Component {
 		this.openDelete = this.openDelete.bind(this);
 		this.closeDelete = this.closeDelete.bind(this);
 		this.deleteServer = this.deleteServer.bind(this);
-		this.selected = this.selected.bind(this);
+		
 	
 	}
 
@@ -37,7 +37,10 @@ class ServerShow extends React.Component {
 				fetchServer(serverId)
 					.then(() => getServerChannels(serverId));
 		}}
+
+	
 	}
+
 
 	openDelete(e) {
 		e.stopPropagation();

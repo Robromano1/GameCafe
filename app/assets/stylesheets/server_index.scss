@@ -46,6 +46,12 @@
 	cursor: pointer;
 	color: #43b581;
 	transition: all .2s ease-out;
+	box-sizing: border-box;
+	width: 48px;
+	height: 48px;
+	position: relative;
+	margin-top: 170px ;
+
 }
 
 .addServer:hover {
@@ -61,15 +67,27 @@
 }
 
 .logoutContainer {
-	margin-top: 650%;
+	//margin-top: 650%;
+	position: relative;
 }
 
-.deleteContainer {
+.listItem {
+	position: relative;
+	display: flex;
+	-webkit-box-pack: center;
+	width: 72px;
+	margin: 0 0 8px;
+}
+
+#deleteContainer {
 	font-family: "Roboto";
 	font-size: 16px;
 	color: #F04747;
-	margin-left: 10px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	cursor: pointer;
+}
+
+.notAdmin {
+	display: none;
 }

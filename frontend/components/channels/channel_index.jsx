@@ -13,6 +13,8 @@ class ChannelIndex extends React.Component {
     // this.openDelete = this.openDelete.bind(this);
     // this.closeDelete = this.closeDelete.bind(this);
     this.selected = this.selected.bind(this);
+    // this.toggleChDelete = this.toggleChDelete.bind(this);
+    // this.toggleNewCh = this.toggleNewCh.bind(this);
   }
 
   // componentDidMount() {
@@ -29,10 +31,14 @@ class ChannelIndex extends React.Component {
 
   componentDidMount() {
     this.selected();
+    // this.toggleChDelete();
+    // this.toggleNewCh();
   }
 
   componentDidUpdate() {
     this.selected();
+    // this.toggleChDelete();
+    // this.toggleNewCh();
   }
 
   openModal(e) {
@@ -75,7 +81,31 @@ class ChannelIndex extends React.Component {
     }, 300);
   }
 
+  toggleChDelete() {
+    const deleteCh = document.getElementById('deleteChannel');
+   
+    if (this.props.currentServer && this.props.currentUser.id !== this.props.currentServer.admin_id) {
+      deleteCh.classList.add('notAdmin');
+    }
+  }
+
+  toggleNewCh() {
+    const newCh = document.getElementById('newChannel');
+  
+    if (this.props.currentServer && this.props.currentUser.id !== this.props.currentServer.admin_id) {
+      newCh.style.display = "none ";
+    } else {
+      newCh.style.display = 'block';
+    }
+  }
+  
   render() {
+    
+    
+    // } else {
+    //   deleteCh.classList.add('notAdmin');
+    // }
+
     let { channels } = this.props;
     let serverChannels = [];
     let serverTitle;
@@ -98,6 +128,7 @@ class ChannelIndex extends React.Component {
         </li>
       );
     });
+
 
     return (
       <div className="base">
@@ -145,10 +176,10 @@ class ChannelIndex extends React.Component {
             <div className="serverChannels" onClick={this.selected}>
               <ul>{serverChannels}</ul>
             </div>
-            <div className="newChannel" onClick={this.openModal}>
+            <div id="newChannel" onClick={this.openModal}>
               NEW CHANNEL
             </div>
-            <div className="deleteChannel" onClick={this.openDelete}>
+            <div id="deleteChannel" className="deleteCh" onClick={this.openDelete}>
               DELETE CHANNEL
             </div>
           </div>

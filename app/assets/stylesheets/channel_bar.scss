@@ -97,13 +97,18 @@
 	background-color: #36393f;
 }
 
-.deleteChannel {
+#deleteChannel {
 	color: #F04747;
 	font-size: 14px;
 	font-family: "Roboto", sans-serif;
 	margin: 20px auto;
 	cursor: pointer;
+	
 }
+
+// .deleteCh {
+// 	display: none;
+// }
 
 .serverTitle > h1 {
 	display: flex;

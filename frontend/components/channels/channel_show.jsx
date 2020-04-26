@@ -5,7 +5,7 @@ import ServerShowContainer from '../server/server_show_contianer';
 import { getChannel } from '../../util/channel_api_util';
 import App from '../app';
 import Modal from '../server/server_form_container';
-import BridgeContainer from '../bridge_container';
+
 
 class ChannelShow extends React.Component {
   constructor(props) {
@@ -81,6 +81,7 @@ class ChannelShow extends React.Component {
   }
 
   render() {
+
     return (
       <>
         <div id="deleteChannelModal" className="delete-channel-modal">
@@ -106,6 +107,7 @@ class ChannelShow extends React.Component {
             </div>
           </div>
         </div>
+       
         <div className="mainContent">
           <div className="chatRoom">
             <div className="chatroom-container">

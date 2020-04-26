@@ -13,8 +13,8 @@ class ChannelIndex extends React.Component {
     // this.openDelete = this.openDelete.bind(this);
     // this.closeDelete = this.closeDelete.bind(this);
     this.selected = this.selected.bind(this);
-    this.toggleChDelete = this.toggleChDelete.bind(this);
-    this.toggleNewCh = this.toggleNewCh.bind(this);
+    // this.toggleChDelete = this.toggleChDelete.bind(this);
+    // this.toggleNewCh = this.toggleNewCh.bind(this);
   }
 
   // componentDidMount() {
@@ -35,7 +35,7 @@ class ChannelIndex extends React.Component {
     // this.toggleNewCh();
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     this.selected();
     // this.toggleChDelete();
     // this.toggleNewCh();
@@ -81,33 +81,49 @@ class ChannelIndex extends React.Component {
     }, 300);
   }
 
-  toggleChDelete() {
-    const deleteCh = document.getElementById('deleteChannel');
+  // toggleChDelete() {
+  //   const deleteCh = document.getElementById('deleteChannel');
    
-    if (this.props.currentServer && this.props.currentUser.id !== this.props.currentServer.admin_id) {
-      deleteCh.style.display = "none";
-    } else {
-      deleteCh.style.display = "block";
-    }
-  }
+  //   if (this.props.currentServer && this.props.currentUser.id !== this.props.currentServer.admin_id) {
+  //     deleteCh.style.display = "none";
+  //   } else {
+  //     deleteCh.style.display = "block";
+  //   }
+  // }
 
-  toggleNewCh() {
-    const newCh = document.getElementById('newChannel');
+  // toggleNewCh() {
+  //   const newCh = document.getElementById('newChannel');
   
-    if (this.props.currentServer && this.props.currentUser.id !== this.props.currentServer.admin_id) {
-      newCh.style.display = "none";
-    } else {
-      newCh.style.display = 'block';
-    }
-  }
+  //   if (newCh) {
+  //     if (this.props.currentServer && this.props.currentUser.id !== this.props.currentServer.admin_id) {
+  //       newCh.style.display = "none";
+  //     } else {
+  //       newCh.style.display = 'block';
+  //     }
+
+  //   }
+   
+    // if (this.props.currentServer) {
+    //   if (this.props.currentUser.id !== this.props.currentServer.admin_id) {
+    //     newCh.classList.add('notAdmin');
+    //   } else {
+    //     newCh.classList.remove('notAdmin');
+    //   }
+    // }
+  // }
   
   render() {
     
-    
-    // } else {
-    //   deleteCh.classList.add('notAdmin');
+    // const chDelete = document.getElementById('deleteChannel');
+    // if (this.props.currentServer && this.props.currentUser) {
+    //   if (this.props.currentUser.id !== this.props.currentServer.admin_id) {
+    //     chDelete.style.display = 'none';
+    //   } else {
+    //     chDelete.style.display = 'block';
+    //   }
     // }
-
+  
+    
     let { channels } = this.props;
     let serverChannels = [];
     let serverTitle;

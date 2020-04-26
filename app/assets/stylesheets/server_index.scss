@@ -88,6 +88,6 @@
 	cursor: pointer;
 }
 
-.notAdmin {
-	display: none;
+.notAdmin > svg{
+	display: none !important;
 }

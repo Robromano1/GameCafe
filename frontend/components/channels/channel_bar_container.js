@@ -5,7 +5,9 @@ import { getServerChannels } from '../../actions/channel_actions';
 const mSTP = state => {
 
 	return ({
-		server: Object.values(state.entities.servers)
+		server: Object.values(state.entities.servers),
+		currentServer: Object.values(state.entities.currentServer)[0],
+		currentUser: state.entities.users[state.session.id]
 	})
 };
 

@@ -25,9 +25,10 @@ class ChannelBar extends React.Component {
 	// }
 
 	render() {
+
 		return (
 			<>
-				<ChannelIndexContainer/>
+				<ChannelIndexContainer />
 			</>
 		)
 	}

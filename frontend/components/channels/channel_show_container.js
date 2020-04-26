@@ -8,6 +8,9 @@ const mSTP = (state, ownProps) => {
 	
 	return ({
 		channels: Object.values(state.entities.channels),
+		channel: state.entities.channels[ownProps.channelId],
+		// serverId: state.entities.servers[state.entities.channels[ownProps.channelId].server_id],
+		// servers: state.entities.servers,
 		messages: state.entities.messages,
 		currentUserId: state.session.id,
 		currentUser: state.entities.users[state.session.id]

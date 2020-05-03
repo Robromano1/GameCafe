@@ -4,12 +4,7 @@ import { Link } from 'react-router-dom';
 class SessionForm extends React.Component {
     constructor(props) {
         super(props)
-        
-        // this.state = {
-        //     email: "",
-        //     username: "",
-        //     password: ""
-        // }
+    
         this.state = this.props.session;
         this.demoEmail = "demo_user@demo.com";
         this.demoPassword = "coffeelife123";
@@ -37,26 +32,6 @@ class SessionForm extends React.Component {
                 this.props.history.push("/channels/")
             }) 
     }
-
-    // renderErrors() {
-    //     const inputs = document.getElementsByClassName('input');
-    //     if(this.props.errors.length) {
-    //         return (
-    //             <ul>
-    //                 {this.props.errors.map(error => (
-    //                     <li key={`error-${error.id}`}>
-    //                         <p className="errors">{error}</p>
-    //                     </li>
-    //                 ))}
-    //             </ul>
-    //         );
-    //         for(let i = 0; i < inputs.length; i++) {
-    //             inputs[i].classList.add('error');
-    //         }
-    //     } else {
-
-    //     }
-    // }
 
     demoLogin() {
         const email = this.demoEmail;
@@ -162,13 +137,8 @@ class SessionForm extends React.Component {
         
             return (
               	<div className="outer-container">
-                    {/* <h1 className="home">
-                        <Link to="/">Game Cafe</Link>
-                    </h1> */}
                     <div className="signup-form-container theme-dark">
                         <form onSubmit={this.handleSubmit}>
-                            {/* {errors} */}
-
                             <h2 className="signup-message">{title}</h2>
                             <div className="input-wrapper">
                                 <div className="email-field">
@@ -216,7 +186,6 @@ class SessionForm extends React.Component {
                                 <br />
                                 <div className="navContent">{navLink}</div>
                              
-                                {/* <p className="contents">{navLink}</p> */}
                             </div>
                         </form>
                     </div>       
@@ -233,10 +202,7 @@ class SessionForm extends React.Component {
                                 <h2 className="title">Welcome back!</h2>
                                 <h3 className="sub-title">We're so excited to see you again!</h3>
                             </div>
-
-                            {/* {this.renderErrors()} */}
                             {errors}
-
                             <div className="login-wrapper">
                                 <div className="login-email">
                                     <h5>EMAIL</h5>

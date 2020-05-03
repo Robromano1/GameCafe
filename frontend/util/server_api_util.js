@@ -4,7 +4,7 @@ export const fetchServers = () => (
 		method: 'GET'
 	})
 )
-// change to implicit return ()
+
 export const fetchServer = id => (
 	$.ajax({
 		url: `/api/servers/${id}`,

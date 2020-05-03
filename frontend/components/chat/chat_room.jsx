@@ -15,22 +15,6 @@ class ChatRoom extends React.Component {
 	}
 
 	chatRoom(channelId) {
-
-		// App.currentChannel = App.cable.subscriptions.create(
-    //   { channel: "ChatChannel", id: this.props.match.params.channelId },
-    //   {
-    //     received: (data) => {
-    //       // Instead of setting local this.state, dispatch action to update store
-
-    //       this.props.receiveMessage(JSON.parse(data.message));
-    //       // break
-    //     },
-    //     speak: function (data) {
-    //       return this.perform("speak", data);
-    //     },
-    //   }
-    // );
-		
 		App.currentChannel = App.cable.subscriptions.create(
 			{
 				channel: "ChatChannel",
@@ -52,21 +36,6 @@ class ChatRoom extends React.Component {
 	};
 
 	componentDidMount() {
-		//Can have own component for App.cable.subscription
-		// App.currentChannel = App.cable.subscriptions.create(
-		// 	{ channel: "ChatChannel", id: this.props.match.params.channelId },
-		// 	{ 
-		// 		received: data => {
-		// 			// Instead of setting local this.state, dispatch action to update store
-					
-		// 			this.props.receiveMessage(JSON.parse(data.message));
-		// 			// break
-		// 		},
-		// 		speak: function(data) {
-		// 			return this.perform("speak", data);
-		// 		}
-		// 	}
-		// );
 		if (this.props.channelId) {
 
 			this.chatRoom(this.props.channelId);
@@ -88,9 +57,6 @@ class ChatRoom extends React.Component {
 		if (this.bottom.current) {
 			this.bottom.current.scrollIntoView();
 		}
-		// const channelId = this.props.match.params.channelId
-		// this.props.getChannel(channelId)
-		// 	.then(() => this.props.fetchChannelMessages(channelId))
 	}
 
 	handleSubmit(e) {

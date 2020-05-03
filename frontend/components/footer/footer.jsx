@@ -34,16 +34,12 @@ const Footer = () => {
 								</div>
 								<div className="navigationSection">
 									<h3 className="navHeader">Resources</h3>
-										{/* <Link className="navRoute" to=""> */}
 										<div className="navRoute">
 											<span>Terms of service</span>
 										</div>
-										{/* </Link> */}
-										{/* <Link className="navRoute" to=""> */}
 										<div className="navRoute">
 											<span>Privacy Policy</span>
 										</div>
-										{/* </Link> */}
 								</div>
 								<div className="navigationSection">
 									<h3 className="navHeader">Credits</h3>

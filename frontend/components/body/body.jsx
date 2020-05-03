@@ -83,9 +83,6 @@ const Body = () => {
 				</div>
 			</div>
 		</div>
-		// <div className="images">
-		// 	<img className="desktop" src="https://discordapp.dcom/assets/0d82411c439e3558f8b2f6fb12eccbc1.svg"/>
-		// </div>
 	)
 }
 

@@ -15,12 +15,6 @@ const usersReducer = (state = {}, action ) => {
 		case CLEAR_USER:
 			newState = {};
 			return newState;
-		// case UPDATE_USER_CHANNELS:
-		// 	newState = merge({}, state);
-		// 	if(!newState[action.userId].channel_ids.includes(action.channelId)) {
-		// 		newState[action.userId].channel_ids.push(action.channelId);
-		// 	}
-			// return newState;
 		default:
 			return state;
 

@@ -18,9 +18,7 @@ class ServerIndex extends React.Component {
     this.openDelete = this.openDelete.bind(this);
     this.closeDelete = this.closeDelete.bind(this);
     this.toggleDelete = this.toggleDelete.bind(this);
-    // this.clsoeModal = this.clsoeModal.bind(this);
-    //this.openModal = this.openModal.bind(this);
-    // this.modal = this.modal.bind(this);
+
   }
 
   componentDidMount() {
@@ -30,10 +28,7 @@ class ServerIndex extends React.Component {
     }, 300);
 
     this.toggleDelete();
-    // if (this.props.currentUser.id !== this.props.currentServer.admin_id) {
-    //   const deleteBtn = document.getElementById('deleteContainer');
-    //   deleteBtn.classList.add('noAdmin');
-    // };
+   
   }
 
   componentDidUpdate() {
@@ -61,31 +56,13 @@ class ServerIndex extends React.Component {
     e.stopPropagation();
     const modal = document.getElementById("serverModal");
     modal.style.display = "block";
-    // e.stopPropagation();
-
-    // const modalNode = document.getElementsByClassName('modal')[0];
-    // if (!modalNode.classList.contains('openModal')) {
-    //   modalNode.classList.add('openModal')
-    // } else {
-    //   modalNode.classList.remove('openModal')
-    // }
   }
 
   closeModal(e) {
     e.stopPropagation();
-    // e.preventDefault();
     const modal = document.getElementById("serverModal");
 
     modal.style.display = "none";
-
-    // e.stopPropagation();
-
-    // const modalNode = document.getElementsByClassName('modal')[0];
-    // if (!modalNode.classList.contains('closeModal')) {
-    //   modalNode.classList.add('closeModal')
-    // } else {
-    //   modalNode.classList.remove('closeModal')
-    // }
   }
 
   openDelete(e) {
@@ -102,21 +79,6 @@ class ServerIndex extends React.Component {
     const deleteModal = document.getElementById("deleteModal");
     deleteModal.style.display = "none";
   }
-
-  // openModal() {
-  //   const modal = document.getElementById("serverModal");
-  //   modal.style.display = "block";
-  // }
-
-  // closeModal() {
-  //   const modal = document.getElementById("serverModal");
-  //   modal.style.display = "none";
-  // }
-
-  // openModal() {
-  //   const modal = document.getElementById("serverModal");
-  //   modal.style.display = "block";
-  // }
 
   selected() {
     setTimeout(() => {
@@ -146,14 +108,6 @@ class ServerIndex extends React.Component {
       );
     });
   
-    // const deleteBtn = document.getElementById('deleteContainer');
-    // if (this.props.currentServer && this.props.currentUser.id === this.props.currentServer.admin_id) {
-    //   deleteBtn.classList.add('notAdmin');
-    // } else {
-    //   deleteBtn.classList.remove('not Admin')
-    // }
-    
-    
     return (
       <>
         <div className="scrollWrap scrollTheme">

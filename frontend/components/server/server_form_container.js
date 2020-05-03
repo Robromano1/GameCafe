@@ -6,8 +6,7 @@ const mSTP = state => ({
 	server: {
 		server_name: "",
 		description: "Change this description",
-		server_image: true,
-		// admin_id: state.entities.users[state.session.id].id
+		server_image: true
 	},
 	servers: Object.values(state.entities.servers),
 	channels: Object.values(state.entities.channels),

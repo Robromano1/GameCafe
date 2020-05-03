@@ -36,10 +36,6 @@ class Api::ServersController < ApplicationController
 	end
 
 	def create
-		
-		# if server_params[:server_name] == ""
-		# 	render json: ["This field is required"], status: 422
-		# else
 		@server = Server.new(server_params)
 
 		@server.admin_id = current_user.id 

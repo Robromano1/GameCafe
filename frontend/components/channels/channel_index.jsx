@@ -8,37 +8,17 @@ class ChannelIndex extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.openModal = this.openModal.bind(this);
-    // this.closeModal = this.closeModal.bind(this);
-    // this.openDelete = this.openDelete.bind(this);
-    // this.closeDelete = this.closeDelete.bind(this);
     this.selected = this.selected.bind(this);
-    // this.toggleChDelete = this.toggleChDelete.bind(this);
-    // this.toggleNewCh = this.toggleNewCh.bind(this);
+    
   }
-
-  // componentDidMount() {
-  // 	// this.props.getUserChannels();
-  // 	//this.props.getUserChannel(this.props.currentUser.id);
-  // 	//<ServerBarContainer/>
-  // 	const { getServerChannels } = this.props;
-
-  // 	const serverId = this.props.match.params.serverId
-  // 	if (serverId) {
-  // 		getServerChannels(serverId);
-  // 	}
-  // }
 
   componentDidMount() {
     this.selected();
-    // this.toggleChDelete();
-    // this.toggleNewCh();
   }
 
   componentDidUpdate(prevProps) {
     this.selected();
-    // this.toggleChDelete();
-    // this.toggleNewCh();
+  
   }
 
   openModal(e) {
@@ -81,48 +61,7 @@ class ChannelIndex extends React.Component {
     }, 300);
   }
 
-  // toggleChDelete() {
-  //   const deleteCh = document.getElementById('deleteChannel');
-   
-  //   if (this.props.currentServer && this.props.currentUser.id !== this.props.currentServer.admin_id) {
-  //     deleteCh.style.display = "none";
-  //   } else {
-  //     deleteCh.style.display = "block";
-  //   }
-  // }
-
-  // toggleNewCh() {
-  //   const newCh = document.getElementById('newChannel');
-  
-  //   if (newCh) {
-  //     if (this.props.currentServer && this.props.currentUser.id !== this.props.currentServer.admin_id) {
-  //       newCh.style.display = "none";
-  //     } else {
-  //       newCh.style.display = 'block';
-  //     }
-
-  //   }
-   
-    // if (this.props.currentServer) {
-    //   if (this.props.currentUser.id !== this.props.currentServer.admin_id) {
-    //     newCh.classList.add('notAdmin');
-    //   } else {
-    //     newCh.classList.remove('notAdmin');
-    //   }
-    // }
-  // }
-  
   render() {
-    
-    // const chDelete = document.getElementById('deleteChannel');
-    // if (this.props.currentServer && this.props.currentUser) {
-    //   if (this.props.currentUser.id !== this.props.currentServer.admin_id) {
-    //     chDelete.style.display = 'none';
-    //   } else {
-    //     chDelete.style.display = 'block';
-    //   }
-    // }
-  
     
     let { channels } = this.props;
     let serverChannels = [];

@@ -7,7 +7,6 @@ const mSTP = (state, ownProps) => {
 	
 	return ({
 		server: state.entities.servers,
-		// serverId: parseInt(ownProps.match.params.serverId),
 		channels: state.entities.channels,
 		users: state.entities.users,
 		currentUserId: state.session.id,

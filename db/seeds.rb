@@ -60,7 +60,6 @@ palpatine = User.create!(email: "palpatine@starwars.com", username: "Palpatine",
 kylo = User.create!(email: "kylo@starwars.com", username: "Kylo Ren", password: "starwars123")
 
 star_wars = Server.create!(server_name: "Star Wars", server_image: "true", description: "In a galaxy far far away...", private: true, admin_id: yoda.id)
-# sith = Server.create!(server_name: "Sith", server_image: "true", description: "We must destroy the jedi", private: true, admin_id: palpatine.id)
 
 member = ServerUser.create!(user_id: obi_wan.id, server_id: star_wars.id)
 member = ServerUser.create!(user_id: luke.id, server_id: star_wars.id)

@@ -50,21 +50,6 @@ class ChannelForm extends React.Component {
     }, 300);
   }
 
-  // componentDidUpdate(prevProps) {
-  //   if (this.props.match.params.serverId !== prevProps.match.params.serverId) {
-  //     this.setState({ server_id: this.props.match.params.serverId });
-  //   }
-  // }
-
-  // handleSubmit(e) {
-  //   e.preventDefault();
-
-  //   this.props.createChannel(this.state).then(() => {
-  //     this.closeModal();
-  //     this.props.history.push("/channels");
-  //   });
-  // }
-
   openModal(e) {
     e.stopPropagation();
     const modal = document.getElementById("channelModal");
